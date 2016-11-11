@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name swissMetNetDisplayApp.controller:AboutCtrl
+ * @name swissMetNetDisplayApp.controller:ListCtrl
  * @description
- * # AboutCtrl
+ * # ListCtrl
  * Controller of the swissMetNetDisplayApp
  */
 angular.module('swissMetNetDisplayApp')
-  .controller('AboutCtrl', function () {
+  .controller('ListCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

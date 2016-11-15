@@ -26,7 +26,7 @@ angular
         controller: 'ListCtrl',
         controllerAs: 'list'
       })
-      .when('/:station/:language', {
+      .when('/:profile/:language', {
         templateUrl: 'views/profile.html',
         controller: 'ProfileCtrl',
         controllerAs: 'profile'

@@ -38,12 +38,13 @@ angular
   .config(function(tmhDynamicLocaleProvider) {
     tmhDynamicLocaleProvider.localeLocationPattern('/bower_components/angular-i18n/angular-locale_{{locale}}.js');
   })
-  .config(function ($translateProvider, de, en, fr, it) {
+  .config(function ($translateProvider) {
     $translateProvider.useSanitizeValueStrategy('sanitize');
-    $translateProvider.translations('de', de)
-      .translations('en', en)
-      .translations('fr', fr)
-      .translations('it', it)
+    $translateProvider.useStaticFilesLoader({
+        prefix: 'resources/locale-',// path to translations files
+        suffix: '.json'// suffix, currently- extension of the translations
+    });
+    $translateProvider
       .preferredLanguage('en')
       .fallbackLanguage('en');
   });

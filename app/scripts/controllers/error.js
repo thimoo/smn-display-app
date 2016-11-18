@@ -17,9 +17,6 @@ angular.module('swissMetNetDisplayApp')
     urlService, 
     webService) {
 
-      // TODO check if the network is available
-      // TODO check if the profile arn't offline
-
       // Setup the url for the profile
       var urlToCheck = urlService.getProfileUrl($routeParams.profile);
 

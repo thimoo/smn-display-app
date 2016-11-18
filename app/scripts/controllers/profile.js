@@ -21,8 +21,6 @@ angular.module('swissMetNetDisplayApp')
     dependencyService, 
     urlService) {
 
-      console.log('hello from profile ctrl');
-
       var lastResponse = null;
 
       var updateLink = null;
@@ -52,9 +50,8 @@ angular.module('swissMetNetDisplayApp')
       checkInterval = $interval(checkForUpdate, 60000);
 
       function checkForUpdate () {
-        console.log('check profile ');
+        // If no response is available, get the profile
         if (lastResponse == null) {
-          // If no response is available, get the profile
           refreshProfile();
         } else {
           // if a response is available, check if an update
@@ -120,6 +117,7 @@ angular.module('swissMetNetDisplayApp')
             // the retreived profiles
             var urlsDependencies = dependencyService.getUrls(dependencies, profile);
 
+            // Broadcast the update event to all directives
             $scope.$broadcast('update', {
               target: directive,
               data: urlsDependencies

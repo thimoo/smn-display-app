@@ -9,9 +9,5 @@
  */
 angular.module('swissMetNetDisplayApp')
   .controller('ListCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    // TODO
   });

@@ -63,6 +63,7 @@ angular.module('swissMetNetDisplayApp')
             }
           }, 
           function (response) {
+            console.log(response);
             redirectError();
           });
       }
@@ -75,13 +76,15 @@ angular.module('swissMetNetDisplayApp')
           // if a response is available, check if an update
           // is available, if yes get the profile
           var lastUpdate = lastResponse.lastUpdate;
-          webService.checkForUpdate(updateLink, lastUpdate, function (response) {
-            if (response.updateAvailable) {
-              refreshProfile();
-            }
-          }, function (errorResponse) {
-            redirectError();
-          });
+          webService.checkForUpdate(updateLink, lastUpdate, 
+            function (response) {
+              if (response.updateAvailable) {
+                refreshProfile();
+              }
+            }, function (errorResponse) {
+              console.log(errorResponse);
+              redirectError();
+            });
         }
       }
 
@@ -129,7 +132,7 @@ angular.module('swissMetNetDisplayApp')
       }
 
       function redirectError () {
-        // TODO
+        // TODO clear interval
         console.log('error');
         $location.path( "/error" );
       }

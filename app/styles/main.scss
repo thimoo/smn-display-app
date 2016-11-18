@@ -1,91 +1,116 @@
+/*!
+  This CSS resource incorporates links to font software which is the valuable copyrighted 
+  property of Monotype and/or its suppliers. You may not attempt to copy, install, redistribute, 
+  convert, modify or reverse engineer this font software. Please contact Monotype with any 
+  questions regarding Web Fonts:  https://www.linotype.com
+  */
+@font-face{
+  font-family:"Neue Frutiger W04 Bold";
+  src:url("Fonts/1123327/1eac686d-0ee9-49c0-a7c1-8ebf9b4f6836.eot?#iefix");
+  src:url("Fonts/1123327/1eac686d-0ee9-49c0-a7c1-8ebf9b4f6836.eot?#iefix") format("eot"),url("Fonts/1123327/7d7bafe9-2e12-4906-bcdc-13befac67731.woff2") format("woff2"),url("Fonts/1123327/999775fb-6515-4b9a-ac68-fe3e2a35ab5b.woff") format("woff"),url("Fonts/1123327/d8a374b7-96e9-4365-b4c4-828135877527.ttf") format("truetype");
+}
+@font-face{
+  font-family:"Neue Frutiger W04 Light";
+  src:url("Fonts/1123415/8c62d2c9-6b16-455b-b50c-bd9379dca215.eot?#iefix");
+  src:url("Fonts/1123415/8c62d2c9-6b16-455b-b50c-bd9379dca215.eot?#iefix") format("eot"),url("Fonts/1123415/cc1ddd05-3327-4c9f-ac92-9f39e7cd9705.woff2") format("woff2"),url("Fonts/1123415/b7c08596-80c2-4b7e-82ce-291775ee0059.woff") format("woff"),url("Fonts/1123415/f2ea3620-e173-4c86-b6aa-054d636dbac0.ttf") format("truetype");
+}
+@font-face{
+  font-family:"NeueFrutigerW04-Regular";
+  src:url("Fonts/1123427/554b0b6c-9554-4f84-9d48-70727818069e.eot?#iefix");
+  src:url("Fonts/1123427/554b0b6c-9554-4f84-9d48-70727818069e.eot?#iefix") format("eot"),url("Fonts/1123427/0cb16cc2-1eee-4cf5-b6fa-5ef137fc9163.woff2") format("woff2"),url("Fonts/1123427/5d587816-2954-436a-926f-23decf2261f1.woff") format("woff"),url("Fonts/1123427/599de572-d074-41e4-aa91-6400abb570f4.ttf") format("truetype");
+}
+
+
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
 
-body {
-  padding: 0;
-}
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
+// .browsehappy {
+//   margin: 0.2em 0;
+//   background: #ccc;
+//   color: #000;
+//   padding: 0.2em 0;
+// }
 
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
+// body {
+//   padding: 0;
+// }
 
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
-}
+// /* Everything but the jumbotron gets side spacing for mobile first views */
+// .header,
+// .marketing,
+// .footer {
+//   padding-left: 15px;
+//   padding-right: 15px;
+// }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
+// /* Custom page header */
+// .header {
+//   border-bottom: 1px solid #e5e5e5;
+//   margin-bottom: 10px;
 
-.container-narrow > hr {
-  margin: 30px 0;
-}
+//   /* Make the masthead heading the same height as the navigation */
+//   h3 {
+//     margin-top: 0;
+//     margin-bottom: 0;
+//     line-height: 40px;
+//     padding-bottom: 19px;
+//   }
+// }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+// /* Custom page footer */
+// .footer {
+//   padding-top: 19px;
+//   color: #777;
+//   border-top: 1px solid #e5e5e5;
+// }
 
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
+// .container-narrow > hr {
+//   margin: 30px 0;
+// }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
+// Main marketing message and sign up button
+// .jumbotron {
+//   text-align: center;
+//   border-bottom: 1px solid #e5e5e5;
 
-  p + h4 {
-    margin-top: 28px;
-  }
-}
+//   .btn {
+//     font-size: 21px;
+//     padding: 14px 24px;
+//   }
+// }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
+// /* Supporting marketing content */
+// .marketing {
+//   margin: 40px 0;
 
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-}
+//   p + h4 {
+//     margin-top: 28px;
+//   }
+// }
+
+// /* Responsive: Portrait tablets and up */
+// @media screen and (min-width: 768px) {
+//   .container {
+//     max-width: 730px;
+//   }
+
+//   /* Remove the padding we set earlier */
+//   .header,
+//   .marketing,
+//   .footer {
+//     padding-left: 0;
+//     padding-right: 0;
+//   }
+//   /* Space out the masthead */
+//   .header {
+//     margin-bottom: 30px;
+//   }
+//   /* Remove the bottom border on the jumbotron for visual effect */
+//   .jumbotron {
+//     border-bottom: 0;
+//   }
+// }

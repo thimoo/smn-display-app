@@ -1,4 +1,5 @@
 {
-    "title": "Hi",
-    "last_update": "Last update at"
+    "swiss_meteo": "MeteoSwiss",
+    "station": "Station",
+    "swiss_met_net": "SwissMetNet"
 }

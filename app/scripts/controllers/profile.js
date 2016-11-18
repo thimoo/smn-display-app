@@ -13,6 +13,7 @@ angular.module('swissMetNetDisplayApp')
     $routeParams, 
     $translate, 
     $locale, 
+    $location,
     $interval, 
     tmhDynamicLocale, 
     webService, 
@@ -26,6 +27,12 @@ angular.module('swissMetNetDisplayApp')
 
       $scope.displays = {
         singleTemp: false
+      };
+
+      $scope.profile = {
+        name: '',
+        altitude: '',
+        updateDate: null
       };
 
       // Setup the language
@@ -46,11 +53,17 @@ angular.module('swissMetNetDisplayApp')
           function (response) {
             lastResponse = response.data.data;
             updateLink = lastResponse.$href;
-            bootstrapUI(lastResponse);
+
+            // If the profile is offline, then display
+            // the error page. Else bootstrap the UI
+            if (lastResponse.isOnline) {
+              bootstrapUI(lastResponse);
+            } else {
+              redirectError();
+            }
           }, 
           function (response) {
-            // TODO if network error display specific page
-            alert('an error occured');
+            redirectError();
           });
       }
 
@@ -63,16 +76,19 @@ angular.module('swissMetNetDisplayApp')
           // is available, if yes get the profile
           var lastUpdate = lastResponse.lastUpdate;
           webService.checkForUpdate(updateLink, lastUpdate, function (response) {
-            console.log('update', response.updateAvailable);
             if (response.updateAvailable) {
               refreshProfile();
             }
+          }, function (errorResponse) {
+            redirectError();
           });
-          // TODO if network error display specific page
         }
       }
 
       function bootstrapUI (profile) {
+        // Refresh infos from profile
+        loadProfile(profile);
+
         // For each directives in dependencies
         // check if all dependencies are available
         // and broadcast an update event with a
@@ -102,6 +118,20 @@ angular.module('swissMetNetDisplayApp')
             });
           }
         });
+      }
+
+      function loadProfile (profile) {
+        $scope.profile = {
+          name: profile.stnCode,
+          altitude: profile.altitude,
+          updateDate: profile.lastUpdate
+        };
+      }
+
+      function redirectError () {
+        // TODO
+        console.log('error');
+        $location.path( "/error" );
       }
 
     });

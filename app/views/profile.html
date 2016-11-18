@@ -1,4 +1,19 @@
-<h1>{{'title' | translate}}</h1>
-<p>This is the about view.</p>
-
-<single-temp ng-show="displays.singleTemp"></single-temp>
+<div class="header">
+    <div class="date" style="width: 33%; float: left;">
+        <h2 class="hour">{{ profile.updateDate | date : 'hh:mm' }}</h2>
+        <h3 class="date">{{ profile.updateDate | date : 'fullDate' }}</h3>
+    </div>
+    <div class="title" style="width: 33%; float: left; text-align: center;">
+        <h1>{{ profile.name }}</h1>
+        <p>{{ profile.altitude }}</p>
+    </div>
+    <div class="swiss-met-net" style="width: 33%; float: left; text-align: right;">
+        <h2>{{ 'swiss_meteo' | translate }}</h2>
+        <h3>{{ 'station' | translate }} {{ 'swiss_met_net' | translate }}</h3>
+    </div>
+</div>
+<div class="content">
+    <!-- start list of all directive -->
+    <single-temp ng-show="displays.singleTemp"></single-temp>
+    <!-- end list of all directive -->
+</div>

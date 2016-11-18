@@ -13,11 +13,6 @@ angular.module('swissMetNetDisplayApp')
       replace: true,
       restrict: 'E',
 
-      scope: {
-        update: '=',
-        profile: '='
-      },
-
       controller: function ($scope, webService) {
 
         $scope.temp = '-';

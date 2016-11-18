@@ -20,7 +20,7 @@ angular.module('swissMetNetDisplayApp')
           url: url
         }).then(success, error);
       },
-      checkForUpdate: function (url, time, callback) {
+      checkForUpdate: function (url, time, callback, errorCallback) {
         $http({
           method: 'GET',
           url: url + '/update',
@@ -29,7 +29,7 @@ angular.module('swissMetNetDisplayApp')
           function (response) {
             callback(response.data.data);
           }, function (response) {
-            alert('an error occured');
+            errorCallback(response);
           });
       },
       get: function (url, callback) {

@@ -26,6 +26,11 @@ angular
         controller: 'ListCtrl',
         controllerAs: 'list'
       })
+      .when('/error', {
+        templateUrl: 'views/error.html',
+        controller: 'ErrorCtrl',
+        controllerAs: 'error'
+      })
       .when('/:profile/:language?', {
         templateUrl: 'views/profile.html',
         controller: 'ProfileCtrl',

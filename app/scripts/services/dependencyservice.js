@@ -19,14 +19,14 @@ angular.module('swissMetNetDisplayApp')
         res.push(value.code);
       });
       return res;
-    }
+    };
 
     var search = function (type, value) {
       switch (type) {
-        case 'data': return reversedData.indexOf(value) != -1;
-        case 'collections': return reversedCollections.indexOf(value) != -1;
+        case 'data': return reversedData.indexOf(value) !== -1;
+        case 'collections': return reversedCollections.indexOf(value) !== -1;
       } 
-    }
+    };
 
     this.check = function (directive, dependencies, profile) {
       var status = true;
@@ -43,7 +43,7 @@ angular.module('swissMetNetDisplayApp')
 
       });
       return status;
-    }
+    };
     
     this.reverseToObject = function (array) {
       var res = {};
@@ -51,7 +51,7 @@ angular.module('swissMetNetDisplayApp')
         res[value.code] = value.$href;
       });
       return res;
-    }
+    };
 
     this.getUrls = function (dependencies, profile) {
       var urls = {
@@ -62,7 +62,7 @@ angular.module('swissMetNetDisplayApp')
       var profileUrls = {
         data: this.reverseToObject(profile.data),
         collections: this.reverseToObject(profile.collections)
-      }
+      };
 
       angular.forEach(dependencies, function (dependency) {
         
@@ -72,6 +72,6 @@ angular.module('swissMetNetDisplayApp')
 
       });
       return urls;
-    }
+    };
 
   });

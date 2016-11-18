@@ -8,18 +8,22 @@
  * Factory in the swissMetNetDisplayApp.
  */
 angular.module('swissMetNetDisplayApp')
-  .factory('webService', function ($http, urlService) {
-    // Service logic
-    // ...
+  .factory('webService', function ($http) {
 
-    // Public API here
+    // Return the service public API to
+    // communicate with the REST server
     return {
+
+      // Get the profile
       getProfile: function (url, success, error) {
         $http({
           method: 'GET',
           url: url
         }).then(success, error);
       },
+
+      // Call the update url for the profile given
+      // and add the X-Datetime header
       checkForUpdate: function (url, time, callback, errorCallback) {
         $http({
           method: 'GET',
@@ -32,6 +36,8 @@ angular.module('swissMetNetDisplayApp')
             errorCallback(response);
           });
       },
+
+      // Make a GET request on the url
       get: function (url, callback) {
         $http({
           method: 'GET',
@@ -40,9 +46,13 @@ angular.module('swissMetNetDisplayApp')
           function (response) {
             callback(response.data.data);
           }, function (response) {
-            alert('an error occured');
+            console.log(response);
           });
       },
+
+      // Make a GET request on the url and
+      // add an agregator header equals to
+      // min
       getMin: function (url, callback) {
         $http({
           method: 'GET',
@@ -52,9 +62,13 @@ angular.module('swissMetNetDisplayApp')
           function (response) {
             callback(response.data.data);
           }, function (response) {
-            alert('an error occured');
+            console.log(response);
           });
       },
+
+      // Make a GET request on the url and
+      // add an agregator header equals to
+      // max
       getMax: function (url, callback) {
         $http({
           method: 'GET',
@@ -64,7 +78,7 @@ angular.module('swissMetNetDisplayApp')
           function (response) {
             callback(response.data.data);
           }, function (response) {
-            alert('an error occured');
+            console.log(response);
           });
       }
     };

@@ -24,7 +24,7 @@ angular.module('swissMetNetDisplayApp')
         $scope.$on('update', function (event, data) {
           // If the targeted directive is not this
           // skip the update
-          if (data.target.indexOf('singleTemp') === -1) return;
+          if (data.target.indexOf('singleTemp') === -1) { return; }
 
           // Retrieve all needed URLs
           var tempUrl = data.data.data.temp;

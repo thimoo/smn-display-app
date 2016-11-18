@@ -46,12 +46,9 @@ angular.module('swissMetNetDisplayApp')
       // Setup updateLink
       updateLink = urlService.getProfileUrl($routeParams.profile);
 
-      checkForUpdate();
-      checkInterval = $interval(checkForUpdate, 60000);
-
       function checkForUpdate () {
         // If no response is available, get the profile
-        if (lastResponse == null) {
+        if (lastResponse === null) {
           refreshProfile();
         } else {
           // if a response is available, check if an update
@@ -144,5 +141,9 @@ angular.module('swissMetNetDisplayApp')
         // profile and language informations
         $location.path('/error' + $location.$$url);
       }
+
+      // Setup the interval
+      checkForUpdate();
+      checkInterval = $interval(checkForUpdate, 60000);
 
     });

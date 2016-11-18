@@ -26,9 +26,6 @@ angular.module('swissMetNetDisplayApp')
         tmhDynamicLocale.set($routeParams.language);
       }
 
-      checkNetwork();
-      var checkInterval = $interval(checkNetwork, 5000);
-
       // If the connection to the network is available
       // and the profile is online, then we can redirect
       // to the profile page
@@ -51,5 +48,9 @@ angular.module('swissMetNetDisplayApp')
             }
           });
       }
+
+      // Setup the interval
+      checkNetwork();
+      var checkInterval = $interval(checkNetwork, 5000);
 
     });

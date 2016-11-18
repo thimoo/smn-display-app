@@ -5,10 +5,111 @@
 
 // Landscape mode
 
-// TODO ...
+$land-column:   8;
+$land-row:      8;
 
+$horizontal-gutter:  1vw;
+$vertical-gutter:    1vh;
+
+@mixin width($number) {
+  width: (100vw - ($land-column + 1 * $horizontal-gutter)) / $land-column * $number + (($number - 1) * $horizontal-gutter);
+}
+
+@mixin height($number) {
+  height: (100vh - ($land-row + 1 * $vertical-gutter)) / $land-row * $number + (($number - 1) * $vertical-gutter);
+}
+
+.container {
+  clear: both;
+  width: 100vw;
+  height: 100vh;
+}
+
+.item {
+  float: left;
+}
+
+.gutter-left {
+  margin-left: $horizontal-gutter;
+}
+
+.gutter-right {
+  margin-right: $horizontal-gutter;
+}
+
+.gutter-top {
+  margin-top: $vertical-gutter;
+}
+
+.gutter-down {
+  margin-down: $vertical-gutter;
+}
+
+.land-horizontal-1of8 {
+  @extend .item;
+  @include width(1);}
+
+.land-horizontal-2of8 {
+  @extend .item;
+  @include width(2);}
+
+.land-horizontal-3of8 {
+  @extend .item;
+  @include width(3);}
+
+.land-horizontal-4of8 {
+  @extend .item;
+  @include width(4);}
+
+.land-horizontal-5of8 {
+  @extend .item;
+  @include width(5);}
+
+.land-horizontal-6of8 {
+  @extend .item;
+  @include width(6);}
+
+.land-horizontal-7of8 {
+  @extend .item;
+  @include width(7);}
+
+.land-horizontal-8of8 {
+  @extend .item;
+  @include width(8);}
+
+
+.land-vertical-1of8 {
+  @include height(1);
+}
+.land-vertical-2of8 {
+  @include height(2);
+}
+.land-vertical-3of8 {
+  @include height(3);
+}
+.land-vertical-4of8 {
+  @include height(4);
+}
+.land-vertical-5of8 {
+  @include height(5);
+}
+.land-vertical-6of8 {
+  @include height(6);
+}
+.land-vertical-7of8 {
+  @include height(7);
+}
+.land-vertical-8of8 {
+  @include height(8);
+}
 
 // Portrait mode
+
+$port-column:   4;
+$port-row:      16;
+
+$horizontal-guter:  1.77;
+$vertical-guter:    0.5625;
 
 // TODO ...
 

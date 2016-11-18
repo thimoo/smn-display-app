@@ -21,9 +21,13 @@ angular.module('swissMetNetDisplayApp')
     dependencyService, 
     urlService) {
 
+      console.log('hello from profile ctrl');
+
       var lastResponse = null;
 
       var updateLink = null;
+
+      var checkInterval;
 
       $scope.displays = {
         singleTemp: false
@@ -45,7 +49,28 @@ angular.module('swissMetNetDisplayApp')
       updateLink = urlService.getProfileUrl($routeParams.profile);
 
       checkForUpdate();
-      $interval(checkForUpdate, 60000); //60000
+      checkInterval = $interval(checkForUpdate, 60000);
+
+      function checkForUpdate () {
+        console.log('check profile ');
+        if (lastResponse == null) {
+          // If no response is available, get the profile
+          refreshProfile();
+        } else {
+          // if a response is available, check if an update
+          // is available, if yes get the profile
+          var lastUpdate = lastResponse.lastUpdate;
+          webService.checkForUpdate(updateLink, lastUpdate, 
+            function (response) {
+              if (response.updateAvailable) {
+                refreshProfile();
+              }
+            }, function (errorResponse) {
+              console.log(errorResponse);
+              redirectError();
+            });
+        }
+      }
 
       function refreshProfile () {
         // Retreive the profile and bootstrap the UI update
@@ -66,26 +91,6 @@ angular.module('swissMetNetDisplayApp')
             console.log(response);
             redirectError();
           });
-      }
-
-      function checkForUpdate () {
-        if (lastResponse == null) {
-          // If no response is available, get the profile
-          refreshProfile();
-        } else {
-          // if a response is available, check if an update
-          // is available, if yes get the profile
-          var lastUpdate = lastResponse.lastUpdate;
-          webService.checkForUpdate(updateLink, lastUpdate, 
-            function (response) {
-              if (response.updateAvailable) {
-                refreshProfile();
-              }
-            }, function (errorResponse) {
-              console.log(errorResponse);
-              redirectError();
-            });
-        }
       }
 
       function bootstrapUI (profile) {
@@ -123,6 +128,8 @@ angular.module('swissMetNetDisplayApp')
         });
       }
 
+      // Load all scope informations used to display
+      // the profile
       function loadProfile (profile) {
         $scope.profile = {
           name: profile.stnCode,
@@ -132,9 +139,12 @@ angular.module('swissMetNetDisplayApp')
       }
 
       function redirectError () {
-        // TODO clear interval
-        console.log('error');
-        $location.path( "/error" );
+        // Clear the refresh profile interval
+        $interval.cancel(checkInterval);
+
+        // Redirect to the error page with the current
+        // profile and language informations
+        $location.path('/error' + $location.$$url);
       }
 
     });

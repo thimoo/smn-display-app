@@ -44,5 +44,34 @@ angular.module('swissMetNetDisplayApp')
       });
       return status;
     }
+    
+    this.reverseToObject = function (array) {
+      var res = {};
+      angular.forEach(array, function (value) {
+        res[value.code] = value.$href;
+      });
+      return res;
+    }
+
+    this.getUrls = function (dependencies, profile) {
+      var urls = {
+        data: {},
+        collections: {}
+      };
+
+      var profileUrls = {
+        data: this.reverseToObject(profile.data),
+        collections: this.reverseToObject(profile.collections)
+      }
+
+      angular.forEach(dependencies, function (dependency) {
+        
+        var source = dependency.split('-');
+
+        urls[source[0]][source[1]] = profileUrls[source[0]][source[1]];
+
+      });
+      return urls;
+    }
 
   });

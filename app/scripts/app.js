@@ -26,7 +26,7 @@ angular
         controller: 'ListCtrl',
         controllerAs: 'list'
       })
-      .when('/:profile/:language', {
+      .when('/:profile/:language?', {
         templateUrl: 'views/profile.html',
         controller: 'ProfileCtrl',
         controllerAs: 'profile'
@@ -39,10 +39,10 @@ angular
     tmhDynamicLocaleProvider.localeLocationPattern('/bower_components/angular-i18n/angular-locale_{{locale}}.js');
   })
   .config(function ($translateProvider) {
-    $translateProvider.useSanitizeValueStrategy('sanitize');
+    $translateProvider.useSanitizeValueStrategy('escape');
     $translateProvider.useStaticFilesLoader({
-        prefix: 'resources/locale-',// path to translations files
-        suffix: '.json'// suffix, currently- extension of the translations
+        prefix: 'resources/locale-',
+        suffix: '.json'
     });
     $translateProvider
       .preferredLanguage('en')

@@ -24,34 +24,30 @@ angular.module('swissMetNetDisplayApp')
         $scope.tempMin = '-';
         $scope.tempMax = '-';
 
-        $scope.$watch('update', function () {
-          if ($scope.update) {
-            update();
-          }
-        });
+        $scope.date = null;
 
-        function update () {
+        $scope.$on('update', function (event, data) {
+          // If the targeted directive is not this
+          // skip the update
+          if (data.target.indexOf('singleTemp') === -1) return;
 
-          angular.forEach($scope.profile.data, function (value, key) {
+          // Retrieve all needed URLs
+          var tempUrl = data.data.data.temp;
 
-            if (value.code == 'temp') {
-
-              webService.get(value.$href, function (data) {
-                $scope.temp = data.value;
-              });
-
-              webService.getMin(value.$href, function (data) {
-                $scope.tempMin = data.value;
-              });
-
-              webService.getMax(value.$href, function (data) {
-                $scope.tempMax = data.value;
-              });
-
-            }
+          webService.get(tempUrl, function (tempData) {
+            $scope.temp = tempData.value;
+            $scope.date = tempData.date;
           });
 
-        }
+          webService.getMin(tempUrl, function (tempData) {
+            $scope.tempMin = tempData.value;
+          });
+
+          webService.getMax(tempUrl, function (tempData) {
+            $scope.tempMax = tempData.value;
+          });
+
+        });
 
       }
     };

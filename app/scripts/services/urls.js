@@ -10,7 +10,5 @@
 angular.module('swissMetNetDisplayApp')
   .constant('urls', {
     base: 'http://dev.api.swissmetnet-display.ch/v1/',
-    profiles: 'profiles/',
-    data: 'data/',
-    collections: 'collections/'
+    profiles: 'profiles/'
   });

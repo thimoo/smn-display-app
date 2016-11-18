@@ -19,9 +19,6 @@ angular.module('swissMetNetDisplayApp')
       },
       getProfileUrl: function (code) {
         return urls.base + urls.profiles + code;
-      },
-      getUpdateProfileUrl: function (code) {
-        return urls.base + urls.profiles + code;
       }
     };
   });

@@ -12,19 +12,13 @@ angular.module('swissMetNetDisplayApp')
     // Service logic
     // ...
 
-    function retreiveProfile(code) {
-      var url = urlService.getProfileUrl(code);
-      return $http({
-          method: 'GET',
-          url: url
-        });
-    }
-
     // Public API here
     return {
-      getProfile: function (code, success, error) {
-        retreiveProfile(code)
-          .then(success, error);
+      getProfile: function (url, success, error) {
+        $http({
+          method: 'GET',
+          url: url
+        }).then(success, error);
       },
       checkForUpdate: function (url, time, callback) {
         $http({

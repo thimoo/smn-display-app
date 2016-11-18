@@ -4,25 +4,17 @@
   convert, modify or reverse engineer this font software. Please contact Monotype with any 
   questions regarding Web Fonts:  https://www.linotype.com
   */
-@font-face{
-  font-family:"Neue Frutiger W04 Bold";
-  src:url("Fonts/1123327/1eac686d-0ee9-49c0-a7c1-8ebf9b4f6836.eot?#iefix");
-  src:url("Fonts/1123327/1eac686d-0ee9-49c0-a7c1-8ebf9b4f6836.eot?#iefix") format("eot"),url("Fonts/1123327/7d7bafe9-2e12-4906-bcdc-13befac67731.woff2") format("woff2"),url("Fonts/1123327/999775fb-6515-4b9a-ac68-fe3e2a35ab5b.woff") format("woff"),url("Fonts/1123327/d8a374b7-96e9-4365-b4c4-828135877527.ttf") format("truetype");
-}
-@font-face{
-  font-family:"Neue Frutiger W04 Light";
-  src:url("Fonts/1123415/8c62d2c9-6b16-455b-b50c-bd9379dca215.eot?#iefix");
-  src:url("Fonts/1123415/8c62d2c9-6b16-455b-b50c-bd9379dca215.eot?#iefix") format("eot"),url("Fonts/1123415/cc1ddd05-3327-4c9f-ac92-9f39e7cd9705.woff2") format("woff2"),url("Fonts/1123415/b7c08596-80c2-4b7e-82ce-291775ee0059.woff") format("woff"),url("Fonts/1123415/f2ea3620-e173-4c86-b6aa-054d636dbac0.ttf") format("truetype");
-}
-@font-face{
-  font-family:"NeueFrutigerW04-Regular";
-  src:url("Fonts/1123427/554b0b6c-9554-4f84-9d48-70727818069e.eot?#iefix");
-  src:url("Fonts/1123427/554b0b6c-9554-4f84-9d48-70727818069e.eot?#iefix") format("eot"),url("Fonts/1123427/0cb16cc2-1eee-4cf5-b6fa-5ef137fc9163.woff2") format("woff2"),url("Fonts/1123427/5d587816-2954-436a-926f-23decf2261f1.woff") format("woff"),url("Fonts/1123427/599de572-d074-41e4-aa91-6400abb570f4.ttf") format("truetype");
-}
+
+@import 'typography';
+
+@import 'colors';
+
+@import 'grid';
 
 // bower:scss
 // endbower
 
 * {
-  font-family: "NeueFrutigerW04-Regular";
+  font-family: $primary-font;
+  color: $red;
 }

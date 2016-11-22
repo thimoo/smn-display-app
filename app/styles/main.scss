@@ -50,13 +50,14 @@ $header-bottom-padding:   10px;
 
   .hour {
     color: $red;
-    font-size: 2.5em;
+    font-size: 3.5em;
     margin: 0;
   }
 
   .day {
     color: $black-55;
     margin: 0;
+    font-size: 2em;
 
     font-family: $light-font;
     text-transform: capitalize;
@@ -98,12 +99,13 @@ $header-bottom-padding:   10px;
   align-items: flex-end;
   justify-content: flex-end;
   padding-bottom: $header-bottom-padding;
+  text-align: right;
 
   .logo {
     // TODO
     color: $red;
     font-family: $bold-font;
-    font-size: 2em;
+    font-size: 3.5em;
     margin: 0;
   }
 
@@ -111,7 +113,7 @@ $header-bottom-padding:   10px;
     color: $black-55;
     font-family: $light-font;
     margin: 0;
-    font-size: 1.25em;
+    font-size: 2em;
 
     .strong {
       font-family: $bold-font;
@@ -133,12 +135,29 @@ $header-bottom-padding:   10px;
   font-size: 1.3em;
 }
 
+.sub-title {
+  font-size: 1.3em;
+}
+
 .single-temp {
   @extend .item;
   color: $black-40;
   font-family: $light-font;
   padding: 10px;
 
+  #termometer {
+    width: 25%;
+  }
+
+  .h24 {
+    width: 20%;
+    vertical-align: middle;
+    margin-right: 5px;
+
+    .hour-color {
+     fill: $orange;
+    } 
+  }
   
 
   .value {
@@ -147,6 +166,8 @@ $header-bottom-padding:   10px;
     font-family: $primary-font;
     text-align: center;
     line-height: 0.65em;
+
+    letter-spacing: -0.07em;
     
     &::after {
       content: '°C';
@@ -154,11 +175,18 @@ $header-bottom-padding:   10px;
       font-size: 0.3em;
       line-height: 1em;
       vertical-align: text-top;
+
+      letter-spacing: 0;
+      padding-left: 9px;
     }
   }
 
   .meta-data {
     text-align: center;
+
+    .sub-title {
+      line-height: 2.8em;
+    }
 
     .value {
       font-size: 5em;

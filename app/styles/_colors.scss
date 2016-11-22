@@ -2,8 +2,18 @@
  * Declare all color variables
  */
 
-$red:                   rgb(202, 42, 39);
-$black:                 rgb(0, 0, 0);
-$primary-grey:          rgb(115, 115, 115);
-$light-grey:            rgb(153, 153, 153);
+$black:     rgba(0, 0, 0, 1);
+$black-55:  rgba(0, 0, 0, 0.55);
+$black-40:  rgba(0, 0, 0, 0.40);
+$black-25:  rgba(0, 0, 0, 0.25);
+$black-10:  rgba(0, 0, 0, 0.10);
+
+
+$red:         rgb(220, 0, 24);
+$deep-green:  rgb(60, 70, 60);
+$green:       rgb(135, 160, 130);
+$deep-blue:   rbg(105, 150, 165);
+$light-blue:  rgb(220, 240, 245);
+$orange:      rgb(235, 165, 80);
+$yellow:      rgb(255, 235, 160);
 

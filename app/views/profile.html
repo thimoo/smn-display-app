@@ -1,21 +1,27 @@
 <div class="land-horizontal-8of8 land-vertical-1of8 gutter-left gutter-top gutter-right port-horizontal-4of4 port-vertical-2of16 header">
-    <div class="land-horizontal-2of8 land-vertical-1of8 port-horizontal-1of4 port-vertical-2of16 test-color date">
-        <h2 class="hour">{{ profile.updateDate | date : 'HH:mm' }}</h2>
-        <h3 class="date">{{ profile.updateDate | date : 'fullDate' }}</h3>
+    <div class="land-horizontal-2of8 land-vertical-1of8 port-horizontal-1of4 port-vertical-2of16 date">
+        <div>
+            <h2 class="hour">{{ profile.updateDate | date : 'HH:mm' }}</h2>
+            <h3 class="day">{{ profile.updateDate | date : 'fullDate' }}</h3>
+        </div>
     </div>
-    <div class="land-horizontal-4of8 land-vertical-1of8 gutter-left port-horizontal-2of4 port-vertical-2of16 test-color title">
-        <h1>{{ profile.name }}</h1>
-        <p>{{ profile.altitude }}</p>
+    <div class="land-horizontal-4of8 land-vertical-1of8 gutter-left port-horizontal-2of4 port-vertical-2of16 title">
+        <div class="row">
+            <h1 class="name">{{ profile.name }}</h1>
+            <div class="altitude">{{ profile.altitude }}</div>
+        </div>
     </div>
-    <div class="land-horizontal-2of8 land-vertical-1of8 gutter-left port-horizontal-1of4 port-vertical-2of16 test-color swiss-met-net">
-        <h2>{{ 'swiss_meteo' | translate }}</h2>
-        <h3>{{ 'station' | translate }} {{ 'swiss_met_net' | translate }}</h3>
+    <div class="land-horizontal-2of8 land-vertical-1of8 gutter-left port-horizontal-1of4 port-vertical-2of16 swiss-met-net">
+        <div>
+            <h2 class="logo">{{ 'swiss_meteo' | translate }}</h2>
+            <h3 class="station">{{ 'station' | translate }} <span class="strong">{{ 'swiss_met_net' | translate }}</span></h3>
+        </div>
     </div>
 </div>
 <div class="land-horizontal-4of8 land-vertical-4of8 gutter-left gutter-top port-horizontal-4of4 port-vertical-4of16 first-content">
     <!-- start list of first content directive -->
     
-    <single-temp ng-show="displays.singleTemp" class="land-horizontal-2of8 land-vertical-4of8 port-horizontal-2of4 port-vertical-4of16 test-color"></single-temp>
+    <single-temp ng-show="displays.singleTemp" class="land-horizontal-2of8 land-vertical-4of8 port-horizontal-2of4 port-vertical-4of16 single-temp"></single-temp>
     <div class="land-horizontal-2of8 land-vertical-4of8 gutter-left port-horizontal-2of4 port-vertical-4of16 test-color"></div>
     <!-- TODO make wind directive -->
     

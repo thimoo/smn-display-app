@@ -15,8 +15,6 @@
 // endbower
 
 * {
-  font-family: $primary-font;
-  color: $red;
 }
 
 html, body {
@@ -24,7 +22,10 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100vh;
-  clear: both;  
+  clear: both;
+  
+  font-size: 1em;
+  font-family: $primary-font;
 }
 
 
@@ -32,6 +33,145 @@ html, body {
   background: rgb(240, 240, 240);
 }
 
-.title { text-align: center; }
 
-.swiss-met-net { text-align: right; }
+/*
+  Header
+ */
+$header-bottom-padding:   10px;
+
+.header {
+  border-bottom: 3px solid $red;
+}
+
+.date {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: $header-bottom-padding;
+
+  .hour {
+    color: $red;
+    font-size: 2.5em;
+    margin: 0;
+  }
+
+  .day {
+    color: $black-55;
+    margin: 0;
+
+    font-family: $light-font;
+    text-transform: capitalize;
+  }
+}
+
+
+.title { 
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: $header-bottom-padding;
+
+  font-family: $light-font;
+  
+  .row {
+    display: block;
+    text-align: center;
+
+    .name {
+      width: auto;
+      display: inline-block;
+      margin: 0;
+  
+      font-size: 3.5em;
+      color: $black;
+    }
+
+    .altitude {
+      display: inline-block;
+
+      color: $black-55;
+    }
+  }
+}
+
+.swiss-met-net { 
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-bottom: $header-bottom-padding;
+
+  .logo {
+    // TODO
+    color: $red;
+    font-family: $bold-font;
+    font-size: 2em;
+    margin: 0;
+  }
+
+  .station {
+    color: $black-55;
+    font-family: $light-font;
+    margin: 0;
+    font-size: 1.25em;
+
+    .strong {
+      font-family: $bold-font;
+    }
+  }
+
+}
+
+
+/*
+ Directives
+ */
+
+.item {
+  border-left: 3px solid $black-10;
+}
+
+.directive-title {
+  font-size: 1.3em;
+}
+
+.single-temp {
+  @extend .item;
+  color: $black-40;
+  font-family: $light-font;
+  padding: 10px;
+
+  
+
+  .value {
+    font-size: 18em;
+    color: $black-55;
+    font-family: $primary-font;
+    text-align: center;
+    line-height: 0.65em;
+    
+    &::after {
+      content: '°C';
+      color: $black-25;
+      font-size: 0.3em;
+      line-height: 1em;
+      vertical-align: text-top;
+    }
+  }
+
+  .meta-data {
+    text-align: center;
+
+    .value {
+      font-size: 5em;
+      color: $black-55;
+      font-family: $primary-font;
+
+      &::after {
+        font-size: 0.3em;
+        color: $black-40;
+      }
+    }
+  }
+}
+
+
+

@@ -30,6 +30,8 @@ module.exports = function(config) {
       'bower_components/angular-translate/angular-translate.js',
       'bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js',
       'bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
+      'bower_components/svg4everybody/dist/svg4everybody.js',
+      'bower_components/svg4everybody/dist/svg4everybody.legacy.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

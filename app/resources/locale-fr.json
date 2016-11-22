@@ -2,5 +2,6 @@
     "swiss_meteo": "MétéoSuisse",
     "station": "Station",
     "swiss_met_net": "SwissMetNet",
-    "temp_name": "Température"
+    "temp_name": "Température",
+    "wind_name": "Vent"
 }

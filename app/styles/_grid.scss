@@ -3,21 +3,6 @@
  * to display the application
  */
 
-// Landscape mode
-
-$land-column:   8;
-$land-row:      8;
-
-$horizontal-gutter:  1vw;
-$vertical-gutter:    1vh;
-
-@mixin width($number) {
-  width: (100vw - ($land-column + 1 * $horizontal-gutter)) / $land-column * $number + (($number - 1) * $horizontal-gutter);
-}
-
-@mixin height($number) {
-  height: (100vh - ($land-row + 1 * $vertical-gutter)) / $land-row * $number + (($number - 1) * $vertical-gutter);
-}
 
 .container {
   clear: both;
@@ -25,91 +10,164 @@ $vertical-gutter:    1vh;
   height: 100vh;
 }
 
-.item {
-  float: left;
+
+// Landscape mode
+@media all and (orientation:landscape) {
+
+  $land-column:   8;
+  $land-row:      8;
+
+  $horizontal-gutter:  1vw;
+  $vertical-gutter:    1vh;
+
+
+  @mixin width($number) {
+    width: ((100vw - ($land-column + 1 * $horizontal-gutter)) / $land-column * $number) + (($number - 1) * $horizontal-gutter);
+  }
+
+  @mixin height($number) {
+    height: ((100vh - (($land-row + 1) * $vertical-gutter)) / $land-row * $number) + (($number - 1) * $vertical-gutter);
+  }
+
+  .land-generic {
+    float: left;
+  }
+
+  .land-gutter-left,
+  .gutter-left {
+    margin-left: $horizontal-gutter;
+  }
+
+  .land-gutter-right,
+  .gutter-right {
+    margin-right: $horizontal-gutter;
+  }
+
+  .land-gutter-top,
+  .gutter-top {
+    margin-top: $vertical-gutter;
+  }
+
+  .land-gutter-down,
+  .gutter-down {
+    margin-down: $vertical-gutter;
+  }
+
+  .land-horizontal-1of8 {
+    @extend .land-generic;
+    @include width(1);}
+
+  .land-horizontal-2of8 {
+    @extend .land-generic;
+    @include width(2);}
+
+  .land-horizontal-3of8 {
+    @extend .land-generic;
+    @include width(3);}
+
+  .land-horizontal-4of8 {
+    @extend .land-generic;
+    @include width(4);}
+
+  .land-horizontal-5of8 {
+    @extend .land-generic;
+    @include width(5);}
+
+  .land-horizontal-6of8 {
+    @extend .land-generic;
+    @include width(6);}
+
+  .land-horizontal-7of8 {
+    @extend .land-generic;
+    @include width(7);}
+
+  .land-horizontal-8of8 {
+    @extend .land-generic;
+    @include width(8);}
+
+
+  .land-vertical-1of8 { @include height(1); }
+  .land-vertical-2of8 { @include height(2); }
+  .land-vertical-3of8 { @include height(3); }
+  .land-vertical-4of8 { @include height(4); }
+  .land-vertical-5of8 { @include height(5); }
+  .land-vertical-6of8 { @include height(6); }
+  .land-vertical-7of8 { @include height(7); }
+  .land-vertical-8of8 { @include height(8); }
 }
 
-.gutter-left {
-  margin-left: $horizontal-gutter;
-}
 
-.gutter-right {
-  margin-right: $horizontal-gutter;
-}
-
-.gutter-top {
-  margin-top: $vertical-gutter;
-}
-
-.gutter-down {
-  margin-down: $vertical-gutter;
-}
-
-.land-horizontal-1of8 {
-  @extend .item;
-  @include width(1);}
-
-.land-horizontal-2of8 {
-  @extend .item;
-  @include width(2);}
-
-.land-horizontal-3of8 {
-  @extend .item;
-  @include width(3);}
-
-.land-horizontal-4of8 {
-  @extend .item;
-  @include width(4);}
-
-.land-horizontal-5of8 {
-  @extend .item;
-  @include width(5);}
-
-.land-horizontal-6of8 {
-  @extend .item;
-  @include width(6);}
-
-.land-horizontal-7of8 {
-  @extend .item;
-  @include width(7);}
-
-.land-horizontal-8of8 {
-  @extend .item;
-  @include width(8);}
-
-
-.land-vertical-1of8 {
-  @include height(1);
-}
-.land-vertical-2of8 {
-  @include height(2);
-}
-.land-vertical-3of8 {
-  @include height(3);
-}
-.land-vertical-4of8 {
-  @include height(4);
-}
-.land-vertical-5of8 {
-  @include height(5);
-}
-.land-vertical-6of8 {
-  @include height(6);
-}
-.land-vertical-7of8 {
-  @include height(7);
-}
-.land-vertical-8of8 {
-  @include height(8);
-}
 
 // Portrait mode
+@media all and (orientation:portrait) {
+  
+  $port-column:   4;
+  $port-row:      16;
 
-$port-column:   4;
-$port-row:      16;
+  $horizontal-gutter:  1.77vw;
+  $vertical-gutter:    0.5625vh;
 
-$horizontal-guter:  1.77;
-$vertical-guter:    0.5625;
+  @mixin width($number) {
+    width: ((100vw - (($port-column + 1) * $horizontal-gutter)) / $port-column * $number) + (($number - 1) * $horizontal-gutter);
+  }
 
-// TODO ...
+  @mixin height($number) {
+    height: ((100vh - (($port-row + 1) * $vertical-gutter)) / $port-row * $number) + (($number - 1) * $vertical-gutter);
+  }
 
+  .port-generic {
+    float: left;
+  }
+
+  .port-gutter-left,
+  .gutter-left {
+    margin-left: $horizontal-gutter;
+  }
+
+  .port-gutter-right,
+  .gutter-right {
+    margin-right: $horizontal-gutter;
+  }
+
+  .port-gutter-top,
+  .gutter-top {
+    margin-top: $vertical-gutter;
+  }
+
+  .port-gutter-down,
+  .gutter-down {
+    margin-down: $vertical-gutter;
+  }
+
+
+  .port-horizontal-1of4 {
+    @extend .port-generic;
+    @include width(1);}
+  .port-horizontal-2of4 {
+    @extend .port-generic;
+    @include width(2);}
+  .port-horizontal-3of4 {
+    @extend .port-generic;
+    @include width(3);}
+  .port-horizontal-4of4 {
+    @extend .port-generic;
+    @include width(4);}
+
+  .port-vertical-1of16 { @include height(1); }
+  .port-vertical-2of16 { @include height(2); }
+  .port-vertical-3of16 { @include height(3); }
+  .port-vertical-4of16 { @include height(4); }
+  .port-vertical-5of16 { @include height(5); }
+  .port-vertical-6of16 { @include height(6); }
+  .port-vertical-7of16 { @include height(7); }
+  .port-vertical-8of16 { @include height(8); }
+  .port-vertical-9of16 { @include height(9); }
+  .port-vertical-10of16 { @include height(10); }
+  .port-vertical-11of16 { @include height(11); }
+  .port-vertical-12of16 { @include height(12); }
+  .port-vertical-13of16 { @include height(13); }
+  .port-vertical-14of16 { @include height(14); }
+  .port-vertical-15of16 { @include height(15); }
+  .port-vertical-16of16 { @include height(16); }
+
+}

@@ -1,33 +1,33 @@
-<div class="land-horizontal-8of8 land-vertical-1of8 gutter-left gutter-top gutter-right test-color header">
-    <div class="land-horizontal-2of8 land-vertical-1of8 date">
+<div class="land-horizontal-8of8 land-vertical-1of8 gutter-left gutter-top gutter-right port-horizontal-4of4 port-vertical-2of16 header">
+    <div class="land-horizontal-2of8 land-vertical-1of8 port-horizontal-1of4 port-vertical-2of16 test-color date">
         <h2 class="hour">{{ profile.updateDate | date : 'HH:mm' }}</h2>
         <h3 class="date">{{ profile.updateDate | date : 'fullDate' }}</h3>
     </div>
-    <div class="land-horizontal-4of8 land-vertical-1of8 gutter-left title">
+    <div class="land-horizontal-4of8 land-vertical-1of8 gutter-left port-horizontal-2of4 port-vertical-2of16 test-color title">
         <h1>{{ profile.name }}</h1>
         <p>{{ profile.altitude }}</p>
     </div>
-    <div class="land-horizontal-2of8 land-vertical-1of8 gutter-left swiss-met-net">
+    <div class="land-horizontal-2of8 land-vertical-1of8 gutter-left port-horizontal-1of4 port-vertical-2of16 test-color swiss-met-net">
         <h2>{{ 'swiss_meteo' | translate }}</h2>
         <h3>{{ 'station' | translate }} {{ 'swiss_met_net' | translate }}</h3>
     </div>
 </div>
-<div class="land-horizontal-4of8 land-vertical-4of8 gutter-left gutter-top first-content">
+<div class="land-horizontal-4of8 land-vertical-4of8 gutter-left gutter-top port-horizontal-4of4 port-vertical-4of16 first-content">
     <!-- start list of first content directive -->
     
-    <single-temp ng-show="displays.singleTemp" class="land-horizontal-2of8 land-vertical-4of8 test-color"></single-temp>
-    <div class="land-horizontal-2of8 land-vertical-4of8 gutter-left test-color"></div>
+    <single-temp ng-show="displays.singleTemp" class="land-horizontal-2of8 land-vertical-4of8 port-horizontal-2of4 port-vertical-4of16 test-color"></single-temp>
+    <div class="land-horizontal-2of8 land-vertical-4of8 gutter-left port-horizontal-2of4 port-vertical-4of16 test-color"></div>
     <!-- TODO make wind directive -->
     
     <!-- end list of first content directive -->
 </div>
-<div class="land-horizontal-4of8 land-vertical-4of8 gutter-left gutter-top second-content">
+<div class="land-horizontal-4of8 land-vertical-4of8 gutter-left gutter-top port-horizontal-4of4 port-vertical-4of16 second-content">
     <!-- start list of second content directive -->
     
-    <div class="land-horizontal-2of8 land-vertical-2of8 test-color"></div>
-    <div class="land-horizontal-2of8 land-vertical-2of8 gutter-left test-color"></div>
-    <div class="land-horizontal-2of8 land-vertical-2of8 gutter-top test-color"></div>
-    <div class="land-horizontal-2of8 land-vertical-2of8 gutter-top gutter-left test-color"></div>
+    <div class="land-horizontal-2of8 land-vertical-2of8 port-horizontal-2of4 port-vertical-2of16 test-color"></div>
+    <div class="land-horizontal-2of8 land-vertical-2of8 port-horizontal-2of4 port-vertical-2of16 gutter-left test-color"></div>
+    <div class="land-horizontal-2of8 land-vertical-2of8 port-horizontal-2of4 port-vertical-2of16 gutter-top test-color"></div>
+    <div class="land-horizontal-2of8 land-vertical-2of8 port-horizontal-2of4 port-vertical-2of16 gutter-top gutter-left test-color"></div>
     <!-- TODO make precipitation directive -->
     <!-- TODO make humidity directive -->
     <!-- TODO make pression directive -->
@@ -35,9 +35,9 @@
     
     <!-- end list of second content directive -->
 </div>
-<div class="land-horizontal-8of8 land-vertical-3of8 gutter-left gutter-top second-content">
+<div class="land-horizontal-8of8 land-vertical-3of8 gutter-left port-horizontal-4of4 port-vertical-6of16 gutter-top second-content">
 
-    <div class="land-horizontal-4of8 land-vertical-3of8 test-color"></div>
-    <div class="land-horizontal-4of8 land-vertical-3of8 gutter-left test-color"></div>
+    <div class="land-horizontal-4of8 land-vertical-3of8 port-horizontal-4of4 port-vertical-3of16 test-color"></div>
+    <div class="land-horizontal-4of8 land-vertical-3of8 port-horizontal-4of4 port-vertical-3of16 land-gutter-left port-gutter-top test-color"></div>
     
 </div>

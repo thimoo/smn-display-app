@@ -96,6 +96,31 @@
   .land-vertical-6of8 { @include height(6); }
   .land-vertical-7of8 { @include height(7); }
   .land-vertical-8of8 { @include height(8); }
+
+
+  /*
+    Short classes
+   */
+  .land-s-1of4 {
+    @extend .land-horizontal-2of8;
+    @extend .land-vertical-2of8;}
+  .land-s-2of4 {
+    @extend .land-horizontal-2of8;
+    @extend .land-vertical-2of8;
+    @extend .land-gutter-left;}
+  .land-s-3of4 {
+    @extend .land-horizontal-2of8;
+    @extend .land-vertical-2of8;
+    @extend .land-gutter-top;}
+  .land-s-4of4 {
+    @extend .land-horizontal-2of8;
+    @extend .land-vertical-2of8;
+    @extend .land-gutter-top;
+    @extend .land-gutter-left;}
+
+  // .second-content > div:nth-child(even) {
+  //   @extend .land-gutter-left;
+  // }
 }
 
 

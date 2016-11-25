@@ -27,15 +27,15 @@ angular.module('swissMetNetDisplayApp')
 
       var checkInterval;
 
-      $scope.displays = {
-        singleTemp: false
-      };
+      $scope.displays = {};
 
       $scope.profile = {
         name: '',
         altitude: '',
         updateDate: null
       };
+
+      $scope.position = {};
 
       // Setup the language
       if ($routeParams.language) {
@@ -106,10 +106,12 @@ angular.module('swissMetNetDisplayApp')
           // retreived value by the dependency service
           $scope.displays[directive] = mustBeDisplayed;
 
+
           // If the value returned by the dependency
           // service is true, then the directive must
           // be updated
           if (mustBeDisplayed) {
+
             // Get the URLs object of dependencies based on
             // the retreived profiles
             var urlsDependencies = dependencyService.getUrls(dependencies, profile);
@@ -120,7 +122,37 @@ angular.module('swissMetNetDisplayApp')
               data: urlsDependencies
             });
           }
+
         });
+
+        angular.forEach(dependencies, function (dependencies, directive) {
+          $scope.position[directive] = getPosition(directive);
+        });
+      }
+
+      function getPosition (directive) {
+        var $position = 0;
+        switch (directive) {
+          case 'singlePrecipitation':
+            $position = $scope.displays.singlePrecipitation + 0;
+            break;
+          case 'singleHumidity':
+            $position = $scope.displays.singlePrecipitation 
+              + $scope.displays.singleHumidity + 0;
+            break;
+          case 'singleQnh':
+            $position = $scope.displays.singlePrecipitation 
+              + $scope.displays.singleHumidity 
+              + $scope.displays.singleQnh + 0;
+            break;
+          case 'singleSun':
+            $position = $scope.displays.singlePrecipitation 
+              + $scope.displays.singleHumidity 
+              + $scope.displays.singleQnh 
+              + $scope.displays.singleSun + 0;
+            break;
+        }
+        return $position;
       }
 
       // Load all scope informations used to display

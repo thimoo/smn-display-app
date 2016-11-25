@@ -3,5 +3,8 @@
     "station": "Station",
     "swiss_met_net": "SwissMetNet",
     "temp_name": "Température",
-    "wind_name": "Vent"
+    "wind_name": "Vent",
+    "wind_ave_name": "Moyen (km/h)",
+    "wind_gusts_name": "Vent rafale",
+    "wind_gusts_unit": "km/h"
 }

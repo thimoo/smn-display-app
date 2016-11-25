@@ -13,11 +13,12 @@ angular.module('swissMetNetDisplayApp')
       replace: true,
       restrict: 'E',
 
-      controller: function ($scope, webService) {
+      controller: function ($scope, $document, webService) {
 
         $scope.wind = '-';
         $scope.windGust = '-';
         $scope.windDirection = 0;
+        $scope.oldWindDirection = 0;
 
         $scope.$on('update', function (event, data) {
           // If the targeted directive is not this
@@ -33,7 +34,20 @@ angular.module('swissMetNetDisplayApp')
           });
 
           webService.get(data.data.data.wind_dir, function (tempData) {
+            $scope.oldWindDirection = $scope.windDirection;
             $scope.windDirection = tempData.value;
+
+            var svg = d3.select("#wind-direction");
+
+            svg.transition().duration(1000).attrTween('transform', rotTween); // .transition().duration(2000)
+            
+            function rotTween() {
+              var i = d3.interpolate($scope.oldWindDirection, $scope.windDirection);
+              return function(t) {
+                  return "rotate(" + i(t) + " 207.71 200.72)";
+              };
+            }
+
           });
 
         });

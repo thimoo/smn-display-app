@@ -299,6 +299,19 @@ $header-bottom-padding:   10px;
     }
   }
 
+}
+
+.single-humidity {
+  .vertical-full-container-midle .small-logo {
+
+    svg {
+      width: 45%;
+    }
+  }
+}
+
+
+.vertical-full-container-midle {
   .small-logo {
     display: flex;
     align-items: center;
@@ -321,14 +334,13 @@ $header-bottom-padding:   10px;
     }
 
     .unit {
-      padding-left: 3px;
+      padding-left: 13px;
     }
   }
 
   .half-middle {
     text-align: center;
   }
-
 }
 
 .single-humidity {
@@ -400,7 +412,10 @@ $header-bottom-padding:   10px;
 
   }
 
-  .single-precipitation {
+  .single-precipitation,
+  .single-qnh,
+  .single-sun,
+  .single-humidity {
     .value {
       font-size: 10vh;
     }
@@ -408,6 +423,10 @@ $header-bottom-padding:   10px;
     .unit {
       font-size: 3vh;
     }
+  }
+
+  .single-qnh .value {
+    font-size: 8vh;
   }
 
 }

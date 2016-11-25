@@ -15,10 +15,7 @@ angular.module('swissMetNetDisplayApp')
 
       controller: function ($scope, webService) {
 
-        $scope.precipitation = '-';
-
-        // TO BE REMOVE
-        $scope.precipitation = 2.1;
+        $scope.precipitation = '–';
 
         $scope.$on('update', function (event, data) {
           // If the targeted directive is not this
@@ -26,9 +23,11 @@ angular.module('swissMetNetDisplayApp')
           if (data.target.indexOf('singlePrecipitation') === -1) { return; }
 
           // Retrieve all needed URLs
-          var tempUrl = data.data.data.temp;
+          var url = data.data.data.sun;
 
-          console.log(tempUrl);
+          webService.getSu(url, function (data) {
+            $scope.precipitation = data.value;
+          });
 
         });
 

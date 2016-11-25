@@ -80,6 +80,22 @@ angular.module('swissMetNetDisplayApp')
           }, function (response) {
             console.log(response);
           });
+      },
+
+      // Make a GET request on the url and
+      // add an agregator header equals to
+      // sum
+      getSum: function (url, callback) {
+        $http({
+          method: 'GET',
+          url: url,
+          headers: {'agregator': 'sum'}
+        }).then(
+          function (response) {
+            callback(response.data.data);
+          }, function (response) {
+            console.log(response);
+          });
       }
     };
   });

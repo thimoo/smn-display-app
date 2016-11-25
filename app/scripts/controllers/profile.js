@@ -100,7 +100,7 @@ angular.module('swissMetNetDisplayApp')
         angular.forEach(dependencies, function (dependencies, directive) {
           // Check if all dependencies are present in the
           // profile
-          var mustBeDisplayed = true | dependencyService.check(directive, dependencies, profile);
+          var mustBeDisplayed = dependencyService.check(directive, dependencies, profile);
 
           // Show or hide the directive based on the
           // retreived value by the dependency service

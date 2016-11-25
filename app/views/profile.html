@@ -29,25 +29,20 @@
 <div class="land-horizontal-4of8 land-vertical-4of8 gutter-left gutter-top port-horizontal-4of4 port-vertical-4of16 second-content">
     <!-- start list of second content directive -->
     
-    <!-- <div class="land-horizontal-2of8 land-vertical-2of8 port-horizontal-2of4 port-vertical-2of16 test-color"></div> -->
-    <div ng-show="displays.singlePrecipitation" 
-        class="land-horizontal-2of8 land-vertical-2of8 port-horizontal-2of4 port-vertical-2of16 test-color">precipitation {{position.singlePrecipitation}}</div>
+    <single-precipitation ng-show="displays.singlePrecipitation" 
+        class="land-horizontal-2of8 land-vertical-2of8 port-horizontal-2of4 port-vertical-2of16 single-precipitation"></single-precipitation>
 
-    <div ng-show="displays.singleHumidity" 
+    <single-humidity ng-show="displays.singleHumidity" 
         ng-class="[{'gutter-left': position.singleHumidity%2==0}]" 
-        class="land-horizontal-2of8 land-vertical-2of8 port-horizontal-2of4 port-vertical-2of16 test-color">humidity {{position.singleHumidity}}</div>
+        class="land-horizontal-2of8 land-vertical-2of8 port-horizontal-2of4 port-vertical-2of16 single-humidity"></single-humidity>
 
-    <div ng-show="displays.singleQnh" 
+    <single-qnh ng-show="displays.singleQnh" 
         ng-class="[{'gutter-top': position.singleQnh>2},{'gutter-left': position.singleQnh%2==0}]" 
-        class="land-horizontal-2of8 land-vertical-2of8 port-horizontal-2of4 port-vertical-2of16 test-color">qnh {{position.singleQnh}}</div>
+        class="land-horizontal-2of8 land-vertical-2of8 port-horizontal-2of4 port-vertical-2of16 single-qnh"></single-qnh>
 
-    <div ng-show="displays.singleSun" 
+    <single-sun ng-show="displays.singleSun" 
         ng-class="[{'gutter-top': position.singleSun>2},{'gutter-left': position.singleSun%2==0}]" 
-        class="land-horizontal-2of8 land-vertical-2of8 port-horizontal-2of4 port-vertical-2of16 test-color">sun {{position.singleSun}}</div>
-
-    <!-- TODO make humidity directive -->
-    <!-- TODO make pression directive -->
-    <!-- TODO make sun directive -->
+        class="land-horizontal-2of8 land-vertical-2of8 port-horizontal-2of4 port-vertical-2of16 single-sun"></single-sun>
     
     <!-- end list of second content directive -->
 </div>

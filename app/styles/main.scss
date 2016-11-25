@@ -129,6 +129,14 @@ $header-bottom-padding:   10px;
 
 .item {
   border-left: 3px solid $black-10;
+  color: $black-40;
+  font-family: $light-font;
+  padding: 10px;
+}
+
+.directive-title {
+  display: flex;
+  align-items: center;
 }
 
 .numeric-value {
@@ -137,9 +145,6 @@ $header-bottom-padding:   10px;
 
 .single-temp {
   @extend .item;
-  color: $black-40;
-  font-family: $light-font;
-  padding: 10px;
 
   #termometer {
     width: 30%;
@@ -197,9 +202,6 @@ $header-bottom-padding:   10px;
 
 .single-wind {
   @extend .item;
-  color: $black-40;
-  font-family: $light-font;
-  padding: 10px;
 
   #complete-dial {
     width: 100%;
@@ -278,6 +280,68 @@ $header-bottom-padding:   10px;
 
 }
 
+.single-precipitation {
+  @extend .item;
+
+  .logo {
+    display: inline-block;
+    height: 100%;
+    margin-left: 8px;
+    margin-top: -2px;
+
+    .hour-color {
+      fill: $deep-blue;
+    }
+
+    svg {
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  .small-logo {
+    display: flex;
+    align-items: center;
+    width: 40%;
+
+    svg {
+      width: 60%;
+    }
+    
+  }
+
+  .container-value {
+    display: flex;
+    align-items: center;
+    width: 60%;
+
+    .value {
+      font-family: $primary-font;
+      color: $black-55;
+    }
+
+    .unit {
+      padding-left: 3px;
+    }
+  }
+
+  .half-middle {
+    text-align: center;
+  }
+
+}
+
+.single-humidity {
+  @extend .item;
+}
+
+.single-qnh {
+  @extend .item;
+}
+
+.single-sun {
+  @extend .item;
+}
 
 
 
@@ -334,6 +398,16 @@ $header-bottom-padding:   10px;
     }
     
 
+  }
+
+  .single-precipitation {
+    .value {
+      font-size: 10vh;
+    }
+
+    .unit {
+      font-size: 3vh;
+    }
   }
 
 }

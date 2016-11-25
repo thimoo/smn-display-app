@@ -9,10 +9,19 @@
 angular.module('swissMetNetDisplayApp')
   .directive('singleHumidity', function () {
     return {
-      template: '<div></div>',
+      templateUrl: 'views/singlehumidity.html',
+      replace: true,
       restrict: 'E',
-      link: function postLink(scope, element, attrs) {
-        element.text('this is the singleHumidity directive');
+
+      controller: function ($scope, webService) {
+
+        $scope.$on('update', function (event, data) {
+          // If the targeted directive is not this
+          // skip the update
+          if (data.target.indexOf('singleHumidity') === -1) { return; }
+
+        });
+
       }
     };
   });

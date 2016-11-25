@@ -9,10 +9,19 @@
 angular.module('swissMetNetDisplayApp')
   .directive('singleSun', function () {
     return {
-      template: '<div></div>',
+      templateUrl: 'views/singlesun.html',
+      replace: true,
       restrict: 'E',
-      link: function postLink(scope, element, attrs) {
-        element.text('this is the singleSun directive');
+
+      controller: function ($scope, webService) {
+
+        $scope.$on('update', function (event, data) {
+          // If the targeted directive is not this
+          // skip the update
+          if (data.target.indexOf('singleSun') === -1) { return; }
+
+        });
+
       }
     };
   });

@@ -9,10 +9,19 @@
 angular.module('swissMetNetDisplayApp')
   .directive('singleQnh', function () {
     return {
-      template: '<div></div>',
+      templateUrl: 'views/singleqnh.html',
+      replace: true,
       restrict: 'E',
-      link: function postLink(scope, element, attrs) {
-        element.text('this is the singleQnh directive');
+
+      controller: function ($scope, webService) {
+
+        $scope.$on('update', function (event, data) {
+          // If the targeted directive is not this
+          // skip the update
+          if (data.target.indexOf('singleQnh') === -1) { return; }
+
+        });
+
       }
     };
   });

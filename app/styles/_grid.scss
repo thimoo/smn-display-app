@@ -216,6 +216,12 @@
   justify-content: center;
 }
 
+.vertical-full-container-midle {
+  display: flex;
+  align-items: stretch;
+  // justify-content: center;
+}
+
 .all-1of3 {
   float: left;
   display: inline-block;

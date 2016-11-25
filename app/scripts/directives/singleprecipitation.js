@@ -17,6 +17,9 @@ angular.module('swissMetNetDisplayApp')
 
         $scope.precipitation = '-';
 
+        // TO BE REMOVE
+        $scope.precipitation = 2.1;
+
         $scope.$on('update', function (event, data) {
           // If the targeted directive is not this
           // skip the update

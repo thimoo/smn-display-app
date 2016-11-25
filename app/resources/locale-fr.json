@@ -6,5 +6,9 @@
     "wind_name": "Vent",
     "wind_ave_name": "Moyen (km/h)",
     "wind_gusts_name": "Vent rafale",
-    "wind_gusts_unit": "km/h"
+    "wind_gusts_unit": "km/h",
+    "precipitation_name": "Précipitation",
+    "humidity_name": "Humidité",
+    "qnh_name": "Pression QNH",
+    "sun_name": "Ensoleillement"
 }

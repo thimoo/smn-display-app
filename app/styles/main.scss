@@ -13,6 +13,8 @@
 
 @import 'chart';
 
+@import 'transitions';
+
 // bower:scss
 // endbower
 
@@ -33,81 +35,6 @@ html, body {
 
 .test-color {
   background: rgb(240, 240, 240);
-}
-
-
-.slider-container {
-  position: relative;
-}
-
-
-.slider-animation {
-  -webkit-transition:0.5s linear all;
-  transition:0.5s linear all;
-  
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.slider-animation.disabled {
-  opacity: 0;
-}
-
-.slider-animation {
-  opacity: 1;
-}
-
-.slider-animation.disabled-add {
-  -webkit-animation:0.5s disable-on;
-  animation:0.5s disable-on;
-}
-
-@keyframes disable-on {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes disable-on {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-.slider-animation.disabled-remove {
-  -webkit-animation:0.5s disable-off;
-  animation:0.5s disable-off;
-}
-
-.slider-animation.disabled {
-  opacity: 0;
-}
-
-@keyframes disable-off {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes disable-off {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 

@@ -104,9 +104,6 @@ $header-padding:   10px 15px;
 
       color: $black-55;
 
-      #alt-icon {
-        height: 1.7vh;
-      }
     }
   }
 }
@@ -315,7 +312,7 @@ $header-padding:   10px 15px;
   .wind-gusts {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: baseline;
 
     box-sizing: border-box;
     padding-top: 5px;
@@ -448,21 +445,15 @@ $header-padding:   10px 15px;
       font-size: 7vh;
     }
 
-    .altitude span {
-      font-size: 2.5vh;
-    }
-  }
+    .altitude {
+      #alt-icon {
+        height: 1.7vh;
+      }
 
-  .error-container {
-
-
-    .center-cloudy {
-      max-width: 40vw;
-    }
-
-    .text {
-      font-size: 2.1vh;
-      line-height: 1.3em;
+      span {
+        font-size: 2.5vh;
+      }
+      
     }
   }
 
@@ -480,12 +471,44 @@ $header-padding:   10px 15px;
     }
   }
 
+  .error-container {
+    .center-cloudy {
+      max-width: 40vw;
+    }
+
+    .text {
+      font-size: 2.1vh;
+      line-height: 1.3em;
+    }
+  }
+
   .directive-title {
     font-size: 2.2vh;
   }
 
   .sub-title {
     font-size: 2vh;
+  }
+
+  .single-temp {
+
+    .value {
+      font-size: 22vh;
+      line-height: 0.65em;
+
+      &::after {
+        font-size: 0.2em;
+        line-height: 1em;
+      }
+    }
+
+    .meta-data .value {
+      font-size: 7vh;
+
+      &::after {
+        font-size: 0.25em;
+      }
+    }
   }
 
   .single-wind {
@@ -507,29 +530,6 @@ $header-padding:   10px 15px;
       font-size: 2vh;
       line-height: 0.9em;
     }
-  }
-
-  .single-temp {
-
-    .value {
-      font-size: 22vh;
-      line-height: 0.65em;
-
-      &::after {
-        font-size: 0.2em;
-        line-height: 1em;
-      }
-    }
-
-    .meta-data .value {
-      font-size: 8vh;
-
-      &::after {
-        font-size: 0.25em;
-      }
-    }
-    
-
   }
 
   .single-precipitation,
@@ -555,6 +555,62 @@ $header-padding:   10px 15px;
 // Portrait mode
 @media all and (orientation:portrait) {
 
+  .date {
+    align-items: flex-start;
+
+    .hour {
+      font-size: 5.5vw;
+      line-height: 1em;
+    }
+
+    .day {
+      font-size: 2.5vw;
+      width: 200%;
+    }
+  }
+
+  .title .row {
+
+    .baseline-container {
+      flex-direction: column-reverse;
+      justify-content: center;
+    }
+
+    .name {
+      align-self: center;
+      font-size: 7vw;
+
+      margin-right: 0;
+    }
+
+    .altitude {
+      align-self: center;
+
+      span {
+        font-size: 2.5vw;
+      }
+
+      #alt-icon {
+        height: 1.7vw;
+      }
+    }
+  }
+
+
+  .swiss-met-net {
+    align-items: flex-start; 
+
+    .logo {
+      //TODO remove this when svg came
+      font-size: 5.5vw;
+      line-height: 1em;
+    }
+
+    .station {
+      font-size: 2.5vw;
+    }
+  }
+
 
   .error-container {
 
@@ -576,6 +632,81 @@ $header-padding:   10px 15px;
       font-size: 1.4vh;
       line-height: 1.3em;
     }
+  }
+
+
+  .directive-title {
+    font-size: 2.2vw;
+  }
+
+  .sub-title {
+    font-size: 2vw;
+  }
+
+  /*
+   Directives
+   */
+  
+
+  .single-temp {
+
+    .value {
+      font-size: 22vw;
+      line-height: 0.65em;
+
+      &::after {
+        font-size: 0.2em;
+        line-height: 1em;
+      }
+    }
+
+    .meta-data .value {
+      font-size: 7.5vw;
+
+      &::after {
+        font-size: 0.25em;
+      }
+    }
+
+  }
+
+  .single-wind {
+
+    .label {
+      font-size: 2vw;
+    }
+
+    .wind-value {
+      font-size: 11vw;
+      line-height: 1.2em;
+    }
+
+    .wind-gusts-value {
+      font-size: 4vw;
+      line-height: 0.6em;
+    }
+    .wind-gusts-unit {
+      font-size: 2vw;
+      line-height: 0.9em;
+    }
+  }
+
+
+  .single-precipitation,
+  .single-qnh,
+  .single-sun,
+  .single-humidity {
+    .value {
+      font-size: 10vw;
+    }
+
+    .unit {
+      font-size: 3vw;
+    }
+  }
+
+  .single-qnh .value {
+    font-size: 8vw;
   }
 }
 

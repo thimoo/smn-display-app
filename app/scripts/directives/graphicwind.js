@@ -19,8 +19,6 @@ angular.module('swissMetNetDisplayApp')
         // that is resolving to our chart container element. The Second parameter
         // is the actual data object.
         var graphic = new Chartist.Line('.ct-wind-chart', {}, {
-          high: 120,
-          low: 0,
           showPoint: false,
           showArea: true,
           axisX: {

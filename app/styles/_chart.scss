@@ -3,6 +3,7 @@
 Points on line charts are actually just very short strokes. 
 This allows you to customize even the point size in CSS */
 
+.ct-pression-chart .ct-grid,
 .ct-temp-chart .ct-grid,
 .ct-wind-chart .ct-grid, {
     stroke: rgba(0, 0, 0, 0.1);
@@ -18,6 +19,20 @@ This allows you to customize even the point size in CSS */
 
     .ct-line {
         stroke: $red;
+        stroke-width: 2px;
+    }
+
+}
+
+.ct-pression-chart .ct-series-a {
+
+    .ct-area {
+        fill: $orange;
+        fill-opacity: 0.1;
+    }
+
+    .ct-line {
+        stroke: $orange;
         stroke-width: 2px;
     }
 

@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc directive
- * @name swissMetNetDisplayApp.directive:GraphicTemp
+ * @name swissMetNetDisplayApp.directive:graphicPression
  * @description
- * # GraphicTemp
+ * # graphicPression
  */
 angular.module('swissMetNetDisplayApp')
-  .directive('graphicTemp', function () {
+  .directive('graphicPression', function () {
     return {
-      templateUrl: 'views/graphictemp.html',
+      templateUrl: 'views/graphicpression.html',
       replace: true,
       restrict: 'E',
 
@@ -18,7 +18,7 @@ angular.module('swissMetNetDisplayApp')
         // Create a new line chart object where as first parameter we pass in a selector
         // that is resolving to our chart container element. The Second parameter
         // is the actual data object.
-        var graphic = new Chartist.Line('.ct-temp-chart', {}, {
+        var graphic = new Chartist.Line('.ct-pression-chart', {}, {
           showPoint: false,
           showArea: true,
           axisX: {
@@ -31,12 +31,12 @@ angular.module('swissMetNetDisplayApp')
           }
         });
 
-        $scope.$on('update', function (event, edata) {
+        $scope.$on('update', function (event, data) {
           // If the targeted directive is not this
           // skip the update
-          if (edata.target.indexOf('graphicTemp') === -1) { return; }
+          if (data.target.indexOf('graphicQnh') === -1) { return; }
 
-          var url = edata.data.collections.temp;
+          var url = data.data.collections.qnh;
 
           webService.get(url, function (d) {
             var gdata = {

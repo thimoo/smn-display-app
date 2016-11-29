@@ -11,5 +11,6 @@
     "humidity_name": "Humidité",
     "qnh_name": "Pression QNH",
     "sun_name": "Ensoleillement",
-    "error_message": "Les données collectées depuis la station météorologique SwissMetNet ne sont malheureusement plus accessibles."
+    "error_message": "Les données collectées depuis la station météorologique SwissMetNet ne sont malheureusement plus accessibles.",
+    "graphic_temp_name": "Températures (°C)"
 }

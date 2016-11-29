@@ -37,7 +37,7 @@ html, body {
 /*
   Header
  */
-$header-bottom-padding:   10px;
+$header-padding:   10px 15px;
 
 .header {
   border-bottom: 3px solid $red;
@@ -46,18 +46,18 @@ $header-bottom-padding:   10px;
 .date {
   display: flex;
   align-items: flex-end;
-  padding-bottom: $header-bottom-padding;
+  padding: $header-padding;
 
   .hour {
     color: $red;
-    font-size: 3.5em;
+    // font-size: 3.5em;
     margin: 0;
   }
 
   .day {
     color: $black-55;
     margin: 0;
-    font-size: 2em;
+    // font-size: 2em;
 
     font-family: $light-font;
     text-transform: capitalize;
@@ -69,27 +69,44 @@ $header-bottom-padding:   10px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding-bottom: $header-bottom-padding;
+  padding: $header-padding;
 
   font-family: $light-font;
   
   .row {
-    display: block;
-    text-align: center;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    .baseline-container {
+      display: flex;
+      align-items: baseline;
+
+    }
 
     .name {
       width: auto;
       display: inline-block;
       margin: 0;
-  
-      font-size: 3.5em;
+      
+      font-family: $light-font;
       color: $black;
+
+      margin-right: 0.5vw;
     }
 
     .altitude {
-      display: inline-block;
+      display: flex;
+      align-items: baseline;
 
       color: $black-55;
+
+      #alt-icon {
+        height: 1.7vh;
+      }
     }
   }
 }
@@ -98,14 +115,14 @@ $header-bottom-padding:   10px;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  padding-bottom: $header-bottom-padding;
+  padding: $header-padding;
   text-align: right;
 
   .logo {
     // TODO
     color: $red;
     font-family: $bold-font;
-    font-size: 3.5em;
+    // font-size: 3.5em;
     margin: 0;
   }
 
@@ -113,7 +130,7 @@ $header-bottom-padding:   10px;
     color: $black-55;
     font-family: $light-font;
     margin: 0;
-    font-size: 2em;
+    // font-size: 2em;
 
     .strong {
       font-family: $bold-font;
@@ -140,7 +157,7 @@ $header-bottom-padding:   10px;
 }
 
 .numeric-value {
-  letter-spacing: -0.07em;
+  letter-spacing: -0.04em;
 }
 
 .single-temp {
@@ -360,6 +377,44 @@ $header-bottom-padding:   10px;
 // Landscape mode
 @media all and (orientation:landscape) {
 
+
+  .date {
+
+    .hour {
+      font-size: 5.5vh;
+      line-height: 1em;
+    }
+
+    .day {
+      font-size: 3vh;
+    }
+  }
+
+  .title {
+
+    .name {
+      font-size: 7vh;
+    }
+
+    .altitude span {
+      font-size: 2.5vh;
+    }
+  }
+
+
+  .swiss-met-net {
+
+    .logo {
+      //TODO remove this when svg came
+      font-size: 5.5vh;
+      line-height: 1em;
+    }
+
+    .station {
+      font-size: 3vh;
+    }
+  }
+
   .directive-title {
     font-size: 2.2vh;
   }
@@ -392,7 +447,7 @@ $header-bottom-padding:   10px;
   .single-temp {
 
     .value {
-      font-size: 25vh;
+      font-size: 22vh;
       line-height: 0.65em;
 
       &::after {

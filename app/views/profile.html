@@ -7,8 +7,21 @@
     </div>
     <div class="land-horizontal-4of8 land-vertical-1of8 gutter-left port-horizontal-2of4 port-vertical-2of16 title">
         <div class="row">
-            <h1 class="name">{{ profile.name }}</h1>
-            <div class="altitude">{{ profile.altitude }}</div>
+            <div class="baseline-container">
+                <h1 class="name">{{ profile.name }}</h1>
+                <div class="altitude">
+                    <svg id="alt-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.8 18.77">
+                      <defs>
+                        <style>
+                          .altitude-a{fill:#999;}.altitude-b{fill:#bfbfbf;}
+                        </style>
+                      </defs>
+                      <path class="altitude-a" d="M8.33 2.84L0 18.77h17.32L8.33 2.84"></path>
+                      <path class="altitude-b" d="M18.84 18.07l.39.7h6.57L15.21 0l-3.15 6.03 6.78 12.04"></path>
+                    </svg>
+                    <span>{{ profile.altitude }}m</span>
+                </div>
+            </div>
         </div>
     </div>
     <div class="land-horizontal-2of8 land-vertical-1of8 gutter-left port-horizontal-1of4 port-vertical-2of16 swiss-met-net">

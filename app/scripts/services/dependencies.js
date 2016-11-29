@@ -30,20 +30,20 @@ angular.module('swissMetNetDisplayApp')
     singleSun: [
       'data-sun'
     ],
-    graphTemp: [
+    graphicTemp: [
       'collections-temp'
     ],
-    graphPrecipitation: [
+    graphicPrecipitation: [
       'collections-precipitation'
     ],
-    graphSun: [
+    graphicSun: [
       'collections-sun'
     ],
-    graphWind: [
+    graphicWind: [
       'collections-wind',
       'collections-wind_gusts'
     ],
-    graphQnh: [
+    graphicQnh: [
       'collections-qnh'
     ]
   });

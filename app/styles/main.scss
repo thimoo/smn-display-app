@@ -33,6 +33,48 @@ html, body {
   background: rgb(240, 240, 240);
 }
 
+.fake-directive {
+  width: 100%;
+  height: 100%;
+}
+
+.f1 { background-color: green; }
+.f2 { background-color: red; }
+.f3 { background-color: blue; }
+
+
+.slider-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.container .fake-directive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.swap-animation.ng-enter, .swap-animation.ng-leave {
+  transition:0.5s ease-in-out all;
+}
+.swap-animation.ng-enter {
+  // transform: translate(100%);
+  opacity: 0;
+}
+.swap-animation.ng-enter-active {
+  // transform: translate(0);
+  opacity: 1;
+}
+.swap-animation.ng-leave {
+  // transform: translate(0);
+  opacity: 1;
+}
+.swap-animation.ng-leave-active {
+  // transform: translate(-100%);
+  opacity: 0;
+}
 
 /*
   Header

@@ -23,9 +23,9 @@ angular.module('swissMetNetDisplayApp')
           if (data.target.indexOf('singlePrecipitation') === -1) { return; }
 
           // Retrieve all needed URLs
-          var url = data.data.data.sun;
+          var url = data.data.data.precipitation;
 
-          webService.getSu(url, function (data) {
+          webService.getSum(url, function (data) {
             $scope.precipitation = data.value;
           });
 

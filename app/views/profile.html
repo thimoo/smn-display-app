@@ -61,12 +61,13 @@
 </div>
 <div class="land-horizontal-8of8 land-vertical-3of8 gutter-left port-horizontal-4of4 port-vertical-6of16 gutter-top second-content">
 
-    <div ng-controller="GraphicsliderCtrl" class="land-horizontal-4of8 land-vertical-3of8 port-horizontal-4of4 port-vertical-3of16">
-        <graphic-temp class="graphic-temp"></graphic-temp>
+    <div ng-controller="GraphicsliderCtrl" class="land-horizontal-4of8 land-vertical-3of8 port-horizontal-4of4 port-vertical-3of16 slider-container">
+        <graphic-temp class="slider-animation graphic-temp" ng-class="{disabled:disabled1}"></graphic-temp>
+        <graphic-wind class="slider-animation graphic-wind" ng-class="{disabled:disabled2}"></graphic-wind>
     </div>
 
     <div class="land-horizontal-4of8 land-vertical-3of8 port-horizontal-4of4 port-vertical-3of16 land-gutter-left port-gutter-top">
-        <graphic-wind class="graphic-wind"></graphic-wind>
+        
     </div>
     
 </div>

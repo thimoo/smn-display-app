@@ -141,6 +141,58 @@ $header-padding:   10px 15px;
 
 
 /*
+  Error
+ */
+
+.error-container {
+  width: 100vw;
+  height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .center-cloudy {
+    text-align: center;
+    // max-width: 40vw;
+  }
+
+  .cloudy {
+    width: 100%;
+    margin-bottom: 6vh;
+
+    svg {
+      height: 28vh;
+    }
+  }
+
+  .text {
+    width: 100%;
+    margin-bottom: 6vh;
+
+    color: $black-25;
+    font-family: $bold-font;
+  }
+
+  .logo-meteo-swiss {
+    width: 100%;
+    margin-bottom: 10vh;
+
+    // TODO replace by meteo swiss logo
+    
+    color: $red;
+    font-size: 3vh;
+    font-family: $bold-font;
+    letter-spacing: -0.1em;
+
+  }
+}
+
+
+/*
  Directives
  */
 
@@ -401,6 +453,19 @@ $header-padding:   10px 15px;
     }
   }
 
+  .error-container {
+
+
+    .center-cloudy {
+      max-width: 40vw;
+    }
+
+    .text {
+      font-size: 2.1vh;
+      line-height: 1.3em;
+    }
+  }
+
 
   .swiss-met-net {
 
@@ -488,4 +553,31 @@ $header-padding:   10px 15px;
 
 
 // Portrait mode
-@media all and (orientation:portrait) {}
+@media all and (orientation:portrait) {
+
+
+  .error-container {
+
+
+    .cloudy {
+      margin-bottom: 3vh;
+
+      svg {
+        height: 14vh;
+      }
+    }
+
+
+    .center-cloudy {
+      max-width: 80vw;
+    }
+
+    .text {
+      font-size: 1.4vh;
+      line-height: 1.3em;
+    }
+  }
+}
+
+
+

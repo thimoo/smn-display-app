@@ -15,7 +15,7 @@ angular.module('swissMetNetDisplayApp')
       angular.forEach(collection.values, function (value, index) {
         serie.push(value.date);
       });
-      return serie;
+      return serie.reverse();
     };
 
     this.toSerie = function (collection) {
@@ -23,7 +23,7 @@ angular.module('swissMetNetDisplayApp')
       angular.forEach(collection.values, function (value, index) {
         serie.push(value.value);
       });
-      return serie;
+      return serie.reverse();
     };
 
   });

@@ -49,7 +49,7 @@ angular.module('swissMetNetDisplayApp')
           var url = edata.data.collections.temp;
 
           webService.get(url, function (d) {
-            // console.log(d)
+            console.log(d)
             var gdata = {
               labels: graphicService.toLabels(d),
               series: [
@@ -58,6 +58,11 @@ angular.module('swissMetNetDisplayApp')
             };
             graphic.update(gdata);
           });
+
+        });
+
+        $scope.$on('add', function (event) {
+          console.log('show animate');
 
         });
 

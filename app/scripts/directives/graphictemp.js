@@ -24,10 +24,22 @@ angular.module('swissMetNetDisplayApp')
           ]
         };
 
+        var responsiveOptions = [
+          ['screen and (max-width: 3000px)', {
+            showPoint: false,
+            axisX: {
+              labelInterpolationFnc: function(value, index) {
+                // Transform the date attribute
+                return index % 6 == 0 ? new Date(value).getHours() + 'h' : null;
+              }
+            }
+          }]
+        ];
+
         // Create a new line chart object where as first parameter we pass in a selector
         // that is resolving to our chart container element. The Second parameter
         // is the actual data object.
-        var graphic = new Chartist.Line('.ct-chart', data);
+        var graphic = new Chartist.Line('.ct-chart', data, null, responsiveOptions);
 
         $scope.$on('update', function (event, edata) {
           // If the targeted directive is not this
@@ -37,7 +49,9 @@ angular.module('swissMetNetDisplayApp')
           var url = edata.data.collections.temp;
 
           webService.get(url, function (d) {
+            // console.log(d)
             var gdata = {
+              labels: graphicService.toLabels(d),
               series: [
                 graphicService.toSerie(d)
               ]

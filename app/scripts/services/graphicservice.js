@@ -10,9 +10,12 @@
 angular.module('swissMetNetDisplayApp')
   .service('graphicService', function () {
     
-    this.toLabel = function (collection) {
-      // TODO
-      return [];
+    this.toLabels = function (collection) {
+      var serie = [];
+      angular.forEach(collection.values, function (value, index) {
+        serie.push(value.date);
+      });
+      return serie;
     };
 
     this.toSerie = function (collection) {

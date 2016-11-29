@@ -15,32 +15,21 @@ angular.module('swissMetNetDisplayApp')
 
       controller: function ($q, $scope, $http, webService, graphicService) {
 
-        var data = {
-          // A labels array that can contain any sort of values
-          labels: [],
-          // Our series array that contains series objects or in this case series data arrays
-          series: [
-            []
-          ]
-        };
-
-        var responsiveOptions = [
-          ['screen and (max-width: 3000px)', {
-            showPoint: false,
-            axisX: {
-              labelInterpolationFnc: function(value, index) {
-                // Transform the date attribute
-                var date = new Date(value);
-                return date.getMinutes() == 0 ? date.getHours() + 'h' : null;
-              }
-            }
-          }]
-        ];
-
         // Create a new line chart object where as first parameter we pass in a selector
         // that is resolving to our chart container element. The Second parameter
         // is the actual data object.
-        var graphic = new Chartist.Line('.ct-wind-chart', data, null, responsiveOptions);
+        var graphic = new Chartist.Line('.ct-wind-chart', {}, {
+          showPoint: false,
+          showArea: true,
+          axisX: {
+            showGrid: false,
+            labelInterpolationFnc: function(value, index) {
+              // Transform the date attribute
+              var date = new Date(value);
+              return date.getMinutes() == 0 ? date.getHours() + 'h' : null;
+            }
+          }
+        });
 
         $scope.$on('update', function (event, data) {
           // If the targeted directive is not this

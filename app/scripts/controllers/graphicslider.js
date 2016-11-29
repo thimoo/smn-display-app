@@ -12,18 +12,16 @@ angular.module('swissMetNetDisplayApp')
     
     var counter = 0;
 
-    $scope.f1 = true;
-    // $scope.f2 = false;
-    // $scope.f3 = false;
+    $scope.g1 = true;
+    $scope.g2 = true;
 
     $interval(function() {
 
       counter++;
-      counter %= 1;
+      counter %= 2;
 
-      $scope.f1 = (counter == 0);
-      $scope.f2 = (counter == 1);
-      $scope.f3 = (counter == 2);
+      $scope.g1 = (counter == 0);
+      $scope.g2 = (counter == 1);
 
 
     }, 5000);

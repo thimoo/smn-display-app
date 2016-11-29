@@ -2,9 +2,50 @@
 /* This selector overrides the points style on line charts. 
 Points on line charts are actually just very short strokes. 
 This allows you to customize even the point size in CSS */
-// .ct-series-a .ct-point {
-//   /* Colour of your points */
-//   stroke: transparent;
-//   /* Size of your points */
-//   stroke-width: 0px;
-// }
+
+.ct-temp-chart .ct-grid,
+.ct-wind-chart .ct-grid, {
+    stroke: rgba(0, 0, 0, 0.1);
+    stroke-dasharray: none;
+}
+
+.ct-temp-chart .ct-series-a {
+
+    .ct-area {
+        fill: $red;
+        fill-opacity: 0.1;
+    }
+
+    .ct-line {
+        stroke: $red;
+        stroke-width: 2px;
+    }
+
+}
+
+.ct-wind-chart {
+    .ct-series-a {
+
+        .ct-area {
+            fill: $black-55;
+            fill-opacity: 0.1;
+        }
+
+        .ct-line {
+            stroke: $black-55;
+            stroke-width: 2px;
+        }
+    }
+    .ct-series-b {
+
+        .ct-area {
+            fill: transparent;
+            fill-opacity: 0;
+        }
+
+        .ct-line {
+            stroke: $red;
+            stroke-width: 2px;
+        }
+    }
+}

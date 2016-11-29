@@ -15,5 +15,6 @@
     "graphic_temp_name": "Températures (°C)",
     "graphic_pression_name": "Pression QNH (hPa)",
     "graphic_precipitation_name": "Précipitations (mm)",
+    "graphic_sun_name": "Ensoleillement",
     "graphic_wind_name": "Vent (km/h)"
 }

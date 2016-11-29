@@ -426,6 +426,7 @@ $header-padding:   10px 15px;
 }
 
 .graphic-wind,
+.graphic-sun,
 .graphic-pression,
 .graphic-precipitation,
 .graphic-temp {
@@ -453,6 +454,7 @@ $header-padding:   10px 15px;
 }
 
 
+.graphic-sun,
 .graphic-pression {
   .logo .hour-color {
     fill: $orange;

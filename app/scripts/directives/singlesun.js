@@ -26,7 +26,7 @@ angular.module('swissMetNetDisplayApp')
           var url = data.data.data.sun;
 
           webService.get(url, function (data) {
-            $scope.sun = data.value;
+            $scope.sun = data.value * 10;
           });
 
         });

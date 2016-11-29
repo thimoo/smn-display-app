@@ -5,6 +5,7 @@ This allows you to customize even the point size in CSS */
 
 .ct-pression-chart .ct-grid,
 .ct-temp-chart .ct-grid,
+.ct-sun-chart .ct-grid,
 .ct-precipitation-chart .ct-grid,
 .ct-wind-chart .ct-grid, {
     stroke: rgba(0, 0, 0, 0.1);
@@ -70,6 +71,14 @@ This allows you to customize even the point size in CSS */
 
     .ct-bar {
         stroke: $light-blue;
+        stroke-width: 7px;
+    }
+}
+
+.ct-sun-chart {
+
+    .ct-bar {
+        stroke: $yellow;
         stroke-width: 7px;
     }
 }

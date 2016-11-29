@@ -2,18 +2,18 @@
 
 /**
  * @ngdoc directive
- * @name swissMetNetDisplayApp.directive:GraphicTemp
+ * @name swissMetNetDisplayApp.directive:graphicWind
  * @description
- * # GraphicTemp
+ * # graphicWind
  */
 angular.module('swissMetNetDisplayApp')
-  .directive('graphicTemp', function () {
+  .directive('graphicWind', function () {
     return {
-      templateUrl: 'views/graphictemp.html',
+      templateUrl: 'views/graphicwind.html',
       replace: true,
       restrict: 'E',
 
-      controller: function ($scope, webService, graphicService) {
+      controller: function ($q, $scope, $http, webService, graphicService) {
 
         var data = {
           // A labels array that can contain any sort of values
@@ -40,24 +40,32 @@ angular.module('swissMetNetDisplayApp')
         // Create a new line chart object where as first parameter we pass in a selector
         // that is resolving to our chart container element. The Second parameter
         // is the actual data object.
-        var graphic = new Chartist.Line('.ct-temp-chart', data, null, responsiveOptions);
+        var graphic = new Chartist.Line('.ct-wind-chart', data, null, responsiveOptions);
 
-        $scope.$on('update', function (event, edata) {
+        $scope.$on('update', function (event, data) {
           // If the targeted directive is not this
           // skip the update
-          if (edata.target.indexOf('graphicTemp') === -1) { return; }
+          if (data.target.indexOf('graphicWind') === -1) { return; }
 
-          var url = edata.data.collections.temp;
+          var urlWind = data.data.collections.wind;
+          var urlWindGusts = data.data.collections.wind_gusts;
 
-          webService.get(url, function (d) {
-            console.log(d)
-            var gdata = {
-              labels: graphicService.toLabels(d),
+          $q.all([
+            $http.get(urlWind),
+            $http.get(urlWindGusts)
+          ]).then(function(results) {
+
+            var wind = results[0];
+            var windGusts = results[1];
+
+            graphic.update({
+              labels: graphicService.toLabels(wind.data.data),
               series: [
-                graphicService.toSerie(d)
+                graphicService.toSerie(wind.data.data),
+                graphicService.toSerie(windGusts.data.data),
               ]
-            };
-            graphic.update(gdata);
+            });
+
           });
 
         });

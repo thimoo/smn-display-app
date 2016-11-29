@@ -465,6 +465,7 @@ $header-padding:   10px 15px;
   @extend .item;
 }
 
+.graphic-wind,
 .graphic-temp {
   @extend .item;
 
@@ -488,7 +489,6 @@ $header-padding:   10px 15px;
     }
   }
 }
-
 
 
 // Landscape mode

@@ -33,6 +33,7 @@ module.exports = function(config) {
       'bower_components/svg4everybody/dist/svg4everybody.js',
       'bower_components/svg4everybody/dist/svg4everybody.legacy.js',
       'bower_components/d3/d3.js',
+      'bower_components/chartist/dist/chartist.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

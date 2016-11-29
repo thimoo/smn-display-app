@@ -14,5 +14,6 @@
     "error_message": "Les données collectées depuis la station météorologique SwissMetNet ne sont malheureusement plus accessibles.",
     "graphic_temp_name": "Températures (°C)",
     "graphic_pression_name": "Pression QNH (hPa)",
+    "graphic_precipitation_name": "Précipitations (mm)",
     "graphic_wind_name": "Vent (km/h)"
 }

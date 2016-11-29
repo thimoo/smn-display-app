@@ -14,14 +14,16 @@ angular.module('swissMetNetDisplayApp')
 
     $scope.disabled1 = true;
     $scope.disabled2 = false;
+    $scope.disabled3 = false;
 
     $interval(function() {
 
       counter++;
-      counter %= 2;
+      counter %= 3;
 
       $scope.disabled1 = (counter == 0);
       $scope.disabled2 = (counter == 1);
+      $scope.disabled3 = (counter == 2);
 
 
     }, 5000);

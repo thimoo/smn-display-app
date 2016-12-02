@@ -38,16 +38,12 @@ angular.module('swissMetNetDisplayApp')
           var url = data.data.collections.precipitation;
 
           webService.get(url, function (d) {
-
-            console.log(d);
-
-            var gdata = {
+            graphic.update({
               labels: graphicService.toLabels(d),
               series: [
                 graphicService.toSerie(d)
               ]
-            };
-            graphic.update(gdata);
+            });
           });
 
         });

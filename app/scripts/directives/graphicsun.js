@@ -27,6 +27,9 @@ angular.module('swissMetNetDisplayApp')
               var date = new Date(value);
               return date.getMinutes() == 0 ? date.getHours() + 'h' : null;
             }
+          },
+          axisY: {
+            onlyInteger: true
           }
         });
 
@@ -35,21 +38,15 @@ angular.module('swissMetNetDisplayApp')
           // skip the update
           if (data.target.indexOf('graphicSun') === -1) { return; }
 
-          console.log('update sun');
-
           var url = data.data.collections.sun;
 
           webService.get(url, function (d) {
-
-            console.log(d);
-
-            var gdata = {
+            graphic.update({
               labels: graphicService.toLabels(d),
               series: [
-                graphicService.toSerie(d)
+                graphicService.toSerie(d, 10)
               ]
-            };
-            graphic.update(gdata);
+            });
           });
 
         });

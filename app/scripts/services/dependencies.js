@@ -19,7 +19,7 @@ angular.module('swissMetNetDisplayApp')
       'data-wind_gusts'
     ],
     singlePrecipitation: [
-      'collections-precipitation'
+      'data-precipitation'
     ],
     singleHumidity: [
       'data-humidity'

@@ -18,10 +18,11 @@ angular.module('swissMetNetDisplayApp')
       return serie.reverse();
     };
 
-    this.toSerie = function (collection) {
+    this.toSerie = function (collection, scale) {
+      scale = typeof scale !== 'undefined' ? scale : 1;
       var serie = [];
       angular.forEach(collection.values, function (value, index) {
-        serie.push(value.value + Math.random(1, 5));
+        serie.push(value.value * scale);
       });
       return serie.reverse();
     };

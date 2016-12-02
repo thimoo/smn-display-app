@@ -125,11 +125,16 @@ angular.module('swissMetNetDisplayApp')
 
         });
 
+        // Set the effective position object
         angular.forEach(dependencies, function (dependencies, directive) {
           $scope.position[directive] = getPosition(directive);
         });
+
+        // Broadcast the slider update event
+        $scope.$broadcast('update-slider');
       }
 
+      // Define the ordre of displayed directives
       function getPosition (directive) {
         var $position = 0;
         switch (directive) {
@@ -150,6 +155,29 @@ angular.module('swissMetNetDisplayApp')
               + $scope.displays.singleHumidity 
               + $scope.displays.singleQnh 
               + $scope.displays.singleSun + 0;
+            break;
+          case 'graphicTemp':
+            $position = $scope.displays.graphicTemp + 0;
+            break;
+          case 'graphicSun':
+            $position = $scope.displays.graphicTemp
+              + $scope.displays.graphicSun + 0;
+            break;
+          case 'graphicQnh':
+            $position = $scope.displays.graphicTemp
+              + $scope.displays.graphicSun
+              + $scope.displays.graphicQnh + 0;
+            break;
+          case 'graphicWind':
+            $position = $scope.displays.graphicWind + 0;
+            break;
+          case 'graphicPrecipitation':
+            $position = $scope.displays.graphicWind
+              + $scope.displays.graphicPrecipitation + 0;
+            break;
+          case 'smnDisplay':
+            $position = $scope.displays.graphicWind
+              + $scope.displays.graphicPrecipitation + 1;
             break;
         }
         return $position;

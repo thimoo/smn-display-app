@@ -45,5 +45,6 @@ angular.module('swissMetNetDisplayApp')
     ],
     graphicQnh: [
       'collections-qnh'
-    ]
+    ],
+    smnDisplay: []
   });

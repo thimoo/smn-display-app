@@ -13,6 +13,10 @@ angular.module('swissMetNetDisplayApp')
     var reversedData = [];
     var reversedCollections = [];
 
+    String.prototype.capitalize = function(){
+      return this.replace( /(^|\s)([a-z])/g , function(m,p1,p2){ return p1+p2.toUpperCase(); } );
+    };
+
     var toFlatArray = function (array) {
       var res = [];
       angular.forEach(array, function (value) {
@@ -43,6 +47,11 @@ angular.module('swissMetNetDisplayApp')
 
       });
       return status;
+    };
+
+    this.cssToDirectiveName = function (cssClass) {
+      var array = cssClass.split('-');
+      return array[0] + array[1].toLowerCase().capitalize();
     };
     
     this.reverseToObject = function (array) {

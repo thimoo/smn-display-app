@@ -204,6 +204,10 @@ $header-padding:   10px 15px;
   padding: 10px;
 }
 
+.single-item {
+  position: relative;
+}
+
 .directive-title {
   display: flex;
   align-items: center;
@@ -213,8 +217,59 @@ $header-padding:   10px 15px;
   letter-spacing: -0.04em;
 }
 
+/*
+ No Data mask
+ */
+
+.nodata-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+
+  .flag {
+    display: flex;
+    align-items: stretch;
+    height: 5vh;
+    max-width: 56%;
+
+    background: $black-10;
+    color: $black-55;
+    font-family: $primary-font;
+
+    .no-data-icon {
+      height: 100%;
+
+      .no-data-svg {
+        height: 100%;
+      }
+    }
+
+    .no-data-text {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+    }
+  }
+}
+
+.no-data {
+  opacity: 0.3;
+}
+
+/*
+ Single directive
+ */
+
 .single-temp {
   @extend .item;
+  @extend .single-item;
 
   #termometer {
     width: 30%;
@@ -272,6 +327,7 @@ $header-padding:   10px 15px;
 
 .single-wind {
   @extend .item;
+  @extend .single-item;
 
   #complete-dial {
     width: 100%;
@@ -352,6 +408,7 @@ $header-padding:   10px 15px;
 
 .single-precipitation {
   @extend .item;
+  @extend .single-item;
 
   .logo {
     display: inline-block;
@@ -415,14 +472,17 @@ $header-padding:   10px 15px;
 
 .single-humidity {
   @extend .item;
+  @extend .single-item;
 }
 
 .single-qnh {
   @extend .item;
+  @extend .single-item;
 }
 
 .single-sun {
   @extend .item;
+  @extend .single-item;
 }
 
 .smn-display {
@@ -603,6 +663,11 @@ $header-padding:   10px 15px;
 
 // Portrait mode
 @media all and (orientation:portrait) {
+
+  .nodata-mask {
+    .flag {
+      height: 5vw;}
+  }
 
   .date {
     align-items: flex-start;

@@ -1,6 +1,6 @@
 <div>
     <div class="directive-title all-height-1of12">{{ 'wind_name'| translate }}</div>
-    <div class="vertical-container-midle all-height-11of12">
+    <div ng-class="{'no-data': noData}" class="vertical-container-midle all-height-11of12">
 
         <div class="dial">
 
@@ -73,4 +73,5 @@
         </div>
 
     </div>
+    <ng-include src="'views/nodatamask.html'"></ng-include>
 </div>

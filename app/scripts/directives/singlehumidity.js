@@ -12,10 +12,14 @@ angular.module('swissMetNetDisplayApp')
       templateUrl: 'views/singlehumidity.html',
       replace: true,
       restrict: 'E',
+      scope: {},
 
       controller: function ($scope, webService) {
 
         $scope.humidity = '–';
+        
+        $scope.noData = false;
+        $scope.lastTimeUpdate = null;
 
         $scope.$on('update', function (event, data) {
           // If the targeted directive is not this
@@ -23,10 +27,16 @@ angular.module('swissMetNetDisplayApp')
           if (data.target.indexOf('singleHumidity') === -1) { return; }
 
           // Retrieve all needed URLs
-          var humUrl = data.data.data.humidity;
+          var url = data.data.data.humidity;
 
-          webService.get(humUrl, function (humData) {
-            $scope.humidity = humData.value;
+          webService.get(url, function (data) {
+            if (data.tag === 'no-data') {
+              $scope.noData = true;
+              $scope.lastTimeUpdate = data.original.date;
+              $scope.humidity = data.original.value;
+            } else {
+              $scope.humidity = data.value;
+            }
           });
 
         });

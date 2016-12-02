@@ -16,5 +16,6 @@
     "graphic_pression_name": "Pression QNH (hPa)",
     "graphic_precipitation_name": "Précipitations (mm)",
     "graphic_sun_name": "Ensoleillement (%)",
-    "graphic_wind_name": "Vent (km/h)"
+    "graphic_wind_name": "Vent (km/h)",
+    "no_data_text": "Dernières données actualisées à"
 }

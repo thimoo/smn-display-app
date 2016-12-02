@@ -1,6 +1,6 @@
 <div>
     <div class="directive-title all-height-2of12">{{ 'humidity_name'| translate }}</div>
-    <div class="vertical-full-container-midle all-height-10of12">
+    <div ng-class="{'no-data': noData}" class="vertical-full-container-midle all-height-10of12">
         <div class="small-logo">
             <div class="half-middle">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62.6 87.9">
@@ -23,4 +23,5 @@
             </div>
         </div>
     </div>
+    <ng-include src="'views/nodatamask.html'"></ng-include>
 </div>

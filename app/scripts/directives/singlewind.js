@@ -12,6 +12,7 @@ angular.module('swissMetNetDisplayApp')
       templateUrl: 'views/singlewind.html',
       replace: true,
       restrict: 'E',
+      scope: {},
 
       controller: function ($scope, $document, webService) {
 
@@ -20,26 +21,48 @@ angular.module('swissMetNetDisplayApp')
         $scope.windDirection = 0;
         $scope.oldWindDirection = 0;
 
+        $scope.noData = false;
+        $scope.lastTimeUpdate = null;
+
         $scope.$on('update', function (event, data) {
           // If the targeted directive is not this
           // skip the update
           if (data.target.indexOf('singleWind') === -1) { return; }
 
           webService.get(data.data.data.wind, function (tempData) {
-            $scope.wind = tempData.value;
+            if (tempData.tag === 'no-data') {
+              $scope.noData = true;
+              $scope.lastTimeUpdate = tempData.original.date;
+              $scope.wind = tempData.original.value;
+            } else {
+              $scope.wind = tempData.value;
+            }
           });
 
           webService.get(data.data.data.wind_gusts, function (tempData) {
-            $scope.windGust = tempData.value;
+            if (tempData.tag === 'no-data') {
+              $scope.noData = true;
+              $scope.lastTimeUpdate = tempData.original.date;
+              $scope.windGust = tempData.original.value;
+            } else {
+              $scope.windGust = tempData.value;
+            }
           });
 
           webService.get(data.data.data.wind_dir, function (tempData) {
-            $scope.oldWindDirection = $scope.windDirection;
-            $scope.windDirection = tempData.value;
+            if (tempData.tag === 'no-data') {
+              $scope.noData = true;
+              $scope.lastTimeUpdate = tempData.original.date;
+              $scope.oldWindDirection = $scope.windDirection;
+              $scope.windDirection = tempData.original.value;
+            } else {
+              $scope.oldWindDirection = $scope.windDirection;
+              $scope.windDirection = tempData.value;
+            }
 
             var svg = d3.select("#wind-direction");
 
-            svg.transition().duration(1000).attrTween('transform', rotTween); // .transition().duration(2000)
+            svg.transition().duration(1000).attrTween('transform', rotTween);
             
             function rotTween() {
               var i = d3.interpolate($scope.oldWindDirection, $scope.windDirection);

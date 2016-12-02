@@ -1,6 +1,6 @@
 <div>
     <div class="directive-title all-height-2of12">{{ 'sun_name'| translate }}</div>
-    <div class="vertical-full-container-midle all-height-10of12">
+    <div ng-class="{'no-data': noData}" class="vertical-full-container-midle all-height-10of12">
         <div class="small-logo">
             <div class="half-middle">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 92.89 92.89">
@@ -26,4 +26,5 @@
             </div>
         </div>
     </div>
+    <ng-include src="'views/nodatamask.html'"></ng-include>
 </div>

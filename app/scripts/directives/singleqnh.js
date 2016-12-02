@@ -12,6 +12,7 @@ angular.module('swissMetNetDisplayApp')
       templateUrl: 'views/singleqnh.html',
       replace: true,
       restrict: 'E',
+      scope: {},
 
       controller: function ($scope, webService) {
 
@@ -24,6 +25,9 @@ angular.module('swissMetNetDisplayApp')
         var from = 0;
 
         $scope.hpa = 0;
+        
+        $scope.noData = false;
+        $scope.lastTimeUpdate = null;
 
         $scope.$on('update', function (event, data) {
           // If the targeted directive is not this
@@ -35,7 +39,13 @@ angular.module('swissMetNetDisplayApp')
 
           webService.get(url, function (data) {
 
-            $scope.hpa = data.value;
+            if (data.tag === 'no-data') {
+              $scope.noData = true;
+              $scope.lastTimeUpdate = data.original.date;
+              $scope.hpa = data.original.value;
+            } else {
+              $scope.hpa = data.value;
+            }
 
             from = to;
             to = ((maxQnh - $scope.hpa - (maxQnh - minQnh)) * -1) / (maxQnh - minQnh) * dist + diff;

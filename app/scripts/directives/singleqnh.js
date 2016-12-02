@@ -17,18 +17,13 @@ angular.module('swissMetNetDisplayApp')
 
         var minQnh = 990;
         var maxQnh = 1040;
-        var diff = -40 - 90;
         var dist = 180;
-        var oldTo = 0;
+        var diff = -40 - (dist / 2);
+
+        var to = 0;
+        var from = 0;
 
         $scope.hpa = 0;
-
-        // 50 hPa
-        // 0 -> 990
-        // 50 -> 1040
-        // 
-        // 1017.8 -> 27.8
-        // 
 
         $scope.$on('update', function (event, data) {
           // If the targeted directive is not this
@@ -42,8 +37,8 @@ angular.module('swissMetNetDisplayApp')
 
             $scope.hpa = data.value;
 
-            var from = oldTo;
-            var to = ((maxQnh - $scope.hpa - (maxQnh - minQnh)) * -1) / (maxQnh - minQnh) * dist + diff;
+            from = to;
+            to = ((maxQnh - $scope.hpa - (maxQnh - minQnh)) * -1) / (maxQnh - minQnh) * dist + diff;
 
             var svg = d3.select("#arrow-gnh");
 

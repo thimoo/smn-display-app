@@ -9,6 +9,8 @@
  */
 angular.module('swissMetNetDisplayApp')
   .controller('GraphicsliderCtrl', function ($scope, $interval, $element, dependencyService) {
+    
+    var interval;
     var stack = [];
 
     // Liste slider update event
@@ -28,7 +30,6 @@ angular.module('swissMetNetDisplayApp')
     });
 
     function refresh (stack) {
-      var interval;
       var counter = 0;
       var start = true;
       var max = stack.length;
@@ -37,8 +38,8 @@ angular.module('swissMetNetDisplayApp')
 
         if (! start) {
           // remove old class
-          var oldElem = angular.element(document.querySelector('.' + stack[counter]));
-          oldElem.removeClass('enabled');
+          angular.element(document.querySelector('.' + stack[counter]))
+            .removeClass('enabled');
 
           counter++;
           counter %= max;  
@@ -47,20 +48,26 @@ angular.module('swissMetNetDisplayApp')
         start = false;
 
         // add class on new element
-        var newElem = angular.element(document.querySelector('.' + stack[counter]));
-        newElem.addClass('enabled');
+        angular.element(document.querySelector('.' + stack[counter]))
+          .addClass('enabled');
 
       };
 
-      if (typeof interval !== 'undefined') { $interval.cancel(interval); }
+      // Register interval to kill when location change
       interval = $interval(slide, 10000);
       slide();
     }
 
     function hide (stack) {
       angular.forEach(stack, function (element) {
-          angular.element(document.querySelector('.' + element)).removeClass('enabled');
+        angular.element(document.querySelector('.' + element)).removeClass('enabled');
       });
     }
+
+    // Clear the interval whent the location change
+    // else two or more slider will be active
+    $scope.$on('$locationChangeStart', function() {
+      if (typeof interval !== 'undefined') { $interval.cancel(interval); }
+    });
 
   });

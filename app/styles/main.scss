@@ -425,6 +425,10 @@ $header-padding:   10px 15px;
   @extend .item;
 }
 
+.smn-display {
+  @extend .item;
+}
+
 .graphic-wind,
 .graphic-sun,
 .graphic-pression,

@@ -9,10 +9,8 @@
 angular.module('swissMetNetDisplayApp')
   .directive('smnDisplay', function () {
     return {
-      template: '<div></div>',
-      restrict: 'E',
-      link: function postLink(scope, element, attrs) {
-        element.text('this is the smnDisplay directive');
-      }
+      templateUrl: 'views/smndisplay.html',
+      replace: true,
+      restrict: 'E'
     };
   });

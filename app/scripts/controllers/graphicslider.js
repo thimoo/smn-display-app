@@ -23,6 +23,7 @@ angular.module('swissMetNetDisplayApp')
       });
 
       // Refresh the slider
+      hide(stack);
       refresh(stack);
     });
 
@@ -54,6 +55,12 @@ angular.module('swissMetNetDisplayApp')
       if (typeof interval !== 'undefined') $interval.cancel(interval);
       interval = $interval(slide, 10000);
       slide();
+    }
+
+    function hide (stack) {
+      angular.forEach(stack, function (element) {
+          angular.element(document.querySelector('.' + element)).removeClass('enabled');
+      });
     }
 
   });

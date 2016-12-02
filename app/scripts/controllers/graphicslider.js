@@ -29,16 +29,21 @@ angular.module('swissMetNetDisplayApp')
     function refresh (stack) {
       var interval;
       var counter = 0;
+      var start = true;
       var max = stack.length;
 
       var slide = function () {
 
-        // remove old class
-        var oldElem = angular.element(document.querySelector('.' + stack[counter]));
-        oldElem.removeClass('enabled');
+        if (! start) {
+          // remove old class
+          var oldElem = angular.element(document.querySelector('.' + stack[counter]));
+          oldElem.removeClass('enabled');
 
-        counter++;
-        counter %= max;
+          counter++;
+          counter %= max;  
+        }
+        
+        start = false;
 
         // add class on new element
         var newElem = angular.element(document.querySelector('.' + stack[counter]));

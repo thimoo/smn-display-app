@@ -15,6 +15,7 @@ angular.module('swissMetNetDisplayApp')
       scope: {},
 
       controller: function ($scope, webService) {
+        /* globals d3: false */
 
         var minQnh = 990;
         var maxQnh = 1040;
@@ -50,16 +51,15 @@ angular.module('swissMetNetDisplayApp')
             from = to;
             to = ((maxQnh - $scope.hpa - (maxQnh - minQnh)) * -1) / (maxQnh - minQnh) * dist + diff;
 
-            var svg = d3.select("#arrow-gnh");
-
-            svg.transition().duration(1000).attrTween('transform', rotTween);
-            
             function rotTween() {
               var i = d3.interpolate(from, to);
               return function(t) {
-                  return "rotate(" + i(t) + " 50.867 47.148)";
+                  return 'rotate(' + i(t) + ' 50.867 47.148)';
               };
             }
+
+            var svg = d3.select('#arrow-gnh');
+            svg.transition().duration(1000).attrTween('transform', rotTween);
 
           });
 

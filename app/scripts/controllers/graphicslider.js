@@ -12,14 +12,14 @@ angular.module('swissMetNetDisplayApp')
     var stack = [];
 
     // Liste slider update event
-    $scope.$on('update-slider', function(event) {
+    $scope.$on('update-slider', function() {
 
       // foreach children element in the controller
       // that have not ng-hide class, swap the enabled
       // class
-      angular.forEach($scope.graphs, function (element, index) {
+      angular.forEach($scope.graphs, function (element) {
         var elem = dependencyService.cssToDirectiveName(element);
-        if ($scope.displays[elem] === true) stack.push(element);
+        if ($scope.displays[elem] === true) { stack.push(element); }
       });
 
       // Refresh the slider
@@ -52,7 +52,7 @@ angular.module('swissMetNetDisplayApp')
 
       };
 
-      if (typeof interval !== 'undefined') $interval.cancel(interval);
+      if (typeof interval !== 'undefined') { $interval.cancel(interval); }
       interval = $interval(slide, 10000);
       slide();
     }

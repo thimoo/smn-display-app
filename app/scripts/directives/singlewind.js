@@ -15,6 +15,7 @@ angular.module('swissMetNetDisplayApp')
       scope: {},
 
       controller: function ($scope, $document, webService) {
+        /* globals d3: false */
 
         $scope.wind = '-';
         $scope.windGust = '-';
@@ -59,17 +60,16 @@ angular.module('swissMetNetDisplayApp')
               $scope.oldWindDirection = $scope.windDirection;
               $scope.windDirection = tempData.value;
             }
-
-            var svg = d3.select("#wind-direction");
-
-            svg.transition().duration(1000).attrTween('transform', rotTween);
             
             function rotTween() {
               var i = d3.interpolate($scope.oldWindDirection, $scope.windDirection);
               return function(t) {
-                  return "rotate(" + i(t) + " 207.71 200.72)";
+                  return 'rotate(' + i(t) + ' 207.71 200.72)';
               };
             }
+
+            var svg = d3.select('#wind-direction');
+            svg.transition().duration(1000).attrTween('transform', rotTween);
 
           });
 

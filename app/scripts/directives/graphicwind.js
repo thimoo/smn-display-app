@@ -14,6 +14,7 @@ angular.module('swissMetNetDisplayApp')
       restrict: 'E',
 
       controller: function ($q, $scope, $http, webService, graphicService) {
+        /* globals Chartist: false */
 
         // Create a new line chart object where as first parameter we pass in a selector
         // that is resolving to our chart container element. The Second parameter
@@ -23,10 +24,10 @@ angular.module('swissMetNetDisplayApp')
           showArea: true,
           axisX: {
             showGrid: false,
-            labelInterpolationFnc: function(value, index) {
+            labelInterpolationFnc: function(value) {
               // Transform the date attribute
               var date = new Date(value);
-              return date.getMinutes() == 0 ? date.getHours() + 'h' : null;
+              return date.getMinutes() === 0 ? date.getHours() + 'h' : null;
             }
           }
         });

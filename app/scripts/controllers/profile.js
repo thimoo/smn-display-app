@@ -142,42 +142,42 @@ angular.module('swissMetNetDisplayApp')
             $position = $scope.displays.singlePrecipitation + 0;
             break;
           case 'singleHumidity':
-            $position = $scope.displays.singlePrecipitation 
-              + $scope.displays.singleHumidity + 0;
+            $position = $scope.displays.singlePrecipitation + 
+              $scope.displays.singleHumidity + 0;
             break;
           case 'singleQnh':
-            $position = $scope.displays.singlePrecipitation 
-              + $scope.displays.singleHumidity 
-              + $scope.displays.singleQnh + 0;
+            $position = $scope.displays.singlePrecipitation + 
+              $scope.displays.singleHumidity + 
+              $scope.displays.singleQnh + 0;
             break;
           case 'singleSun':
-            $position = $scope.displays.singlePrecipitation 
-              + $scope.displays.singleHumidity 
-              + $scope.displays.singleQnh 
-              + $scope.displays.singleSun + 0;
+            $position = $scope.displays.singlePrecipitation + 
+              $scope.displays.singleHumidity + 
+              $scope.displays.singleQnh  + 
+              $scope.displays.singleSun + 0;
             break;
           case 'graphicTemp':
             $position = $scope.displays.graphicTemp + 0;
             break;
           case 'graphicSun':
-            $position = $scope.displays.graphicTemp
-              + $scope.displays.graphicSun + 0;
+            $position = $scope.displays.graphicTemp + 
+              $scope.displays.graphicSun + 0;
             break;
           case 'graphicQnh':
-            $position = $scope.displays.graphicTemp
-              + $scope.displays.graphicSun
-              + $scope.displays.graphicQnh + 0;
+            $position = $scope.displays.graphicTemp + 
+              $scope.displays.graphicSun + 
+              $scope.displays.graphicQnh + 0;
             break;
           case 'graphicWind':
             $position = $scope.displays.graphicWind + 0;
             break;
           case 'graphicPrecipitation':
-            $position = $scope.displays.graphicWind
-              + $scope.displays.graphicPrecipitation + 0;
+            $position = $scope.displays.graphicWind + 
+              $scope.displays.graphicPrecipitation + 0;
             break;
           case 'smnDisplay':
-            $position = $scope.displays.graphicWind
-              + $scope.displays.graphicPrecipitation + 1;
+            $position = $scope.displays.graphicWind + 
+              $scope.displays.graphicPrecipitation + 1;
             break;
         }
         return $position;

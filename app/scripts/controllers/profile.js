@@ -60,7 +60,6 @@ angular.module('swissMetNetDisplayApp')
                 refreshProfile();
               }
             }, function (errorResponse) {
-              console.log(errorResponse);
               redirectError();
             });
         }
@@ -82,7 +81,6 @@ angular.module('swissMetNetDisplayApp')
             }
           }, 
           function (response) {
-            console.log(response);
             redirectError();
           });
       }
@@ -105,7 +103,6 @@ angular.module('swissMetNetDisplayApp')
           // Show or hide the directive based on the
           // retreived value by the dependency service
           $scope.displays[directive] = mustBeDisplayed;
-
 
           // If the value returned by the dependency
           // service is true, then the directive must
@@ -167,6 +164,12 @@ angular.module('swissMetNetDisplayApp')
             $position = $scope.displays.graphicTemp + 
               $scope.displays.graphicSun + 
               $scope.displays.graphicQnh + 0;
+            break;
+          case 'graphicHumidity':
+            $position = $scope.displays.graphicTemp + 
+              $scope.displays.graphicSun + 
+              $scope.displays.graphicQnh
+              $scope.displays.graphicHumidity + 0;
             break;
           case 'graphicWind':
             $position = $scope.displays.graphicWind + 0;

@@ -3,6 +3,7 @@
 Points on line charts are actually just very short strokes. 
 This allows you to customize even the point size in CSS */
 
+.ct-humidity-chart .ct-grid,
 .ct-pression-chart .ct-grid,
 .ct-temp-chart .ct-grid,
 .ct-sun-chart .ct-grid,
@@ -67,6 +68,7 @@ This allows you to customize even the point size in CSS */
     }
 }
 
+.ct-humidity-chart,
 .ct-precipitation-chart {
 
     .ct-bar {

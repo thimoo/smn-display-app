@@ -17,5 +17,6 @@
     "graphic_precipitation_name": "Précipitations (mm)",
     "graphic_sun_name": "Ensoleillement (%)",
     "graphic_wind_name": "Vent (km/h)",
+    "graphic_humidity_name": "Humidité (%)",
     "no_data_text": "Dernières données actualisées à"
 }

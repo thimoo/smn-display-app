@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc directive
- * @name swissMetNetDisplayApp.directive:graphicSun
+ * @name swissMetNetDisplayApp.directive:graphicHumidity
  * @description
- * # graphicSun
+ * # graphicHumidity
  */
 angular.module('swissMetNetDisplayApp')
-  .directive('graphicSun', function () {
+  .directive('graphicHumidity', function () {
     return {
-      templateUrl: 'views/graphicsun.html',
+      templateUrl: 'views/graphichumidity.html',
       replace: true,
       restrict: 'E',
 
@@ -19,7 +19,7 @@ angular.module('swissMetNetDisplayApp')
         // Create a new line chart object where as first parameter we pass in a selector
         // that is resolving to our chart container element. The Second parameter
         // is the actual data object.
-        var graphic = new Chartist.Bar('.ct-sun-chart', {}, {
+        var graphic = new Chartist.Bar('.ct-humidity-chart', {}, {
           seriesBarDistance: 0,
           high: 100,
           low: 0,
@@ -39,15 +39,15 @@ angular.module('swissMetNetDisplayApp')
         $scope.$on('update', function (event, data) {
           // If the targeted directive is not this
           // skip the update
-          if (data.target.indexOf('graphicSun') === -1) { return; }
+          if (data.target.indexOf('graphicHumidity') === -1) { return; }
 
-          var url = data.data.collections.sun;
+          var url = data.data.collections.humidity;
 
           webService.get(url, function (d) {
             graphic.update({
               labels: graphicService.toLabels(d),
               series: [
-                graphicService.toSerie(d, 10)
+                graphicService.toSerie(d)
               ]
             });
           });

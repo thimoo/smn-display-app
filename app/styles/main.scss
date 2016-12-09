@@ -489,6 +489,7 @@ $header-padding:   10px 15px;
   @extend .item;
 }
 
+.graphic-humidity,
 .graphic-wind,
 .graphic-sun,
 .graphic-pression,
@@ -525,6 +526,7 @@ $header-padding:   10px 15px;
   }
 }
 
+.graphic-humidity,
 .graphic-precipitation {
   .logo .hour-color {
     fill: $deep-blue;

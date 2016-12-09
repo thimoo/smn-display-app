@@ -29,6 +29,9 @@ angular.module('swissMetNetDisplayApp')
               var date = new Date(value);
               return date.getMinutes() === 0 ? date.getHours() + 'h' : null;
             }
+          },
+          axisY: {
+            onlyInteger: true
           }
         });
 

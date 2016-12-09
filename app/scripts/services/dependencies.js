@@ -36,6 +36,9 @@ angular.module('swissMetNetDisplayApp')
     graphicPrecipitation: [
       'collections-precipitation'
     ],
+    graphicHumidity: [
+      'collections-humidity'
+    ],
     graphicSun: [
       'collections-sun'
     ],

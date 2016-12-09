@@ -25,6 +25,7 @@ angular.module('swissMetNetDisplayApp')
       });
 
       // Refresh the slider
+      // console.log(stack);
       hide(stack);
       refresh(stack);
     });

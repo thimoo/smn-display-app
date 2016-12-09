@@ -3,5 +3,6 @@
     "station": "Station",
     "swiss_met_net": "SwissMetNet",
     "temp_name": "Temp",
-    "wind_name": "wind name"
+    "wind_name": "wind name",
+    "smn_svg_url": "images/smndisplay-en.svg"
 }

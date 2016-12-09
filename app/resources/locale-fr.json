@@ -11,12 +11,13 @@
     "humidity_name": "Humidité",
     "qnh_name": "Pression QNH",
     "sun_name": "Ensoleillement",
-    "error_message": "Les données collectées depuis la station météorologique SwissMetNet ne sont malheureusement plus accessibles.",
+    "error_message": "Les données colectées depuis la station météorologique SwissMetNet ne sont malheureusement plus accessibles.",
     "graphic_temp_name": "Températures (°C)",
     "graphic_pression_name": "Pression QNH (hPa)",
     "graphic_precipitation_name": "Précipitations (mm)",
     "graphic_sun_name": "Ensoleillement (%)",
     "graphic_wind_name": "Vent (km/h)",
     "graphic_humidity_name": "Humidité (%)",
-    "no_data_text": "Dernières données actualisées à"
+    "no_data_text": "Dernières données actualisées à",
+    "smn_svg_url": "images/smndisplay-fr.svg"
 }

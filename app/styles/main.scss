@@ -487,6 +487,15 @@ $header-padding:   10px 15px;
 
 .smn-display {
   @extend .item;
+
+  .smn-title {
+    color: $black-55;
+    font-family: $primary-font;
+
+    .smn-code {
+      text-transform: uppercase;
+    }
+  }
 }
 
 .graphic-humidity,
@@ -532,7 +541,6 @@ $header-padding:   10px 15px;
     fill: $deep-blue;
   }
 }
-
 
 // Landscape mode
 @media all and (orientation:landscape) {

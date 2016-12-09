@@ -32,6 +32,7 @@ angular.module('swissMetNetDisplayApp')
       $scope.profile = {
         name: '',
         altitude: '',
+        code: '',
         updateDate: null
       };
 
@@ -191,6 +192,7 @@ angular.module('swissMetNetDisplayApp')
       function loadProfile (profile) {
         $scope.profile = {
           name: profile.stnCode,
+          code: profile.stnCode,
           altitude: profile.altitude,
           updateDate: profile.lastUpdate
         };

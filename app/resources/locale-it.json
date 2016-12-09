@@ -4,5 +4,6 @@
     "swiss_met_net": "SwissMetNet",
     "temp_name": "temp name",
     "wind_name": "wind name",
-    "smn_svg_url": "images/smndisplay-it.svg"
+    "smn_svg_url": "images/smndisplay-it.svg",
+    "logo_url": "images/logo-it.svg"
 }

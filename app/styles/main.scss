@@ -54,14 +54,12 @@ $header-padding:   10px 15px;
 
   .hour {
     color: $red;
-    // font-size: 3.5em;
     margin: 0;
   }
 
   .day {
     color: $black-55;
     margin: 0;
-    // font-size: 2em;
 
     font-family: $light-font;
     text-transform: capitalize;
@@ -120,10 +118,8 @@ $header-padding:   10px 15px;
   text-align: right;
 
   .logo {
-    // TODO
     color: $red;
     font-family: $bold-font;
-    // font-size: 3.5em;
     margin: 0;
   }
 
@@ -131,7 +127,6 @@ $header-padding:   10px 15px;
     color: $black-55;
     font-family: $light-font;
     margin: 0;
-    // font-size: 2em;
 
     .strong {
       font-family: $bold-font;
@@ -158,7 +153,6 @@ $header-padding:   10px 15px;
 
   .center-cloudy {
     text-align: center;
-    // max-width: 40vw;
   }
 
   .cloudy {
@@ -285,7 +279,6 @@ $header-padding:   10px 15px;
   
 
   .value {
-    // font-size: 18em;
     color: $black-55;
     font-family: $primary-font;
     text-align: center;
@@ -293,8 +286,6 @@ $header-padding:   10px 15px;
     &::after {
       content: '°C';
       color: $black-25;
-      // font-size: 0.3em;
-      // line-height: 1em;
       vertical-align: text-top;
 
       letter-spacing: 0;
@@ -310,12 +301,10 @@ $header-padding:   10px 15px;
     }
 
     .value {
-      // font-size: 5em;
       color: $black-55;
       font-family: $primary-font;
 
       &::after {
-        // font-size: 0.3em;
         color: $black-40;
       }
     }
@@ -361,8 +350,6 @@ $header-padding:   10px 15px;
 
   .wind-value {
     font-family: $primary-font;
-
-    // font-size: 7em;
     color: $black-55;
   }
 
@@ -386,10 +373,7 @@ $header-padding:   10px 15px;
     }
     .wind-gusts-value {
       font-family: $primary-font;
-
-      // font-size: 3.2em;
       color: $black-55;
-      // line-height: 0.9em;
 
       padding: 0 8px 0 8px;
     }
@@ -577,11 +561,9 @@ $header-padding:   10px 15px;
     }
   }
 
-
   .swiss-met-net {
 
     .logo {
-      //TODO remove this when svg came
       font-size: 5.5vh;
       line-height: 1em;
     }
@@ -726,7 +708,6 @@ $header-padding:   10px 15px;
     align-items: flex-start; 
 
     .logo {
-      //TODO remove this when svg came
       font-size: 5.5vw;
       line-height: 1em;
     }
@@ -780,9 +761,7 @@ $header-padding:   10px 15px;
 
   /*
    Directives
-   */
-  
-
+  */
   .single-temp {
 
     .value {

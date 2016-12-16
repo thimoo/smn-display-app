@@ -28,7 +28,16 @@ angular.module('swissMetNetDisplayApp')
               // Transform the date attribute
               var date = new Date(value);
               return date.getMinutes() === 0 ? date.getHours() + 'h' : null;
-            }
+            },
+            labelOffset: {
+              x: -2,
+              y: 6
+            },
+          },
+          axisY: {
+            labelOffset: {
+              y: 4
+            },
           }
         });
 

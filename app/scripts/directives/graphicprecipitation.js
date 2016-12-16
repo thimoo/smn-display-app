@@ -21,13 +21,23 @@ angular.module('swissMetNetDisplayApp')
         // is the actual data object.
         var graphic = new Chartist.Bar('.ct-precipitation-chart', {}, {
           seriesBarDistance: 0,
+          low: 0,
           axisX: {
             showGrid: false,
             labelInterpolationFnc: function(value) {
               // Transform the date attribute
               var date = new Date(value);
               return date.getMinutes() === 0 ? date.getHours() + 'h' : null;
-            }
+            },
+            labelOffset: {
+              x: -2,
+              y: 6
+            },
+          },
+          axisY: {
+            labelOffset: {
+              y: 4
+            },
           }
         });
 

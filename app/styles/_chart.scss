@@ -85,4 +85,27 @@ This allows you to customize even the point size in CSS */
     }
 }
 
+.ct-humidity-chart,
+.ct-precipitation-chart {
+
+    .ct-grid.ct-vertical:first-child {
+        stroke: $light-blue;
+        stroke-width: 2px;
+    }
+}
+.ct-sun-chart {
+
+    .ct-grid.ct-vertical:first-child {
+        stroke: $yellow;
+        stroke-width: 2px;
+    }
+}
+
+.ct-label {
+    fill: $black-55;
+    color: $black-55;
+}
+
+
+
 

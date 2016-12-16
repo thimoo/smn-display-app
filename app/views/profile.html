@@ -73,7 +73,7 @@
     <div ng-controller="GraphicsliderCtrl" ng-init="graphs=['graphic-wind', 'graphic-precipitation', 'smn-display']" class="land-horizontal-4of8 land-vertical-3of8 port-horizontal-4of4 port-vertical-3of16 land-gutter-left port-gutter-top slider-container">
         <graphic-wind ng-show="displays.graphicWind" class="slider-animation graphic-wind"></graphic-wind>
         <graphic-precipitation ng-show="displays.graphicPrecipitation" class="slider-animation graphic-precipitation"></graphic-precipitation>
-        <smn-display class="slider-animation smn-display"></smn-display>
+        <smn-display ng-show="displays.smnDisplay" class="slider-animation smn-display"></smn-display>
     </div>
     
 </div>

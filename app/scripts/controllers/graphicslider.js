@@ -25,7 +25,6 @@ angular.module('swissMetNetDisplayApp')
       });
 
       // Refresh the slider
-      // console.log(stack);
       hide(stack);
       refresh(stack);
     });
@@ -36,7 +35,7 @@ angular.module('swissMetNetDisplayApp')
       var max = stack.length;
 
       var slide = function () {
-
+        
         if (! start) {
           // remove old class
           angular.element(document.querySelector('.' + stack[counter]))

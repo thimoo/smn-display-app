@@ -35,6 +35,7 @@ angular.module('swissMetNetDisplayApp')
               $scope.lastTimeUpdate = data.original.date;
               $scope.sun = data.original.value * 10;
             } else {
+              $scope.noData = false;
               $scope.sun = data.value * 10;
             }
           });

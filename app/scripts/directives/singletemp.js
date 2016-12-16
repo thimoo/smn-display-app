@@ -55,6 +55,7 @@ angular.module('swissMetNetDisplayApp')
             $scope.date = data.date;
             $scope.temp = data.original.value;
           } else {
+            $scope.noData = false;
             $scope.temp = data.value;
             $scope.date = data.date;
           }

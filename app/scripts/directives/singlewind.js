@@ -36,6 +36,7 @@ angular.module('swissMetNetDisplayApp')
               $scope.lastTimeUpdate = tempData.original.date;
               $scope.wind = tempData.original.value;
             } else {
+              $scope.noData = false;
               $scope.wind = tempData.value;
             }
           });
@@ -46,6 +47,7 @@ angular.module('swissMetNetDisplayApp')
               $scope.lastTimeUpdate = tempData.original.date;
               $scope.windGust = tempData.original.value;
             } else {
+              $scope.noData = false;
               $scope.windGust = tempData.value;
             }
           });
@@ -57,6 +59,7 @@ angular.module('swissMetNetDisplayApp')
               $scope.oldWindDirection = $scope.windDirection;
               $scope.windDirection = tempData.original.value;
             } else {
+              $scope.noData = false;
               $scope.oldWindDirection = $scope.windDirection;
               $scope.windDirection = tempData.value;
             }

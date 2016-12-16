@@ -45,6 +45,7 @@ angular.module('swissMetNetDisplayApp')
               $scope.lastTimeUpdate = data.original.date;
               $scope.hpa = data.original.value;
             } else {
+              $scope.noData = false;
               $scope.hpa = data.value;
             }
 

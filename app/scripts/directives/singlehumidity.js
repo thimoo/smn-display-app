@@ -35,6 +35,7 @@ angular.module('swissMetNetDisplayApp')
               $scope.lastTimeUpdate = data.original.date;
               $scope.humidity = data.original.value;
             } else {
+              $scope.noData = false;
               $scope.humidity = data.value;
             }
           });

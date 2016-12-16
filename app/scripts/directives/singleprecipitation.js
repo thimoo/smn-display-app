@@ -35,6 +35,7 @@ angular.module('swissMetNetDisplayApp')
               $scope.lastTimeUpdate = data.original.date;
               $scope.precipitation = data.original.value;
             } else {
+              $scope.noData = false;
               $scope.precipitation = data.value;
             }
           });

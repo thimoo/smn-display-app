@@ -10,56 +10,57 @@
 angular.module('swissMetNetDisplayApp')
   .controller('GraphicsliderCtrl', function ($scope, $interval, $element, dependencyService) {
     
-    var interval;
-    var stack = [];
+    $scope.interval;
+    $scope.stack = [];
 
     // Liste slider update event
     $scope.$on('update-slider', function() {
+      // Reset the stack
+      $scope.stack = [];
 
       // foreach children element in the controller
       // that have not ng-hide class, swap the enabled
       // class
       angular.forEach($scope.graphs, function (element) {
         var elem = dependencyService.cssToDirectiveName(element);
-        if ($scope.displays[elem] === true) { stack.push(element); }
+        if ($scope.displays[elem] === true) { $scope.stack.push(element); }
       });
 
       // Refresh the slider
-      hide(stack);
-      refresh(stack);
+      hide();
+      refresh();
     });
 
-    function refresh (stack) {
-      var counter = 0;
-      var start = true;
-      var max = stack.length;
+    function refresh () {
+      $scope.counter = 0;
+      $scope.start = true;
 
       var slide = function () {
         
-        if (! start) {
+        if (! $scope.start) {
           // remove old class
-          angular.element(document.querySelector('.' + stack[counter]))
+          angular.element(document.querySelector('.' + $scope.stack[$scope.counter]))
             .removeClass('enabled');
 
-          counter++;
-          counter %= max;  
+          $scope.counter++;
+          $scope.counter %= $scope.stack.length;  
         }
         
-        start = false;
+        $scope.start = false;
 
         // add class on new element
-        angular.element(document.querySelector('.' + stack[counter]))
+        angular.element(document.querySelector('.' + $scope.stack[$scope.counter]))
           .addClass('enabled');
 
       };
 
       // Register interval to kill when location change
-      interval = $interval(slide, 10000);
+      $scope.interval = $interval(slide, 10000);
       slide();
     }
 
-    function hide (stack) {
-      angular.forEach(stack, function (element) {
+    function hide () {
+      angular.forEach($scope.stack, function (element) {
         angular.element(document.querySelector('.' + element)).removeClass('enabled');
       });
     }
@@ -67,7 +68,9 @@ angular.module('swissMetNetDisplayApp')
     // Clear the interval whent the location change
     // else two or more slider will be active
     $scope.$on('$locationChangeStart', function() {
-      if (typeof interval !== 'undefined') { $interval.cancel(interval); }
+      hide();
+      refresh();
+      if (typeof $scope.interval !== 'undefined') { $interval.cancel($scope.interval); }
     });
 
   });

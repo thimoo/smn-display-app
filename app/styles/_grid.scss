@@ -117,10 +117,6 @@
     @extend .land-vertical-2of8;
     @extend .land-gutter-top;
     @extend .land-gutter-left;}
-
-  // .second-content > div:nth-child(even) {
-  //   @extend .land-gutter-left;
-  // }
 }
 
 
@@ -219,7 +215,6 @@
 .vertical-full-container-midle {
   display: flex;
   align-items: stretch;
-  // justify-content: center;
 }
 
 .all-1of3 {

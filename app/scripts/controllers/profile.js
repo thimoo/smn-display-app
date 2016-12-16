@@ -190,7 +190,6 @@ angular.module('swissMetNetDisplayApp')
       // Load all scope informations used to display
       // the profile
       function loadProfile (profile) {
-        console.log(profile);
         $scope.profile = {
           name: profile.infos.name || profile.stnCode,
           code: profile.stnCode,

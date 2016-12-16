@@ -62,7 +62,10 @@ $header-padding:   10px 15px;
     margin: 0;
 
     font-family: $light-font;
-    text-transform: capitalize;
+  }
+
+  .day:first-letter {
+    text-transform: uppercase;
   }
 }
 

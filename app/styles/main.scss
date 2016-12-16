@@ -105,7 +105,10 @@ $header-padding:   10px 15px;
       align-items: baseline;
 
       color: $black-55;
-
+  
+      svg {
+        margin-right: 5px;
+      }
     }
   }
 }

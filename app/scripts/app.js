@@ -19,7 +19,10 @@ angular
     'pascalprecht.translate',
     'tmh.dynamicLocale'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $locationProvider) {
+    // use the HTML5 History API
+    $locationProvider.html5Mode(true);
+
     $routeProvider
       .when('/', {
         templateUrl: 'views/list.html',

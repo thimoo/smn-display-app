@@ -12,14 +12,12 @@ angular.module('swissMetNetDisplayApp')
       templateUrl: 'views/graphicwind.html',
       replace: true,
       restrict: 'E',
+      scope: {},
 
       controller: function ($q, $scope, $http, webService, graphicService) {
         /* globals Chartist: false */
 
-        // Create a new line chart object where as first parameter we pass in a selector
-        // that is resolving to our chart container element. The Second parameter
-        // is the actual data object.
-        var graphic = new Chartist.Line('.ct-wind-chart', {}, {
+        $scope.config = {
           showPoint: false,
           showArea: true,
           axisX: {
@@ -39,7 +37,7 @@ angular.module('swissMetNetDisplayApp')
               y: 4
             },
           }
-        });
+        };
 
         $scope.$on('update', function (event, data) {
           // If the targeted directive is not this
@@ -57,13 +55,13 @@ angular.module('swissMetNetDisplayApp')
             var wind = results[0];
             var windGusts = results[1];
 
-            graphic.update({
+            $scope.chart = Chartist.Line('.ct-wind-chart', {
               labels: graphicService.toLabels(wind.data.data),
               series: [
                 graphicService.toSerie(wind.data.data),
                 graphicService.toSerie(windGusts.data.data),
               ]
-            });
+            }, $scope.config);
 
           });
 

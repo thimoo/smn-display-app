@@ -63,14 +63,14 @@
 </div>
 <div class="land-horizontal-8of8 land-vertical-3of8 gutter-left port-horizontal-4of4 port-vertical-6of16 gutter-top second-content">
 
-    <div ng-controller="GraphicsliderCtrl" ng-init="graphs=['graphic-temp', 'graphic-sun', 'graphic-qnh', 'graphic-humidity']" class="land-horizontal-4of8 land-vertical-3of8 port-horizontal-4of4 port-vertical-3of16 slider-container">
+    <div ng-init="graphs=['graphic-temp', 'graphic-sun', 'graphic-qnh', 'graphic-humidity']" class="land-horizontal-4of8 land-vertical-3of8 port-horizontal-4of4 port-vertical-3of16 slider-container">
         <graphic-temp ng-show="displays.graphicTemp" class="slider-animation graphic-temp"></graphic-temp>
         <graphic-sun ng-show="displays.graphicSun" class="slider-animation graphic-sun"></graphic-sun>
-        <graphic-pression ng-show="displays.graphicQnh" class="slider-animation graphic-qnh graphic-pression"></graphic-pression>
+        <graphic-pression ng-show="displays.graphicQnh" class="slider-animation graphic-qnh graphic-pression"></graphic-pression> 
         <graphic-humidity ng-show="displays.graphicHumidity" class="slider-animation graphic-humidity"></graphic-humidity>
     </div>
  <!--  ng-controller="GraphicsliderCtrl" -->
-    <div ng-controller="GraphicsliderCtrl" ng-init="graphs=['graphic-wind', 'graphic-precipitation', 'smn-display']" class="land-horizontal-4of8 land-vertical-3of8 port-horizontal-4of4 port-vertical-3of16 land-gutter-left port-gutter-top slider-container">
+    <div ng-init="graphs=['graphic-wind', 'graphic-precipitation', 'smn-display']" class="land-horizontal-4of8 land-vertical-3of8 port-horizontal-4of4 port-vertical-3of16 land-gutter-left port-gutter-top slider-container">
         <graphic-wind ng-show="displays.graphicWind" class="slider-animation graphic-wind"></graphic-wind>
         <graphic-precipitation ng-show="displays.graphicPrecipitation" class="slider-animation graphic-precipitation"></graphic-precipitation>
         <smn-display ng-show="displays.smnDisplay" class="slider-animation smn-display"></smn-display>

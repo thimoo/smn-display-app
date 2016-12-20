@@ -12,14 +12,12 @@ angular.module('swissMetNetDisplayApp')
       templateUrl: 'views/graphictemp.html',
       replace: true,
       restrict: 'E',
+      scope: {},
 
       controller: function ($scope, webService, graphicService) {
         /* globals Chartist: false */
 
-        // Create a new line chart object where as first parameter we pass in a selector
-        // that is resolving to our chart container element. The Second parameter
-        // is the actual data object.
-        var graphic = new Chartist.Line('.ct-temp-chart', {}, {
+        $scope.config = {
           showPoint: false,
           showArea: true,
           axisX: {
@@ -39,7 +37,7 @@ angular.module('swissMetNetDisplayApp')
               y: 4
             },
           }
-        });
+        };
 
         $scope.$on('update', function (event, edata) {
           // If the targeted directive is not this
@@ -49,13 +47,12 @@ angular.module('swissMetNetDisplayApp')
           var url = edata.data.collections.temp;
 
           webService.get(url, function (d) {
-            var gdata = {
+            $scope.chart = Chartist.Line('.ct-temp-chart', {
               labels: graphicService.toLabels(d),
               series: [
                 graphicService.toSerie(d)
               ]
-            };
-            graphic.update(gdata);
+            }, $scope.config);
           });
 
         });

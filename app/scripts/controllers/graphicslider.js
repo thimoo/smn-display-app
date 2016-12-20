@@ -9,12 +9,15 @@
  */
 angular.module('swissMetNetDisplayApp')
   .controller('GraphicsliderCtrl', function ($scope, $interval, $element, dependencyService) {
+
+    console.log('create slider controller')
     
     $scope.interval;
     $scope.stack = [];
 
-    // Liste slider update event
-    $scope.$on('update-slider', function() {
+    var update = function() {
+      console.log('update slider');
+
       // Reset the stack
       $scope.stack = [];
 
@@ -29,13 +32,17 @@ angular.module('swissMetNetDisplayApp')
       // Refresh the slider
       hide();
       refresh();
-    });
+    };
+
+    // Liste slider update event
+    $scope.$on('update-slider', update);
 
     function refresh () {
       $scope.counter = 0;
       $scope.start = true;
 
       var slide = function () {
+        console.log('tick slider');
         
         if (! $scope.start) {
           // remove old class
@@ -55,7 +62,7 @@ angular.module('swissMetNetDisplayApp')
       };
 
       // Register interval to kill when location change
-      $scope.interval = $interval(slide, 10000);
+      $scope.interval = $interval(slide, 1500);
       slide();
     }
 
@@ -68,9 +75,13 @@ angular.module('swissMetNetDisplayApp')
     // Clear the interval whent the location change
     // else two or more slider will be active
     $scope.$on('$locationChangeStart', function() {
-      hide();
-      refresh();
       if (typeof $scope.interval !== 'undefined') { $interval.cancel($scope.interval); }
+    });
+
+    // Restart the slider
+    $scope.$on('$locationChangeSuccess', function() {
+      // update();
+      console.log('cancel slider');
     });
 
   });

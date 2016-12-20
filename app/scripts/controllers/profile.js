@@ -27,7 +27,21 @@ angular.module('swissMetNetDisplayApp')
 
       var checkInterval;
 
-      $scope.displays = {};
+      $scope.displays = {
+        graphicHumidity: true,
+        graphicPrecipitation: true,
+        graphicQnh: true,
+        graphicSun: true,
+        graphicTemp: true,
+        graphicWind: true,
+        singleHumidity: true,
+        singlePrecipitation: true,
+        singleQnh: true,
+        singleSun: true,
+        singleTemp: true,
+        singleWind: true,
+        smnDisplay: true,
+      };
 
       $scope.profile = {
         name: '–',

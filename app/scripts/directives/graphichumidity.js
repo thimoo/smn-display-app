@@ -15,15 +15,6 @@ angular.module('swissMetNetDisplayApp')
       restrict: 'E',
       scope: {},
 
-      // link: function (scope, element, attrs) {
-
-      //   element.on('$destroy', function() {
-      //     console.log('destroy directive')
-      //     // scope.graphic.detach();
-      //   });
-
-      // },
-
       controller: function ($scope, webService, graphicService) {
         /* globals Chartist: false */
 

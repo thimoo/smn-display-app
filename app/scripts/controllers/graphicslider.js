@@ -9,14 +9,12 @@
  */
 angular.module('swissMetNetDisplayApp')
   .controller('GraphicsliderCtrl', function ($scope, $interval, $element, dependencyService) {
-
-    console.log('create slider controller')
     
     $scope.interval;
     $scope.stack = [];
 
     var update = function() {
-      console.log('update slider');
+      if (typeof $scope.interval !== 'undefined') { $interval.cancel($scope.interval); }
 
       // Reset the stack
       $scope.stack = [];
@@ -42,8 +40,6 @@ angular.module('swissMetNetDisplayApp')
       $scope.start = true;
 
       var slide = function () {
-        console.log('tick slider');
-        
         if (! $scope.start) {
           // remove old class
           angular.element(document.querySelector('.' + $scope.stack[$scope.counter]))
@@ -62,7 +58,7 @@ angular.module('swissMetNetDisplayApp')
       };
 
       // Register interval to kill when location change
-      $scope.interval = $interval(slide, 1500);
+      $scope.interval = $interval(slide, 10000);
       slide();
     }
 
@@ -72,16 +68,9 @@ angular.module('swissMetNetDisplayApp')
       });
     }
 
-    // Clear the interval whent the location change
-    // else two or more slider will be active
+    // Clear interval whent the location change
     $scope.$on('$locationChangeStart', function() {
       if (typeof $scope.interval !== 'undefined') { $interval.cancel($scope.interval); }
-    });
-
-    // Restart the slider
-    $scope.$on('$locationChangeSuccess', function() {
-      // update();
-      console.log('cancel slider');
     });
 
   });

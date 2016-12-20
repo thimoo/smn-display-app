@@ -26,7 +26,7 @@
     </div>
     <div class="land-horizontal-2of8 land-vertical-1of8 gutter-left port-horizontal-1of4 port-vertical-2of16 swiss-met-net">
         <div>
-            <h2 class="logo">
+            <h2 class="logo" ng-class="{'it': lang === 'it'}">
                 <img ng-src="{{ 'logo_url' | translate }}" alt="{{ 'swiss_meteo' | translate }}">
             </h2>
             <h3 class="station">{{ 'station' | translate }} <span class="strong">{{ 'swiss_met_net' | translate }}</span></h3>

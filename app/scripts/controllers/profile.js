@@ -28,6 +28,7 @@ angular.module('swissMetNetDisplayApp')
       var checkInterval;
 
       $scope.displays = {};
+      $scope.lang = null;
 
       $scope.profile = {
         name: '–',
@@ -40,6 +41,7 @@ angular.module('swissMetNetDisplayApp')
 
       // Setup the language
       if ($routeParams.language) {
+        $scope.lang = $routeParams.language;
         $translate.use($routeParams.language);
         tmhDynamicLocale.set($routeParams.language);
       }

@@ -717,6 +717,13 @@ $header-padding:   10px 15px;
     .logo {
       font-size: 5.5vw;
       line-height: 1em;
+
+      width: 120%;
+      float: right;
+
+      &.it {
+        width: 128%;
+      }
     }
 
     .station {

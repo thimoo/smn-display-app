@@ -212,6 +212,10 @@ $header-padding:   10px 15px;
   .home-logo {
     display: flex;
     justify-content: center;
+
+    img {
+      width: 20%;
+    }
   }
 }
 

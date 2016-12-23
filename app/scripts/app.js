@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'pascalprecht.translate',
-    'tmh.dynamicLocale'
+    'tmh.dynamicLocale',
+    'ngSVGAttributes',
   ])
   .config(function ($routeProvider, $locationProvider) {
     // use the HTML5 History API

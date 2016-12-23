@@ -206,11 +206,12 @@ $header-padding:   10px 15px;
   justify-content: center;
 
   .center-content {
-    text-align: center;
+    width: 100%;
   }
 
-  .home-logo img {
-    width: 130%;
+  .home-logo {
+    display: flex;
+    justify-content: center;
   }
 }
 

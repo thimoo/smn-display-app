@@ -40,7 +40,6 @@ angular.module('swissMetNetDisplayApp')
       $scope.position = {};
 
       // Setup the language
-      console.log($routeParams.language);
       if ($routeParams.language) {
         $scope.lang = $routeParams.language;
         $translate.use($routeParams.language);

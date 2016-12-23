@@ -40,10 +40,13 @@ angular.module('swissMetNetDisplayApp')
       $scope.position = {};
 
       // Setup the language
+      console.log($routeParams.language);
       if ($routeParams.language) {
         $scope.lang = $routeParams.language;
         $translate.use($routeParams.language);
         tmhDynamicLocale.set($routeParams.language);
+      } else {
+        tmhDynamicLocale.set('de');
       }
 
       // Setup updateLink

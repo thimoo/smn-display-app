@@ -24,7 +24,7 @@ angular
     $locationProvider.html5Mode(true);
 
     $routeProvider
-      .when('/', {
+      .when('/home/:language?', {
         templateUrl: 'views/list.html',
         controller: 'ListCtrl',
         controllerAs: 'list'
@@ -40,11 +40,8 @@ angular
         controllerAs: 'profile'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/home'
       });
-  })
-  .config(function(tmhDynamicLocaleProvider) {
-    tmhDynamicLocaleProvider.localeLocationPattern('/bower_components/angular-i18n/angular-locale_{{locale}}.js');
   })
   .config(function ($translateProvider) {
     $translateProvider.useSanitizeValueStrategy('escape');
@@ -52,7 +49,11 @@ angular
         prefix: 'resources/locale-',
         suffix: '.json'
     });
+
     $translateProvider
-      .preferredLanguage('en')
-      .fallbackLanguage('en');
+      .preferredLanguage('de')
+      .fallbackLanguage('de');
+  })
+  .config(function(tmhDynamicLocaleProvider) {
+    tmhDynamicLocaleProvider.localeLocationPattern('/bower_components/angular-i18n/angular-locale_{{locale}}.js');
   });

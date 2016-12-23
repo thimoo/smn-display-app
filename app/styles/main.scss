@@ -191,6 +191,30 @@ $header-padding:   10px 15px;
 
 
 /*
+  Home
+ */
+
+.home-container {
+  width: 100vw;
+  height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .center-content {
+    text-align: center;
+  }
+
+  .home-logo img {
+    width: 130%;
+  }
+}
+
+/*
  Directives
  */
 

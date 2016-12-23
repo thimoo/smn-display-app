@@ -9,6 +9,6 @@
  */
 angular.module('swissMetNetDisplayApp')
   .constant('urls', {
-    base: 'http://dev.api.swissmetnet-display.ch/v1/',
+    base: 'http://api.swissmetnet-display.ch/v1/',
     profiles: 'profiles/'
   });

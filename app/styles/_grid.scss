@@ -233,6 +233,17 @@
   width: 100%;
 }
 
+.all-1of5 {
+  float: left;
+  display: inline-block;
+  width: (100% / 5);
+}
+.all-2of5 {
+  float: left;
+  display: inline-block;
+  width: ((100% / 5) * 2);
+}
+
 .all-height-1of12 { height: (100% / 12 * 1) }
 .all-height-2of12 { height: (100% / 12 * 2) }
 .all-height-3of12 { height: (100% / 12 * 3) }

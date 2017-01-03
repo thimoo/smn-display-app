@@ -293,17 +293,21 @@ $header-padding:   10px 15px;
  Single directive
  */
 
+.large-value {
+  font-size: 0.8em;
+}
+
 .single-temp {
   @extend .item;
   @extend .single-item;
 
   #termometer {
-    width: 30%;
+    width: 50%;
     margin-top: 7px;
   }
 
   .h24 {
-    width: 25%;
+    width: 20%;
     vertical-align: middle;
     margin-right: 5px;
 

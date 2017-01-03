@@ -1,7 +1,10 @@
 {
+    "smn_svg_url": "images/smndisplay-fr.svg",
+    "logo_url": "images/logo-fr.svg",
     "swiss_meteo": "MétéoSuisse",
-    "station": "Station",
     "swiss_met_net": "SwissMetNet",
+
+    "station": "Station",
     "temp_name": "Température",
     "wind_name": "Vent",
     "wind_ave_name": "Moyen (km/h)",
@@ -11,14 +14,12 @@
     "humidity_name": "Humidité",
     "qnh_name": "Pression QNH",
     "sun_name": "Ensoleillement",
-    "error_message": "Les données colectées depuis la station météorologique SwissMetNet ne sont malheureusement plus accessibles.",
+    "error_message": "Les données collectées depuis la station météorologique SwissMetNet ne sont malheureusement plus accessibles.",
     "graphic_temp_name": "Températures (°C)",
     "graphic_pression_name": "Pression QNH (hPa)",
     "graphic_precipitation_name": "Précipitations (mm)",
     "graphic_sun_name": "Ensoleillement (%)",
     "graphic_wind_name": "Vent (km/h)",
     "graphic_humidity_name": "Humidité (%)",
-    "no_data_text": "Dernières données actualisées à",
-    "smn_svg_url": "images/smndisplay-fr.svg",
-    "logo_url": "images/logo-fr.svg"
+    "no_data_text": "Dernières données actualisées à"
 }

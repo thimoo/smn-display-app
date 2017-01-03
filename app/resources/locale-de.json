@@ -1,9 +1,11 @@
 {
-    "swiss_meteo": "MeteoSchwiez",
-    "station": "Station",
-    "swiss_met_net": "SwissMetNet",
-    "temp_name": "temp name",
-    "wind_name": "wind name",
     "smn_svg_url": "images/smndisplay-de.svg",
-    "logo_url": "images/logo-de.svg"
+    "logo_url": "images/logo-de.svg",
+    "swiss_meteo": "MeteoSchwiez",
+    "swiss_met_net": "SwissMetNet",
+
+
+    "station": "Station",
+    "temp_name": "temp name",
+    "wind_name": "wind name"
 }

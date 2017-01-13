@@ -3,7 +3,8 @@
     "logo_url": "images/logo-it.svg",
     "swiss_meteo": "MeteoSvizzera",
     "swiss_met_net": "SwissMetNet",
-
+    "min": "min",
+    "max": "mas",
     "station": "Stazione",
     "temp_name": "Temperatura",
     "wind_name": "Vento",

@@ -3,7 +3,8 @@
     "logo_url": "images/logo-de.svg",
     "swiss_meteo": "MeteoSchwiez",
     "swiss_met_net": "SwissMetNet",
-
+    "min": "Min",
+    "max": "Max",
     "station": "Station",
     "temp_name": "Temperatur",
     "wind_name": "Wind",

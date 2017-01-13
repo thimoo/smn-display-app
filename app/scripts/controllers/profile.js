@@ -210,14 +210,16 @@ angular.module('swissMetNetDisplayApp')
 
       function redirectError () {
         // Wait 10 minutes befor redirect
-        redirectErrorTimout = $timeout(function() {
-          // Clear the refresh profile interval
-          $interval.cancel(checkInterval);
+        if (redirectErrorTimout === null) {
+          redirectErrorTimout = $timeout(function() {
+            // Clear the refresh profile interval
+            $interval.cancel(checkInterval);
 
-          // Redirect to the error page with the current
-          // profile and language informations
-          $location.path('/error' + $location.$$url);
-        }, 1000*60*10 );
+            // Redirect to the error page with the current
+            // profile and language informations
+            $location.path('/error' + $location.$$url);
+          }, 1000*60*10 );
+        }
         
       }
 

@@ -31,7 +31,7 @@ angular.module('swissMetNetDisplayApp')
       });
 
       if (bar) {
-        max = Math.max(...serie);
+        max = Math.max.apply(null, serie);
         max = (max === 0) ? up : max;
 
         angular.forEach(serie, function (value) {

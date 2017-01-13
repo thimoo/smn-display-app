@@ -49,7 +49,7 @@ angular.module('swissMetNetDisplayApp')
           webService.get(url, function (d) {
             var serie = graphicService.toSerie(d, 1, true, 1);
 
-            if (Math.max(...serie) === 0.01) {
+            if (Math.max.apply(null,serie) === 0.01) {
               $scope.config.high = 1;
             }
             $scope.chart = Chartist.Bar('.ct-precipitation-chart', {

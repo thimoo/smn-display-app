@@ -15,6 +15,7 @@ angular.module('swissMetNetDisplayApp')
     $locale, 
     $location,
     $interval, 
+    $timeout,
     tmhDynamicLocale, 
     webService, 
     dependencies, 
@@ -26,6 +27,7 @@ angular.module('swissMetNetDisplayApp')
       var updateLink = null;
 
       var checkInterval;
+      var redirectErrorTimout = null;
 
       $scope.displays = {};
       $scope.lang = null;
@@ -74,6 +76,10 @@ angular.module('swissMetNetDisplayApp')
         // Retreive the profile and bootstrap the UI update
         webService.getProfile(updateLink, 
           function (response) {
+            if (redirectErrorTimout !== null) {
+              $timeout.cancel(redirectErrorTimout);
+            }
+
             lastResponse = response.data.data;
             updateLink = lastResponse.$href;
 
@@ -203,12 +209,16 @@ angular.module('swissMetNetDisplayApp')
       }
 
       function redirectError () {
-        // Clear the refresh profile interval
-        $interval.cancel(checkInterval);
+        // Wait 10 minutes befor redirect
+        redirectErrorTimout = $timeout(function() {
+          // Clear the refresh profile interval
+          $interval.cancel(checkInterval);
 
-        // Redirect to the error page with the current
-        // profile and language informations
-        $location.path('/error' + $location.$$url);
+          // Redirect to the error page with the current
+          // profile and language informations
+          $location.path('/error' + $location.$$url);
+        }, 1000*60*10 );
+        
       }
 
       // Setup the interval

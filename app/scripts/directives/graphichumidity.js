@@ -53,7 +53,7 @@ angular.module('swissMetNetDisplayApp')
             $scope.chart = Chartist.Bar('.ct-humidity-chart', {
               labels: graphicService.toLabels(d),
               series: [
-                graphicService.toSerie(d)
+                graphicService.toSerie(d, 1, true)
               ]
             }, $scope.config);
           });

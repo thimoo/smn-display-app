@@ -52,7 +52,7 @@ angular.module('swissMetNetDisplayApp')
             $scope.chart = Chartist.Bar('.ct-sun-chart', {
               labels: graphicService.toLabels(d),
               series: [
-                graphicService.toSerie(d, 10)
+                graphicService.toSerie(d, 10, true)
               ]
             }, $scope.config);
           });

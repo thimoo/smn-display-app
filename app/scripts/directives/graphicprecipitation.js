@@ -47,10 +47,15 @@ angular.module('swissMetNetDisplayApp')
           var url = data.data.collections.precipitation;
 
           webService.get(url, function (d) {
+            var serie = graphicService.toSerie(d, 1, true, 1);
+
+            if (Math.max(...serie) === 0.01) {
+              $scope.config.high = 1;
+            }
             $scope.chart = Chartist.Bar('.ct-precipitation-chart', {
               labels: graphicService.toLabels(d),
               series: [
-                graphicService.toSerie(d)
+                serie
               ]
             }, $scope.config);
           });

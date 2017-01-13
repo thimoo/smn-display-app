@@ -50,7 +50,7 @@ angular.module('swissMetNetDisplayApp')
             $scope.chart = Chartist.Line('.ct-temp-chart', {
               labels: graphicService.toLabels(d),
               series: [
-                graphicService.toSerie(d)
+                graphicService.toSerie(d),
               ]
             }, $scope.config);
           });

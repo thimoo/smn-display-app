@@ -4,8 +4,22 @@
     "swiss_meteo": "MeteoSchwiez",
     "swiss_met_net": "SwissMetNet",
 
-
     "station": "Station",
-    "temp_name": "temp name",
-    "wind_name": "wind name"
+    "temp_name": "Temperatur",
+    "wind_name": "Wind",
+    "wind_ave_name": "Mittelwert (km/h)",
+    "wind_gusts_name": "Böenspitze",
+    "wind_gusts_unit": "km/h",
+    "precipitation_name": "Niederschlag",
+    "humidity_name": "Luftfeuchtigkeit",
+    "qnh_name": "Luftdruck QNH",
+    "sun_name": "Sonnenschein",
+    "error_message": "Die Messwerte von der SwissMetNet Station sind leider nicht mehr zugänglich.",
+    "graphic_temp_name": "Temperatur (°C)",
+    "graphic_pression_name": "Lufftdruck QNH (hPa)",
+    "graphic_precipitation_name": "Niederschlag (mm)",
+    "graphic_sun_name": "Sonnenschein (%)",
+    "graphic_wind_name": "Wind (km/h)",
+    "graphic_humidity_name": "Luftfeuchtigkeit (%)",
+    "no_data_text": "Zuletzt aktualisierte Daten:"
 }

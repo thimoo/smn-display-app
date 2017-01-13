@@ -6,6 +6,21 @@
 
 
     "station": "Station",
-    "temp_name": "Temp",
-    "wind_name": "wind name",
+    "temp_name": "Temperature",
+    "wind_name": "Wind",
+    "wind_ave_name": "Average (km/h)",
+    "wind_gusts_name": "Gust",
+    "wind_gusts_unit": "km/h",
+    "precipitation_name": "Precipitation",
+    "humidity_name": "Humidity",
+    "qnh_name": "Pressure QNH",
+    "sun_name": "Sunshine",
+    "error_message": "The measurement records collected from the SwissMetNet meteorological station are unfortunately no longer accessible.",
+    "graphic_temp_name": "Temperature (°C)",
+    "graphic_pression_name": "Pressure QNH (hPa)",
+    "graphic_precipitation_name": "Precipitation (mm)",
+    "graphic_sun_name": "Sunshine (%)",
+    "graphic_wind_name": "Wind (km/h)",
+    "graphic_humidity_name": "Humidity (%)",
+    "no_data_text": "Latest data update at"
 }

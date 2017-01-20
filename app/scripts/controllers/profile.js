@@ -46,7 +46,7 @@ angular.module('swissMetNetDisplayApp')
       $scope.position = {};
 
       $scope.progressbar = ngProgressFactory.createInstance();
-      $scope.progressbar.setHeight('6px');
+      $scope.progressbar.setHeight('5px');
       $scope.progressbar.setColor('#dc0018');
       $scope.progressbar.set(0);
 
@@ -244,8 +244,7 @@ angular.module('swissMetNetDisplayApp')
       }
 
       function progress () {
-        var num = 100/1400 * state;
-        console.log(state, num);
+        var num = 100/1300 * state;
         $scope.progressbar.set(num);
         state++;
       }

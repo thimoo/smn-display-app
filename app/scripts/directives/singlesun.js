@@ -38,6 +38,17 @@ angular.module('swissMetNetDisplayApp')
               $scope.noData = false;
               $scope.sun = data.value * 10;
             }
+
+            function rotTween() {
+              var i = d3.interpolate(0, 360);
+              return function(t) {
+                  return 'rotate(' + i(t) + ' 46.445 46.445)';
+              };
+            }
+
+            var svg = d3.select('#sunshine');
+            svg.transition().duration(1000).attrTween('transform', rotTween);
+
           });
 
         });

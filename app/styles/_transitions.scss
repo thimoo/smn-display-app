@@ -28,13 +28,13 @@
 }
 
 .slider-animation.enabled-add {
-  -webkit-animation:0.5s enable-on;
-  animation:0.5s enable-on;
+  -webkit-animation:1s enable-on;
+  animation:1s enable-on;
 }
 
 .slider-animation.enabled-remove {
-  -webkit-animation:0.5s enable-off;
-  animation:0.5s enable-off;
+  -webkit-animation:1s enable-off;
+  animation:1s enable-off;
 }
 
 @keyframes enable-on {

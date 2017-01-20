@@ -41,6 +41,13 @@ html, body {
   box-shadow: 0 0 0 0;
 }
 
+#ng-progress-background {
+  position: absolute;
+  height: 6px;
+  width: 100%;
+  background-color: $black-10;
+}
+
 
 /*
   Header

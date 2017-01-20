@@ -46,8 +46,8 @@ angular.module('swissMetNetDisplayApp')
       $scope.position = {};
 
       $scope.progressbar = ngProgressFactory.createInstance();
-      $scope.progressbar.setHeight('4px');
-      $scope.progressbar.setColor('rgb(220, 0, 24)');
+      $scope.progressbar.setHeight('6px');
+      $scope.progressbar.setColor('#dc0018');
       $scope.progressbar.set(0);
 
       // Setup the language

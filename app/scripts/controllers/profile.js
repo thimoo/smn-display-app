@@ -89,6 +89,8 @@ angular.module('swissMetNetDisplayApp')
               redirectError();
             });
         }
+
+        // $interval(function() {refreshProfile();}, 7000);
       }
 
       function refreshProfile () {
@@ -254,7 +256,7 @@ angular.module('swissMetNetDisplayApp')
       }
 
       function progress () {
-        var num = 100/1300 * state;
+        var num = 100/1250 * state;
         $scope.progressbar.set(num);
         state++;
       }

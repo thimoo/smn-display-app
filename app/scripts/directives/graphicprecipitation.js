@@ -57,7 +57,19 @@ angular.module('swissMetNetDisplayApp')
               series: [
                 serie
               ]
-            }, $scope.config);
+            }, $scope.config).on("draw", function(data) {
+              if (data.type === 'bar') {
+                data.element.animate({
+                  y2: {
+                    begin: 1000,
+                    dur: 500,
+                    from: data.y1,
+                    to: data.y2,
+                    easing: Chartist.Svg.Easing.easeOutSine,
+                  }
+                });
+              }
+            });
           });
 
         });

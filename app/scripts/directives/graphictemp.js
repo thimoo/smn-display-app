@@ -52,7 +52,18 @@ angular.module('swissMetNetDisplayApp')
               series: [
                 graphicService.toSerie(d),
               ]
-            }, $scope.config);
+            }, $scope.config).on("draw", function(data) {
+              if (data.type === 'line' || data.type === 'area') {
+                data.element.animate({
+                  opacity: {
+                    begin: 1000,
+                    dur: 500,
+                    from: 0,
+                    to: 1,
+                  }
+                });
+              }
+            });
           });
 
         });

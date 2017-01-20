@@ -42,6 +42,16 @@ angular.module('swissMetNetDisplayApp')
 
         });
 
+        $scope.$watch('precipitation', function(newValue, oldValue) {
+          if (newValue !== '–') {
+            var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+            angular.element(document.querySelector('.precipitation-rotating'))
+              .addClass('animated flipInX ' + animationEnd).one(animationEnd, function() {
+                angular.element(this).removeClass('animated flipInX');
+            });
+          }
+        });
+
       }
     };
   });

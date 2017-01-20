@@ -61,6 +61,16 @@ angular.module('swissMetNetDisplayApp')
           }
         }
 
+        $scope.$watch('temp', function(newValue, oldValue) {
+          if (newValue !== '–') {
+            var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+            angular.element(document.querySelector('.temp-rotating'))
+              .addClass('animated flipInX ' + animationEnd).one(animationEnd, function() {
+                angular.element(this).removeClass('animated flipInX');
+            });
+          }
+        });
+
       }
     };
   });

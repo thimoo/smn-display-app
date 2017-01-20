@@ -58,7 +58,7 @@ angular.module('swissMetNetDisplayApp')
       };
 
       // Register interval to kill when location change
-      $scope.interval = $interval(slide, 10000);
+      $scope.interval = $interval(slide, 12000);
       slide();
     }
 

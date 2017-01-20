@@ -47,10 +47,20 @@ angular.module('swissMetNetDisplayApp')
             }
 
             var svg = d3.select('#sunshine');
-            svg.transition().duration(1000).attrTween('transform', rotTween);
+            svg.transition().duration(1300).attrTween('transform', rotTween);
 
           });
 
+        });
+
+        $scope.$watch('sun', function(newValue, oldValue) {
+          if (newValue !== '–') {
+            var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+            angular.element(document.querySelector('.sun-rotating'))
+              .addClass('animated flipInX ' + animationEnd).one(animationEnd, function() {
+                angular.element(this).removeClass('animated flipInX');
+            });
+          }
         });
 
       }

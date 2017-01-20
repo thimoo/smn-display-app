@@ -19,6 +19,7 @@ angular
     'pascalprecht.translate',
     'tmh.dynamicLocale',
     'ngSVGAttributes',
+    'ngProgress',
   ])
   .config(function ($routeProvider, $locationProvider) {
     // use the HTML5 History API

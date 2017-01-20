@@ -35,6 +35,7 @@ module.exports = function(config) {
       'bower_components/d3/d3.js',
       'bower_components/chartist/dist/chartist.js',
       'bower_components/angular-svg-base/src/svgDirs.js',
+      'bower_components/ngprogress/build/ngprogress.min.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

@@ -20,7 +20,8 @@ angular.module('swissMetNetDisplayApp')
     webService, 
     dependencies, 
     dependencyService, 
-    urlService) {
+    urlService,
+    ngProgressFactory) {
 
       var lastResponse = null;
 
@@ -28,6 +29,9 @@ angular.module('swissMetNetDisplayApp')
 
       var checkInterval;
       var redirectErrorTimout = null;
+
+      var state = 1;
+      var stateInterval = null;
 
       $scope.displays = {};
       $scope.lang = null;
@@ -40,6 +44,11 @@ angular.module('swissMetNetDisplayApp')
       };
 
       $scope.position = {};
+
+      $scope.progressbar = ngProgressFactory.createInstance();
+      $scope.progressbar.setHeight('4px');
+      $scope.progressbar.setColor('rgb(220, 0, 24)');
+      $scope.progressbar.set(0);
 
       // Setup the language
       if ($routeParams.language) {
@@ -73,6 +82,8 @@ angular.module('swissMetNetDisplayApp')
       }
 
       function refreshProfile () {
+        $interval.cancel(stateInterval);
+
         // Retreive the profile and bootstrap the UI update
         webService.getProfile(updateLink, 
           function (response) {
@@ -140,6 +151,13 @@ angular.module('swissMetNetDisplayApp')
 
         // Broadcast the slider update event
         $scope.$broadcast('update-slider');
+
+        // Complete the progress bar
+        $scope.progressbar.complete();
+        state = 1;
+        $timeout(function() {
+          stateInterval = $interval(progress, 500);
+        }, 1500)
       }
 
       // Define the ordre of displayed directives
@@ -215,6 +233,8 @@ angular.module('swissMetNetDisplayApp')
             // Clear the refresh profile interval
             $interval.cancel(checkInterval);
 
+            $interval.cancel(stateInterval);
+
             // Redirect to the error page with the current
             // profile and language informations
             $location.path('/error' + $location.$$url);
@@ -223,8 +243,15 @@ angular.module('swissMetNetDisplayApp')
         
       }
 
+      function progress () {
+        var num = 100/1400 * state;
+        console.log(state, num);
+        $scope.progressbar.set(num);
+        state++;
+      }
+
       // Setup the interval
       checkForUpdate();
-      checkInterval = $interval(checkForUpdate, 60000);
+      checkInterval = $interval(checkForUpdate, 1000*60);
 
     });

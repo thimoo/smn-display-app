@@ -45,11 +45,13 @@ angular.module('swissMetNetDisplayApp')
 
       $scope.$watch('profile', function(newValue, oldValue) {
         if (newValue !== null) {
-          var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-          angular.element(document.querySelector('.hour-rotating'))
-            .addClass('animated flipInX ' + animationEnd).one(animationEnd, function() {
-              angular.element(this).removeClass('animated flipInX');
-          });
+          $timeout(function() {
+            var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+            angular.element(document.querySelector('.hour-rotating'))
+              .addClass('animated flipInX ' + animationEnd).one(animationEnd, function() {
+                angular.element(this).removeClass('animated flipInX');
+            });
+          }, 1000);
         }
       });
 

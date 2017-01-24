@@ -265,7 +265,7 @@ angular.module('swissMetNetDisplayApp')
       }
 
       function progress () {
-        var num = 100/1250 * state;
+        var num = 100/1200 * state;
         $scope.progressbar.set(num);
         state++;
       }

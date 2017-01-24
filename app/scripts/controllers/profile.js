@@ -88,11 +88,13 @@ angular.module('swissMetNetDisplayApp')
                 refreshProfile();
               }
             }, function (errorResponse) {
-              redirectError();
+              if (response.status === -1) {
+                directErrorRedirection();
+              } else {
+                redirectError();
+              }
             });
         }
-
-        // $interval(function() {refreshProfile();}, 7000);
       }
 
       function refreshProfile () {
@@ -117,8 +119,11 @@ angular.module('swissMetNetDisplayApp')
             }
           }, 
           function (response) {
-            console.log(response);
-            redirectError();
+            if (response.status === -1) {
+              directErrorRedirection();
+            } else {
+              redirectError();
+            }
           });
       }
 
@@ -246,7 +251,6 @@ angular.module('swissMetNetDisplayApp')
         if (redirectErrorTimout === null) {
           redirectErrorTimout = $timeout(directErrorRedirection, 1000*60*10 );
         }
-        
       }
 
       function directErrorRedirection () {

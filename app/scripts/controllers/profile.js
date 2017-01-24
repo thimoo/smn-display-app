@@ -45,13 +45,11 @@ angular.module('swissMetNetDisplayApp')
 
       $scope.$watch('profile', function(newValue, oldValue) {
         if (newValue !== null) {
-          $timeout(function() {
-            var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-            angular.element(document.querySelector('.hour-rotating'))
-              .addClass('animated flipInX ' + animationEnd).one(animationEnd, function() {
-                angular.element(this).removeClass('animated flipInX');
-            });
-          }, 1000);
+          var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+          angular.element(document.querySelector('.hour-rotating'))
+            .addClass('animated flipInX ' + animationEnd).one(animationEnd, function() {
+              angular.element(this).removeClass('animated flipInX');
+          });
         }
       });
 
@@ -254,10 +252,12 @@ angular.module('swissMetNetDisplayApp')
       }
 
       function directErrorRedirection () {
-        // Clear the refresh profile interval
+        // Clear intervals
         $interval.cancel(checkInterval);
-
         $interval.cancel(stateInterval);
+
+        // Reset progressbar
+        $scope.progressbar.set(num);
 
         // Redirect to the error page with the current
         // profile and language informations

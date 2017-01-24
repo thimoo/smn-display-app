@@ -117,6 +117,7 @@ angular.module('swissMetNetDisplayApp')
             }
           }, 
           function (response) {
+            console.log(response);
             redirectError();
           });
       }
@@ -243,18 +244,20 @@ angular.module('swissMetNetDisplayApp')
       function redirectError () {
         // Wait 10 minutes befor redirect
         if (redirectErrorTimout === null) {
-          redirectErrorTimout = $timeout(function() {
-            // Clear the refresh profile interval
-            $interval.cancel(checkInterval);
-
-            $interval.cancel(stateInterval);
-
-            // Redirect to the error page with the current
-            // profile and language informations
-            $location.path('/error' + $location.$$url);
-          }, 1000*60*10 );
+          redirectErrorTimout = $timeout(directErrorRedirection, 1000*60*10 );
         }
         
+      }
+
+      function directErrorRedirection () {
+        // Clear the refresh profile interval
+        $interval.cancel(checkInterval);
+
+        $interval.cancel(stateInterval);
+
+        // Redirect to the error page with the current
+        // profile and language informations
+        $location.path('/error' + $location.$$url);
       }
 
       function progress () {

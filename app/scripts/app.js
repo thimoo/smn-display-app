@@ -58,4 +58,10 @@ angular
   })
   .config(function(tmhDynamicLocaleProvider) {
     tmhDynamicLocaleProvider.localeLocationPattern('/bower_components/angular-i18n/angular-locale_{{locale}}.js');
+  })
+  .run(function($http) {
+    $http.defaults.headers.common = { 
+      'Content-Type' : 'application/json', 
+      'Accept' : 'application/json, text/plain, */*' 
+    };
   });

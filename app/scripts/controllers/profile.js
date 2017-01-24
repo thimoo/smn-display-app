@@ -257,7 +257,7 @@ angular.module('swissMetNetDisplayApp')
         $interval.cancel(stateInterval);
 
         // Reset progressbar
-        $scope.progressbar.set(num);
+        $scope.progressbar.set(0);
 
         // Redirect to the error page with the current
         // profile and language informations

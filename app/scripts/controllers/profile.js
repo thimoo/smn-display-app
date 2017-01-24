@@ -88,7 +88,7 @@ angular.module('swissMetNetDisplayApp')
                 refreshProfile();
               }
             }, function (errorResponse) {
-              if (response.status === -1) {
+              if (response && response.status === -1) {
                 directErrorRedirection();
               } else {
                 redirectError();
@@ -119,7 +119,7 @@ angular.module('swissMetNetDisplayApp')
             }
           }, 
           function (response) {
-            if (response.status === -1) {
+            if (response && response.status === -1) {
               directErrorRedirection();
             } else {
               redirectError();

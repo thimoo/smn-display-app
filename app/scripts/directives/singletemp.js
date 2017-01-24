@@ -71,6 +71,26 @@ angular.module('swissMetNetDisplayApp')
           }
         });
 
+        $scope.$watch('tempMin', function(newValue, oldValue) {
+          if (newValue !== '–') {
+            var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+            angular.element(document.querySelector('#h24-min'))
+              .addClass('animated flipInX ' + animationEnd).one(animationEnd, function() {
+                angular.element(this).removeClass('animated flipInX');
+            });
+          }
+        });
+
+        $scope.$watch('tempMax', function(newValue, oldValue) {
+          if (newValue !== '–') {
+            var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+            angular.element(document.querySelector('#h24-max'))
+              .addClass('animated flipInX ' + animationEnd).one(animationEnd, function() {
+                angular.element(this).removeClass('animated flipInX');
+            });
+          }
+        });
+
       }
     };
   });

@@ -49,6 +49,11 @@ angular.module('swissMetNetDisplayApp')
               .addClass('animated flipInX ' + animationEnd).one(animationEnd, function() {
                 angular.element(this).removeClass('animated flipInX');
             });
+
+            angular.element(document.querySelector('#h24-hour'))
+              .addClass('animated flipInX ' + animationEnd).one(animationEnd, function() {
+                angular.element(this).removeClass('animated flipInX');
+            });
           }
         });
 

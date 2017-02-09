@@ -54,12 +54,17 @@ angular.module('swissMetNetDisplayApp')
 
             var wind = results[0];
             var windGusts = results[1];
+            var windGustSerie = graphicService.toSerie(windGusts.data.data);
+
+            if (Math.max.apply(null, windGustSerie) < 20) {
+              $scope.config.high = 20;
+            }
 
             $scope.chart = Chartist.Line('.ct-wind-chart', {
               labels: graphicService.toLabels(wind.data.data),
               series: [
                 graphicService.toSerie(wind.data.data),
-                graphicService.toSerie(windGusts.data.data),
+                windGustSerie,
               ]
             }, $scope.config).on("draw", function(data) {
               if (data.type === 'line' || data.type === 'area') {

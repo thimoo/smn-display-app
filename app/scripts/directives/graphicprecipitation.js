@@ -33,6 +33,9 @@ angular.module('swissMetNetDisplayApp')
             },
           },
           axisY: {
+            labelInterpolationFnc: function(value) {
+              return value * 10 % 1 === 0 ? value : null;
+            },
             labelOffset: {
               y: 4
             },
@@ -47,10 +50,12 @@ angular.module('swissMetNetDisplayApp')
           var url = data.data.collections.precipitation;
 
           webService.get(url, function (d) {
-            var serie = graphicService.toSerie(d, 1, true, 1);
-
-            if (Math.max.apply(null,serie) === 0.01) {
+            var serie = graphicService.toSerie(d, 1, true, 1, 0.02);
+            var maxValue = Math.max.apply(null,serie);
+            if (maxValue === 0.02) {
               $scope.config.high = 1;
+            } else {
+              $scope.config.high = maxValue + 0.1;
             }
             $scope.chart = Chartist.Bar('.ct-precipitation-chart', {
               labels: graphicService.toLabels(d),

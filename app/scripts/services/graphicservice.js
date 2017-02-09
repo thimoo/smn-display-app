@@ -18,10 +18,11 @@ angular.module('swissMetNetDisplayApp')
       return serie.reverse();
     };
 
-    this.toSerie = function (collection, scale, bar, up) {
+    this.toSerie = function (collection, scale, bar, up, ratio) {
       scale = typeof scale !== 'undefined' ? scale : 1;
       bar = typeof bar !== 'undefined' ? bar : false;
       up = typeof up !== 'undefined' ? up : 100;
+      ratio = typeof ratio !== 'undefined' ? ratio : 0.01;
 
       var serie = [], add = 0, max, barSerie = [];
 
@@ -35,7 +36,7 @@ angular.module('swissMetNetDisplayApp')
         max = (max === 0) ? up : max;
 
         angular.forEach(serie, function (value) {
-          if (value === 0) barSerie.push(value + (max * 0.01));
+          if (value === 0) barSerie.push(value + (max * ratio));
           else barSerie.push(value);
         });
         serie = barSerie;

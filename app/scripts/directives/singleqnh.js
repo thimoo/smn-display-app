@@ -26,7 +26,7 @@ angular.module('swissMetNetDisplayApp')
         var from = 0;
 
         $scope.hpa = 0;
-        
+
         $scope.noData = false;
         $scope.lastTimeUpdate = null;
 
@@ -50,6 +50,9 @@ angular.module('swissMetNetDisplayApp')
             }
 
             from = to;
+            console.log(from);
+
+            console.log($scope);
             to = ((maxQnh - $scope.hpa - (maxQnh - minQnh)) * -1) / (maxQnh - minQnh) * dist + diff;
 
             function rotTween() {

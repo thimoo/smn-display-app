@@ -1,7 +1,7 @@
 /*!
-  This CSS resource incorporates links to font software which is the valuable copyrighted 
-  property of Monotype and/or its suppliers. You may not attempt to copy, install, redistribute, 
-  convert, modify or reverse engineer this font software. Please contact Monotype with any 
+  This CSS resource incorporates links to font software which is the valuable copyrighted
+  property of Monotype and/or its suppliers. You may not attempt to copy, install, redistribute,
+  convert, modify or reverse engineer this font software. Please contact Monotype with any
   questions regarding Web Fonts:  https://www.linotype.com
   */
 
@@ -29,7 +29,7 @@ html, body {
   width: 100%;
   height: 100vh;
   clear: both;
-  
+
   font-size: 1em;
   font-family: $primary-font;
 }
@@ -54,7 +54,7 @@ html, body {
 /*
   Header
  */
-$header-padding:   10px 15px;
+$header-padding:   10px 0;
 
 .header {
   border-bottom: 3px solid $red;
@@ -64,9 +64,15 @@ $header-padding:   10px 15px;
   display: flex;
   align-items: flex-end;
   padding: $header-padding;
+  text-align: right;
+  justify-content: right;
+
+  .row {
+    text-align: right;
+  }
 
   .hour {
-    color: $red;
+    color: $black-55;
     margin: 0;
   }
 
@@ -83,14 +89,14 @@ $header-padding:   10px 15px;
 }
 
 
-.title { 
+.title {
   display: flex;
   align-items: flex-end;
   justify-content: center;
   padding: $header-padding;
 
   font-family: $light-font;
-  
+
   .row {
     width: 100%;
     height: 100%;
@@ -109,7 +115,7 @@ $header-padding:   10px 15px;
       width: auto;
       display: inline-block;
       margin: 0;
-      
+
       font-family: $light-font;
       color: $black;
 
@@ -121,7 +127,7 @@ $header-padding:   10px 15px;
       align-items: baseline;
 
       color: $black-55;
-  
+
       svg {
         margin-right: 5px;
       }
@@ -129,17 +135,15 @@ $header-padding:   10px 15px;
   }
 }
 
-.swiss-met-net { 
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  padding: $header-padding;
-  text-align: right;
+.swiss-met-net {
+  display: block;
+  padding: 22px 0;
 
   .logo {
     color: $red;
     font-family: $bold-font;
     margin: 0;
+    width: 100%;
   }
 
   .station {
@@ -294,6 +298,7 @@ $header-padding:   10px 15px;
       display: flex;
       align-items: center;
       padding: 10px;
+      font-size: 1.5vh;
     }
   }
 }
@@ -315,8 +320,8 @@ $header-padding:   10px 15px;
   @extend .single-item;
 
   #termometer {
-    width: 50%;
-    margin-top: 7px;
+    width: 80%;
+    margin-top: 44px;
   }
 
   .h24 {
@@ -326,15 +331,15 @@ $header-padding:   10px 15px;
 
     .hour-color {
      fill: $orange;
-    } 
+    }
   }
-  
+
 
   .value {
     color: $black-55;
     font-family: $primary-font;
     text-align: center;
-    
+
     &::after {
       content: '°C';
       color: $black-25;
@@ -386,7 +391,7 @@ $header-padding:   10px 15px;
       width: 100%;
       height: 100%;
       position: absolute;
-      
+
       text-align: center;
     }
   }
@@ -397,7 +402,7 @@ $header-padding:   10px 15px;
   .wind-name {
     display: flex;
     align-items: flex-end;
-    justify-content: center;  
+    justify-content: center;
   }
 
   .wind-value {
@@ -420,7 +425,7 @@ $header-padding:   10px 15px;
 
       svg {
         width: auto;
-        height: 90%;
+        height: 80%;
       }
     }
     .wind-gusts-value {
@@ -480,7 +485,7 @@ $header-padding:   10px 15px;
     svg {
       width: 60%;
     }
-    
+
   }
 
   .container-value {
@@ -564,7 +569,6 @@ $header-padding:   10px 15px;
   }
 }
 
-
 .graphic-sun,
 .graphic-pression {
   .logo .hour-color {
@@ -588,11 +592,12 @@ $header-padding:   10px 15px;
     .hour {
       font-size: 5.5vh;
       line-height: 1em;
+      font-weight: 700;
     }
 
     .day {
-      font-size: 3vh;
-      width: 150%;
+      font-size: 2.8vh;
+      // width: 150%;
     }
   }
 
@@ -610,11 +615,12 @@ $header-padding:   10px 15px;
       span {
         font-size: 2.5vh;
       }
-      
+
     }
   }
 
   .swiss-met-net {
+    margin-left: 0;
 
     .logo {
       font-size: 5.5vh;
@@ -684,6 +690,7 @@ $header-padding:   10px 15px;
     .wind-gusts-unit {
       font-size: 2vh;
       line-height: 0.9em;
+      margin-top: 1.4vh;
     }
   }
 
@@ -702,6 +709,16 @@ $header-padding:   10px 15px;
 
   .single-qnh .value {
     font-size: 8vh;
+  }
+
+  #precipitation {
+        width: 54%;
+        margin-top: -25px;
+  }
+
+  #qnh {
+    width: 50%;
+    margin-top: -27px;
   }
 
 }
@@ -724,8 +741,9 @@ $header-padding:   10px 15px;
     }
 
     .day {
-      font-size: 2.5vw;
-      width: 200%;
+      font-size: 2.8vw;
+      float: right;
+      //width: 200%;
     }
   }
 
@@ -758,14 +776,14 @@ $header-padding:   10px 15px;
 
 
   .swiss-met-net {
-    align-items: flex-start; 
+    align-items: flex-start;
 
     .logo {
       font-size: 5.5vw;
       line-height: 1em;
 
-      width: 120%;
-      float: right;
+      width: 50vw;
+      float: left;
 
       &.it {
         width: 128%;
@@ -882,7 +900,14 @@ $header-padding:   10px 15px;
   .single-qnh .value {
     font-size: 8vw;
   }
+
+  #precipitation {
+        width: 47%;
+        margin-top: -25px;
+  }
+
+  #qnh {
+    width: 47%;
+    margin-top: -27px;
+  }
 }
-
-
-

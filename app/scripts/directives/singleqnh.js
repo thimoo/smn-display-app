@@ -20,7 +20,7 @@ angular.module('swissMetNetDisplayApp')
         var minQnh = 990;
         var maxQnh = 1040;
         var dist = 180;
-        var diff = -40 - (dist / 2);
+        var diff = 0 - (dist / 2);
 
         var to = 0;
         var from = 0;
@@ -50,15 +50,14 @@ angular.module('swissMetNetDisplayApp')
             }
 
             from = to;
-            console.log(from);
-
-            console.log($scope);
+            // console.log(from);
+            //
             to = ((maxQnh - $scope.hpa - (maxQnh - minQnh)) * -1) / (maxQnh - minQnh) * dist + diff;
 
             function rotTween() {
               var i = d3.interpolate(from, to);
               return function(t) {
-                  return 'rotate(' + i(t) + ' 50.867 47.148)';
+                  return 'rotate(' + i(t) + ' 51.8 51.25)';
               };
             }
 

@@ -17,7 +17,7 @@ angular.module('swissMetNetDisplayApp')
       controller: function ($scope, webService) {
 
         $scope.humidity = '–';
-        
+
         $scope.noData = false;
         $scope.lastTimeUpdate = null;
 
@@ -48,6 +48,10 @@ angular.module('swissMetNetDisplayApp')
             angular.element(document.querySelector('.humidity-rotating'))
               .addClass('animated flipInX ' + animationEnd).one(animationEnd, function() {
                 angular.element(this).removeClass('animated flipInX');
+            });
+            angular.element(document.querySelector('.humidity-b'))
+              .addClass('animated fadeInDown ' + animationEnd).one(animationEnd, function() {
+                angular.element(this).removeClass('animated fadeInDown');
             });
           }
         });

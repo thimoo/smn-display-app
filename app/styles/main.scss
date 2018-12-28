@@ -167,12 +167,10 @@ $header-padding:   10px 0;
   width: calc(100vw - (7.77vw * 2));
   height: 100vh;
 
-  margin: 7.77vw;
+  margin: 38.77vh 7.77vw;
   padding: 0;
 
   display: flex;
-  align-items: center;
-  justify-content: center;
 
   .left-cloudy {
     text-align: left;
@@ -185,7 +183,6 @@ $header-padding:   10px 0;
 
   .cloudy {
     width: 100%;
-    margin-bottom: 6vh;
 
     svg {
       height: 28vh;
@@ -196,8 +193,8 @@ $header-padding:   10px 0;
     width: 100%;
     margin-bottom: 6vh;
 
-    color: $black-25;
-    font-family: $bold-font;
+    color: $black;
+    font-family: $light-font;
 
     position: relative;
   }
@@ -644,8 +641,12 @@ $header-padding:   10px 0;
     }
 
     .text {
-      font-size: 2.5vh;
+      font-size: 2.6vh;
       line-height: 1.3em;
+    }
+
+    .title {
+      font-size: 2.5em;
     }
   }
 
@@ -829,6 +830,10 @@ $header-padding:   10px 0;
     .text {
       font-size: 1.4vh;
       line-height: 1.3em;
+    }
+
+    .title {
+      font-size: 2.5em;
     }
 
     .logo-meteo-swiss {

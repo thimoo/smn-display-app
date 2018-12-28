@@ -1,6 +1,7 @@
 {
     "smn_svg_url": "images/smndisplay-de.svg",
     "logo_url": "images/logo-de.svg",
+    "logo_light_url": "images/logo-light-de.svg",
     "swiss_meteo": "MeteoSchwiez",
     "swiss_met_net": "SwissMetNet",
     "min": "Min",
@@ -16,6 +17,7 @@
     "qnh_name": "Luftdruck QNH",
     "sun_name": "Sonnenschein",
     "error_message": "Die Messwerte von der SwissMetNet Station sind leider nicht mehr zugänglich.",
+    "error_title": "Verbindungsproblem",
     "graphic_temp_name": "Temperatur (°C)",
     "graphic_pression_name": "Lufftdruck QNH (hPa)",
     "graphic_precipitation_name": "Niederschlag (mm)",

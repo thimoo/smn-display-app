@@ -1,20 +1,23 @@
-<div class="error-container">
-    <div class="center-cloudy">
-        <div class="cloudy">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 347.7 315.56">
-              <defs>
-                <clipPath id="cloudy-a">
-                  <path fill="none" d="M89.5 36.8c-.88 0-1.75-.12-2.63-.12C38.89 36.67 0 73.61 0 119.13s38.89 82.49 86.87 82.49a90.48 90.48 0 0 0 29.65-5.05 104.65 104.65 0 0 0 129.37-19 73.36 73.36 0 1 0 6-137.29A104.87 104.87 0 0 0 89.5 36.8"></path>
-                </clipPath>
-              </defs>
-              <path clip-path="url(#cloudy-a)" fill="#e5e5e5" d="M0 0h347.7v210.86H0z"></path>
-              <path fill="#bfbfbf" d="M154.3 154.14c8.93-8.38 24.12-8.63 33.35-.56 4.42 3.87 10.93-2.59 6.48-6.48-13.05-11.42-33.58-11.39-46.31.56-4.31 4 2.18 10.52 6.48 6.48z"></path>
-              <circle fill="#bfbfbf" cx="129.06" cy="90.24" r="8.78"></circle>
-              <circle fill="#bfbfbf" cx="212.89" cy="90.24" r="8.78"></circle>
-              <path fill="#e5e5e5" d="M146.25 285.45a30 30 0 1 0 60.07 0c0-16.64-16.7-35.19-30-54.2-14.11 18.45-30.07 37.56-30.07 54.2zM48.64 255A23.68 23.68 0 0 0 96 255c0-12.94-13.18-27.38-23.67-42.16C61.22 227.17 48.64 242 48.64 255zM289.16 203.31c-11.16 14.61-23.83 29.79-23.83 43a23.83 23.83 0 1 0 47.66 0c.01-13.21-13.26-27.93-23.83-43z"></path>
-            </svg>
+<div class="land-horizontal-8of8 land-vertical-1of8 gutter-left gutter-top gutter-right port-horizontal-4of4 port-vertical-2of16">
+  <div class="land-horizontal-2of8 land-vertical-1of8 gutter-left port-horizontal-1of4 port-vertical-2of16 swiss-met-net">
+          <h2 class="logo" ng-class="{'it': lang === 'it'}">
+              <img ng-src="{{ 'logo_url' | translate }}" alt="{{ 'swiss_meteo' | translate }}">
+          </h2>
+  </div>
+    <div class="land-horizontal-5of8 land-vertical-1of8 gutter-left port-horizontal-2of4 port-vertical-2of16 title">
+        <div class="row">
         </div>
+    </div>
+    <div class="land-horizontal-1of8 land-vertical-1of8 port-horizontal-1of4 port-vertical-2of16 date">
+        <div class="row">
+            <div class="logo-meteo-swiss"><img ng-src="{{ 'logo_light_url' | translate }}" alt="{{ 'swiss_meteo' | translate }}"></div>
+        </div>
+    </div>
+
+</div>
+<div class="error-container gutter-left gutter-right">
+    <div class="left-cloudy">
+        <div class="text title">{{ 'error_title' | translate }}</div>
         <div class="text">{{ 'error_message' | translate }}</div>
-        <div class="logo-meteo-swiss"><img ng-src="{{ 'logo_url' | translate }}" alt="{{ 'swiss_meteo' | translate }}"></div>
     </div>
 </div>

@@ -1,6 +1,7 @@
 {
     "smn_svg_url": "images/smndisplay-it.svg",
     "logo_url": "images/logo-it.svg",
+    "logo_light_url": "images/logo-light-it.svg",
     "swiss_meteo": "MeteoSvizzera",
     "swiss_met_net": "SwissMetNet",
     "min": "min",
@@ -16,6 +17,7 @@
     "qnh_name": "Pressione QNH",
     "sun_name": "Soleggiamento",
     "error_message": "Le misurazioni raccolte dalla SwissMetNet stazione meteo non sono più accessibili.",
+    "error_title": "Problema di connessione",
     "graphic_temp_name": "Temperatura (°C)",
     "graphic_pression_name": "Pressione QNH (hPa)",
     "graphic_precipitation_name": "Precipitazioni (mm)",

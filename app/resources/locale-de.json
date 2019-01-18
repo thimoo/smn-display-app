@@ -4,6 +4,7 @@
     "logo_light_url": "images/logo-light-de.svg",
     "swiss_meteo": "MeteoSchwiez",
     "swiss_met_net": "SwissMetNet",
+    "measured_at": "Gemessen um",
     "min": "Min",
     "max": "Max",
     "station": "Station",
@@ -22,7 +23,9 @@
     "graphic_pression_name": "Lufftdruck QNH (hPa)",
     "graphic_precipitation_name": "Niederschlag (mm)",
     "graphic_sun_name": "Sonnenschein (%)",
-    "graphic_wind_name": "Wind (km/h)",
+    "graphic_wind_name": "Wind",
+    "graphic_gusts_name": "Böenspitze",
+    "graphic_wind_unit": "(km/h)",
     "graphic_humidity_name": "Luftfeuchtigkeit (%)",
     "no_data_text": "Zuletzt aktualisierte Daten:"
 }

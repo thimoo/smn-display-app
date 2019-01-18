@@ -4,6 +4,7 @@
     "logo_light_url": "images/logo-light-en.svg",
     "swiss_meteo": "MeteoSwiss",
     "swiss_met_net": "SwissMetNet",
+    "measured_at": "Measured at",
     "min": "min",
     "max": "max",
     "station": "Station",
@@ -22,7 +23,9 @@
     "graphic_pression_name": "Pressure QNH (hPa)",
     "graphic_precipitation_name": "Precipitation (mm)",
     "graphic_sun_name": "Sunshine (%)",
-    "graphic_wind_name": "Wind (km/h)",
+    "graphic_wind_name": "Gust",
+    "graphic_gusts_name": "Raffica",
+    "graphic_wind_unit": "(km/h)",
     "graphic_humidity_name": "Humidity (%)",
     "no_data_text": "Latest data update at"
 }

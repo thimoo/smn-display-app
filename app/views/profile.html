@@ -1,11 +1,10 @@
 <div id="ng-progress-background"></div>
 <div class="land-horizontal-8of8 land-vertical-1of8 gutter-left gutter-top gutter-right port-horizontal-4of4 port-vertical-2of16 header">
-    <div class="land-horizontal-2of8 land-vertical-1of8 port-horizontal-1of4 port-vertical-2of16 date">
-        <div>
-            <h2 class="hour hour-rotating">{{ profile.updateDate | date : 'HH:mm' }}</h2>
-            <h3 class="day">{{ profile.updateDate | date : 'fullDate' }}</h3>
-        </div>
-    </div>
+  <div class="land-horizontal-2of8 land-vertical-1of8 gutter-left port-horizontal-1of4 port-vertical-2of16 swiss-met-net">
+          <h2 class="logo" ng-class="{'it': lang === 'it'}">
+              <img ng-src="{{ 'logo_url' | translate }}" alt="{{ 'swiss_meteo' | translate }}">
+          </h2>
+  </div>
     <div class="land-horizontal-4of8 land-vertical-1of8 gutter-left port-horizontal-2of4 port-vertical-2of16 title">
         <div class="row">
             <div class="baseline-container">
@@ -25,41 +24,41 @@
             </div>
         </div>
     </div>
-    <div class="land-horizontal-2of8 land-vertical-1of8 gutter-left port-horizontal-1of4 port-vertical-2of16 swiss-met-net">
-        <div>
-            <h2 class="logo" ng-class="{'it': lang === 'it'}">
-                <img ng-src="{{ 'logo_url' | translate }}" alt="{{ 'swiss_meteo' | translate }}">
-            </h2>
-            <h3 class="station">{{ 'station' | translate }} <span class="strong">{{ 'swiss_met_net' | translate }}</span></h3>
+    <div class="land-horizontal-2of8 land-vertical-1of8 port-horizontal-1of4 port-vertical-2of16 date">
+        <div class="row">
+            <h3 class="day">{{ profile.updateDate | date : 'dd.MM.yyyy' }}</h3>
+            <span class="measured_at">{{ 'measured_at'| translate }}</h3>
+            <h2 class="hour hour-rotating">{{ profile.updateDate | date : 'HH:mm' }}</h2>
         </div>
     </div>
+
 </div>
 <div class="land-horizontal-4of8 land-vertical-4of8 gutter-left gutter-top port-horizontal-4of4 port-vertical-4of16 first-content">
     <!-- start list of first content directive -->
-    
+
     <single-temp ng-show="displays.singleTemp" class="land-horizontal-2of8 land-vertical-4of8 port-horizontal-2of4 port-vertical-4of16 single-temp"></single-temp>
     <single-wind ng-show="displays.singleWind" ng-class="{'gutter-left': displays.singleTemp}" class="land-horizontal-2of8 land-vertical-4of8 port-horizontal-2of4 port-vertical-4of16 single-wind"></single-wind>
-    
+
     <!-- end list of first content directive -->
 </div>
 <div class="land-horizontal-4of8 land-vertical-4of8 gutter-left gutter-top port-horizontal-4of4 port-vertical-4of16 second-content">
     <!-- start list of second content directive -->
-    
-    <single-precipitation ng-show="displays.singlePrecipitation" 
+
+    <single-precipitation ng-show="displays.singlePrecipitation"
         class="land-horizontal-2of8 land-vertical-2of8 port-horizontal-2of4 port-vertical-2of16 single-precipitation"></single-precipitation>
 
-    <single-humidity ng-show="displays.singleHumidity" 
-        ng-class="[{'gutter-left': position.singleHumidity%2==0}]" 
+    <single-humidity ng-show="displays.singleHumidity"
+        ng-class="[{'gutter-left': position.singleHumidity%2==0}]"
         class="land-horizontal-2of8 land-vertical-2of8 port-horizontal-2of4 port-vertical-2of16 single-humidity"></single-humidity>
 
-    <single-qnh ng-show="displays.singleQnh" 
-        ng-class="[{'gutter-top': position.singleQnh>2},{'gutter-left': position.singleQnh%2==0}]" 
+    <single-qnh ng-show="displays.singleQnh"
+        ng-class="[{'gutter-top': position.singleQnh>2},{'gutter-left': position.singleQnh%2==0}]"
         class="land-horizontal-2of8 land-vertical-2of8 port-horizontal-2of4 port-vertical-2of16 single-qnh"></single-qnh>
 
-    <single-sun ng-show="displays.singleSun" 
-        ng-class="[{'gutter-top': position.singleSun>2},{'gutter-left': position.singleSun%2==0}]" 
+    <single-sun ng-show="displays.singleSun"
+        ng-class="[{'gutter-top': position.singleSun>2},{'gutter-left': position.singleSun%2==0}]"
         class="land-horizontal-2of8 land-vertical-2of8 port-horizontal-2of4 port-vertical-2of16 single-sun"></single-sun>
-    
+
     <!-- end list of second content directive -->
 </div>
 <div class="land-horizontal-8of8 land-vertical-3of8 gutter-left port-horizontal-4of4 port-vertical-6of16 gutter-top second-content">
@@ -67,7 +66,7 @@
     <div ng-controller="GraphicsliderCtrl" ng-init="graphs=['graphic-temp', 'graphic-sun', 'graphic-qnh', 'graphic-humidity']" class="land-horizontal-4of8 land-vertical-3of8 port-horizontal-4of4 port-vertical-3of16 slider-container">
         <graphic-temp ng-show="displays.graphicTemp" class="slider-animation graphic-temp"></graphic-temp>
         <graphic-sun ng-show="displays.graphicSun" class="slider-animation graphic-sun"></graphic-sun>
-        <graphic-pression ng-show="displays.graphicQnh" class="slider-animation graphic-qnh graphic-pression"></graphic-pression> 
+        <graphic-pression ng-show="displays.graphicQnh" class="slider-animation graphic-qnh graphic-pression"></graphic-pression>
         <graphic-humidity ng-show="displays.graphicHumidity" class="slider-animation graphic-humidity"></graphic-humidity>
     </div>
     <div ng-controller="GraphicsliderCtrl" ng-init="graphs=['graphic-wind', 'graphic-precipitation', 'smn-display']" class="land-horizontal-4of8 land-vertical-3of8 port-horizontal-4of4 port-vertical-3of16 land-gutter-left port-gutter-top slider-container">
@@ -75,5 +74,5 @@
         <graphic-precipitation ng-show="displays.graphicPrecipitation" class="slider-animation graphic-precipitation"></graphic-precipitation>
         <smn-display ng-show="displays.smnDisplay" class="slider-animation smn-display"></smn-display>
     </div>
-    
+
 </div>

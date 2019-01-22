@@ -87,6 +87,10 @@
     @extend .land-generic;
     @include width(8);}
 
+  .head-horizontal-3of9 {
+    @extend .land-generic;
+    @include width(3);}
+
 
   .land-vertical-1of8 { @include height(1); }
   .land-vertical-2of8 { @include height(2); }
@@ -123,7 +127,7 @@
 
 // Portrait mode
 @media all and (orientation:portrait) {
-  
+
   $port-column:   4;
   $port-row:      16;
 
@@ -256,7 +260,3 @@
 .all-height-10of12 { height: (100% / 12 * 10) }
 .all-height-11of12 { height: (100% / 12 * 11) }
 .all-height-12of12 { height: (100% / 12 * 12) }
-
-
-
-

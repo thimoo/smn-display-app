@@ -37,7 +37,9 @@
     <!-- start list of first content directive -->
 
     <single-temp ng-show="displays.singleTemp" class="land-horizontal-2of8 land-vertical-4of8 port-horizontal-2of4 port-vertical-4of16 single-temp"></single-temp>
+    <single-towz-temp ng-show="displays.singleTowzTemp" class="land-horizontal-2of8 land-vertical-4of8 port-horizontal-2of4 port-vertical-4of16 single-temp"></single-towz-temp>
     <single-wind ng-show="displays.singleWind" ng-class="{'gutter-left': displays.singleTemp}" class="land-horizontal-2of8 land-vertical-4of8 port-horizontal-2of4 port-vertical-4of16 single-wind"></single-wind>
+    <single-towz-wind ng-show="displays.singleTowzWind" ng-class="{'gutter-left': displays.singleTemp}" class="land-horizontal-2of8 land-vertical-4of8 port-horizontal-2of4 port-vertical-4of16 single-wind"></single-towz-wind>
 
     <!-- end list of first content directive -->
 </div>
@@ -63,14 +65,16 @@
 </div>
 <div class="land-horizontal-8of8 land-vertical-3of8 gutter-left port-horizontal-4of4 port-vertical-6of16 gutter-top second-content">
 
-    <div ng-controller="GraphicsliderCtrl" ng-init="graphs=['graphic-temp', 'graphic-sun', 'graphic-qnh', 'graphic-humidity']" class="land-horizontal-4of8 land-vertical-3of8 port-horizontal-4of4 port-vertical-3of16 slider-container">
+    <div ng-controller="GraphicsliderCtrl" ng-init="graphs=['graphic-temp', 'graphic-towz-temp', 'graphic-sun', 'graphic-qnh', 'graphic-humidity']" class="land-horizontal-4of8 land-vertical-3of8 port-horizontal-4of4 port-vertical-3of16 slider-container">
         <graphic-temp ng-show="displays.graphicTemp" class="slider-animation graphic-temp"></graphic-temp>
+        <graphic-towz-temp ng-show="displays.graphicTowzTemp" class="slider-animation graphic-towz-temp"></graphic-towz-temp>
         <graphic-sun ng-show="displays.graphicSun" class="slider-animation graphic-sun"></graphic-sun>
         <graphic-pression ng-show="displays.graphicQnh" class="slider-animation graphic-qnh graphic-pression"></graphic-pression>
         <graphic-humidity ng-show="displays.graphicHumidity" class="slider-animation graphic-humidity"></graphic-humidity>
     </div>
-    <div ng-controller="GraphicsliderCtrl" ng-init="graphs=['graphic-wind', 'graphic-precipitation', 'smn-display']" class="land-horizontal-4of8 land-vertical-3of8 port-horizontal-4of4 port-vertical-3of16 land-gutter-left port-gutter-top slider-container">
+    <div ng-controller="GraphicsliderCtrl" ng-init="graphs=['graphic-wind','graphic-towz-wind', 'graphic-precipitation', 'smn-display']" class="land-horizontal-4of8 land-vertical-3of8 port-horizontal-4of4 port-vertical-3of16 land-gutter-left port-gutter-top slider-container">
         <graphic-wind ng-show="displays.graphicWind" class="slider-animation graphic-wind"></graphic-wind>
+        <graphic-towz-wind ng-show="displays.graphicTowzWind" class="slider-animation graphic-towz-wind"></graphic-towz-wind>
         <graphic-precipitation ng-show="displays.graphicPrecipitation" class="slider-animation graphic-precipitation"></graphic-precipitation>
         <smn-display ng-show="displays.smnDisplay" class="slider-animation smn-display"></smn-display>
     </div>

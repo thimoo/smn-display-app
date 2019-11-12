@@ -9,17 +9,17 @@
  */
 angular.module('swissMetNetDisplayApp')
   .controller('ProfileCtrl', function (
-    $scope, 
-    $routeParams, 
-    $translate, 
-    $locale, 
+    $scope,
+    $routeParams,
+    $translate,
+    $locale,
     $location,
-    $interval, 
+    $interval,
     $timeout,
-    tmhDynamicLocale, 
-    webService, 
-    dependencies, 
-    dependencyService, 
+    tmhDynamicLocale,
+    webService,
+    dependencies,
+    dependencyService,
     urlService,
     ngProgressFactory) {
 
@@ -80,7 +80,7 @@ angular.module('swissMetNetDisplayApp')
           // if a response is available, check if an update
           // is available, if yes get the profile
           var lastUpdate = lastResponse.lastUpdate;
-          webService.checkForUpdate(updateLink, lastUpdate, 
+          webService.checkForUpdate(updateLink, lastUpdate,
             function (response) {
               if (response.updateAvailable) {
                 refreshProfile();
@@ -99,7 +99,7 @@ angular.module('swissMetNetDisplayApp')
         $interval.cancel(stateInterval);
 
         // Retreive the profile and bootstrap the UI update
-        webService.getProfile(updateLink, 
+        webService.getProfile(updateLink,
           function (response) {
             if (redirectErrorTimout !== null) {
               $timeout.cancel(redirectErrorTimout);
@@ -115,7 +115,7 @@ angular.module('swissMetNetDisplayApp')
             } else {
               redirectError();
             }
-          }, 
+          },
           function (response) {
             if (typeof response !== 'undefined' && response.status === -1) {
               directErrorRedirection();
@@ -133,7 +133,7 @@ angular.module('swissMetNetDisplayApp')
         // check if all dependencies are available
         // and broadcast an update event with a
         // targeted directive and an object containing
-        // all urls needed to refresh the targeted 
+        // all urls needed to refresh the targeted
         // directive
         angular.forEach(dependencies, function (dependencies, directive) {
           // Check if all dependencies are present in the
@@ -186,47 +186,56 @@ angular.module('swissMetNetDisplayApp')
             $position = $scope.displays.singlePrecipitation + 0;
             break;
           case 'singleHumidity':
-            $position = $scope.displays.singlePrecipitation + 
+            $position = $scope.displays.singlePrecipitation +
               $scope.displays.singleHumidity + 0;
             break;
           case 'singleQnh':
-            $position = $scope.displays.singlePrecipitation + 
-              $scope.displays.singleHumidity + 
+            $position = $scope.displays.singlePrecipitation +
+              $scope.displays.singleHumidity +
               $scope.displays.singleQnh + 0;
             break;
           case 'singleSun':
-            $position = $scope.displays.singlePrecipitation + 
-              $scope.displays.singleHumidity + 
-              $scope.displays.singleQnh  + 
+            $position = $scope.displays.singlePrecipitation +
+              $scope.displays.singleHumidity +
+              $scope.displays.singleQnh  +
               $scope.displays.singleSun + 0;
             break;
           case 'graphicTemp':
             $position = $scope.displays.graphicTemp + 0;
             break;
+          case 'graphictowzTemp':
+            $position = $scope.displays.graphicTemp + 0;
+            break;
+          case 'singleTowzWind':
+            $position = $scope.displays.graphicTemp + 0;
+            break;
           case 'graphicSun':
-            $position = $scope.displays.graphicTemp + 
+            $position = $scope.displays.graphicTemp +
               $scope.displays.graphicSun + 0;
             break;
           case 'graphicQnh':
-            $position = $scope.displays.graphicTemp + 
-              $scope.displays.graphicSun + 
+            $position = $scope.displays.graphicTemp +
+              $scope.displays.graphicSun +
               $scope.displays.graphicQnh + 0;
             break;
           case 'graphicHumidity':
-            $position = $scope.displays.graphicTemp + 
-              $scope.displays.graphicSun + 
+            $position = $scope.displays.graphicTemp +
+              $scope.displays.graphicSun +
               $scope.displays.graphicQnh
               $scope.displays.graphicHumidity + 0;
             break;
           case 'graphicWind':
             $position = $scope.displays.graphicWind + 0;
             break;
+          case 'graphicTowzWind':
+            $position = $scope.displays.graphicWind + 0;
+            break;
           case 'graphicPrecipitation':
-            $position = $scope.displays.graphicWind + 
+            $position = $scope.displays.graphicWind +
               $scope.displays.graphicPrecipitation + 0;
             break;
           case 'smnDisplay':
-            $position = $scope.displays.graphicWind + 
+            $position = $scope.displays.graphicWind +
               $scope.displays.graphicPrecipitation + 1;
             break;
         }

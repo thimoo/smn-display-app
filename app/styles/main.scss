@@ -555,10 +555,12 @@ $header-padding:   10px 0;
 
 .graphic-humidity,
 .graphic-wind,
+.graphic-towz-wind,
 .graphic-sun,
 .graphic-pression,
 .graphic-precipitation,
-.graphic-temp {
+.graphic-temp,
+.graphic-towz-temp {
   @extend .item;
 
   height: 100%;

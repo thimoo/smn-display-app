@@ -9,7 +9,7 @@
  */
 angular.module('swissMetNetDisplayApp')
   .controller('GraphicsliderCtrl', function ($scope, $interval, $element, dependencyService) {
-    
+
     $scope.interval;
     $scope.stack = [];
 
@@ -46,9 +46,9 @@ angular.module('swissMetNetDisplayApp')
             .removeClass('enabled');
 
           $scope.counter++;
-          $scope.counter %= $scope.stack.length;  
+          $scope.counter %= $scope.stack.length;
         }
-        
+
         $scope.start = false;
 
         // add class on new element

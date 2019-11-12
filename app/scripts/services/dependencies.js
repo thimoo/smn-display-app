@@ -13,10 +13,19 @@ angular.module('swissMetNetDisplayApp')
       'data-temp',
       'collections-temp'
     ],
+    singleTowzTemp: [
+      'data-temp_towz',
+      'collections-temp_towz'
+    ],
     singleWind: [
       'data-wind',
       'data-wind_dir',
       'data-wind_gusts'
+    ],
+    singleTowzWind: [
+      'data-wind_towz',
+      'data-wind_dir_towz',
+      'data-wind_gusts_towz'
     ],
     singlePrecipitation: [
       'data-precipitation'
@@ -33,6 +42,9 @@ angular.module('swissMetNetDisplayApp')
     graphicTemp: [
       'collections-temp'
     ],
+    graphicTowzTemp: [
+      'collections-temp_towz'
+    ],
     graphicPrecipitation: [
       'collections-precipitation'
     ],
@@ -45,6 +57,10 @@ angular.module('swissMetNetDisplayApp')
     graphicWind: [
       'collections-wind',
       'collections-wind_gusts'
+    ],
+    graphicTowzWind: [
+      'collections-wind_towz',
+      'collections-wind_gusts_towz'
     ],
     graphicQnh: [
       'collections-qnh'

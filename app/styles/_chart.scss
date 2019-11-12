@@ -1,18 +1,21 @@
 
-/* This selector overrides the points style on line charts. 
-Points on line charts are actually just very short strokes. 
+/* This selector overrides the points style on line charts.
+Points on line charts are actually just very short strokes.
 This allows you to customize even the point size in CSS */
 
 .ct-humidity-chart .ct-grid,
 .ct-pression-chart .ct-grid,
 .ct-temp-chart .ct-grid,
+.ct-towz-temp-chart .ct-grid,
 .ct-sun-chart .ct-grid,
 .ct-precipitation-chart .ct-grid,
-.ct-wind-chart .ct-grid, {
+.ct-wind-chart .ct-grid,
+.ct-towz-wind-chart .ct-grid {
     stroke: rgba(0, 0, 0, 0.1);
     stroke-dasharray: none;
 }
 
+.ct-towz-temp-chart .ct-series-a,
 .ct-temp-chart .ct-series-a {
 
     .ct-area {
@@ -41,7 +44,8 @@ This allows you to customize even the point size in CSS */
 
 }
 
-.ct-wind-chart {
+.ct-wind-chart,
+.ct-towz-wind-chart {
     .ct-series-a {
 
         .ct-area {

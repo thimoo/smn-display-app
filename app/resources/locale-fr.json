@@ -27,5 +27,7 @@
     "graphic_gusts_name": "Rafale",
     "graphic_wind_unit": "(km/h)",
     "graphic_humidity_name": "Humidité (%)",
-    "no_data_text": "Dernières données actualisées à"
+    "no_data_text": "Dernières données actualisées à",
+    "info_towz_primary": "Les mesures sont réalisées sur une tour à",
+    "info_towz_secondary": "m au-dessus du sol."
 }

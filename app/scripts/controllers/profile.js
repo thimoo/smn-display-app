@@ -249,6 +249,7 @@ angular.module('swissMetNetDisplayApp')
           name: profile.infos.name || profile.stnCode,
           code: profile.stnCode,
           altitude: profile.infos.altitude || ' – ',
+          altitudeTowz: profile.infos.altitudeTowz || null,
           updateDate: profile.lastUpdate
         };
       }

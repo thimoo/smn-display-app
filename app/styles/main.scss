@@ -553,6 +553,7 @@ $header-padding:   10px 0;
   }
 }
 
+.graphic-towz-humidity,
 .graphic-humidity,
 .graphic-wind,
 .graphic-towz-wind,
@@ -596,6 +597,7 @@ $header-padding:   10px 0;
 }
 
 .graphic-humidity,
+.graphic-towz-humidity,
 .graphic-precipitation {
   .logo .hour-color {
     fill: $deep-blue;

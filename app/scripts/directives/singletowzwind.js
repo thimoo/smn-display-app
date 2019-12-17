@@ -9,7 +9,7 @@
 angular.module('swissMetNetDisplayApp')
   .directive('singleTowzWind', function () {
     return {
-      templateUrl: 'views/singlewind.html',
+      templateUrl: 'views/singletowzwind.html',
       replace: true,
       restrict: 'E',
       scope: {},
@@ -53,6 +53,7 @@ angular.module('swissMetNetDisplayApp')
           });
 
           webService.get(data.data.data.wind_dir_towz, function (tempData) {
+
             if (tempData.tag === 'no-data') {
               $scope.noData = true;
               $scope.lastTimeUpdate = tempData.original.date;
@@ -65,13 +66,15 @@ angular.module('swissMetNetDisplayApp')
             }
 
             function rotTween() {
+
               var i = d3.interpolate($scope.oldWindDirection, $scope.windDirection);
               return function(t) {
                   return 'rotate(' + i(t) + ' 207.71 200.72)';
               };
             }
 
-            var svg = d3.select('#wind-direction');
+            var svg = d3.select('#wind-towz-direction');
+            console.log(svg);
             svg.transition().duration(1000).attrTween('transform', rotTween);
 
           });

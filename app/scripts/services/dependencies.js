@@ -33,6 +33,9 @@ angular.module('swissMetNetDisplayApp')
     singleHumidity: [
       'data-humidity'
     ],
+    singleTowzHumidity: [
+      'data-humidity_towz'
+    ],
     singleQnh: [
       'data-qnh'
     ],
@@ -50,6 +53,9 @@ angular.module('swissMetNetDisplayApp')
     ],
     graphicHumidity: [
       'collections-humidity'
+    ],
+    graphicTowzHumidity: [
+      'collections-humidity_towz'
     ],
     graphicSun: [
       'collections-sun'

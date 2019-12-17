@@ -189,6 +189,10 @@ angular.module('swissMetNetDisplayApp')
             $position = $scope.displays.singlePrecipitation +
               $scope.displays.singleHumidity + 0;
             break;
+          case 'singleTowzHumidity':
+            $position = $scope.displays.singlePrecipitation +
+              $scope.displays.singleHumidity + 0;
+            break;
           case 'singleQnh':
             $position = $scope.displays.singlePrecipitation +
               $scope.displays.singleHumidity +
@@ -219,6 +223,12 @@ angular.module('swissMetNetDisplayApp')
               $scope.displays.graphicQnh + 0;
             break;
           case 'graphicHumidity':
+            $position = $scope.displays.graphicTemp +
+              $scope.displays.graphicSun +
+              $scope.displays.graphicQnh
+              $scope.displays.graphicHumidity + 0;
+            break;
+          case 'graphicTowzHumidity':
             $position = $scope.displays.graphicTemp +
               $scope.displays.graphicSun +
               $scope.displays.graphicQnh

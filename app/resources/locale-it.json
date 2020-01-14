@@ -27,5 +27,7 @@
     "graphic_gusts_name": "Raffica",
     "graphic_wind_unit": "(km/h)",
     "graphic_humidity_name": "Umidità (%)",
-    "no_data_text": "Ultimo aggiornamento dei dati :"
+    "no_data_text": "Ultimo aggiornamento dei dati :",
+    "info_towz_primary": "Le misure sono effettuate su una torre a",
+    "info_towz_secondary": "m sopra il suolo."
 }

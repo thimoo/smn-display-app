@@ -29,7 +29,7 @@ angular.module('swissMetNetDisplayApp')
       switch (type) {
         case 'data': return reversedData.indexOf(value) !== -1;
         case 'collections': return reversedCollections.indexOf(value) !== -1;
-      } 
+      }
     };
 
     this.check = function (directive, dependencies, profile) {
@@ -39,7 +39,7 @@ angular.module('swissMetNetDisplayApp')
       reversedCollections = toFlatArray(profile.collections);
 
       angular.forEach(dependencies, function (dependency) {
-        
+
         var source = dependency.split('-');
         if (! search(source[0], source[1])) {
           status = false;
@@ -51,9 +51,18 @@ angular.module('swissMetNetDisplayApp')
 
     this.cssToDirectiveName = function (cssClass) {
       var array = cssClass.split('-');
-      return array[0] + array[1].toLowerCase().capitalize();
+      var cssClassCamelCase='';
+      array.forEach(function(element,index) {
+        if(index !== 0){
+          cssClassCamelCase=cssClassCamelCase + element.toLowerCase().capitalize();
+        }
+        else {
+          cssClassCamelCase=element;
+        }
+      });
+      return cssClassCamelCase;
     };
-    
+
     this.reverseToObject = function (array) {
       var res = {};
       angular.forEach(array, function (value) {
@@ -74,7 +83,7 @@ angular.module('swissMetNetDisplayApp')
       };
 
       angular.forEach(dependencies, function (dependency) {
-        
+
         var source = dependency.split('-');
 
         urls[source[0]][source[1]] = profileUrls[source[0]][source[1]];

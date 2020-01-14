@@ -27,5 +27,7 @@
     "graphic_gusts_name": "Gust",
     "graphic_wind_unit": "(km/h)",
     "graphic_humidity_name": "Humidity (%)",
-    "no_data_text": "Latest data update at"
+    "no_data_text": "Latest data update at",
+    "info_towz_primary": "Measurements are carried out on a tower",
+    "info_towz_secondary": "m above ground."
 }

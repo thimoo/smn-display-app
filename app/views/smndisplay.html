@@ -1,7 +1,10 @@
 <div>
-    <div class="directive-title all-height-2of12">
+    <div class="directive-title all-height-1of12">
         <span>{{ profile.name }}</span>
         <span class="smn-title">&nbsp;|&nbsp;SwissMetNet <span class="smn-code">{{ profile.code }}</span></span>
+    </div>
+    <div class="directive-info-towz all-height-1of12" ng-if="profile.altitudeTowz">
+      <span>{{ 'info_towz_primary' | translate }}&nbsp;{{ profile.altitudeTowz }}{{ 'info_towz_secondary' | translate }}</span>
     </div>
     <div class="vertical-full-container-midle all-height-10of12">
         <img ng-src="{{ 'smn_svg_url' | translate }}" alt="SwissMetNet" class="svg-graphic">

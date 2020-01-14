@@ -27,5 +27,7 @@
     "graphic_gusts_name": "Böenspitze",
     "graphic_wind_unit": "(km/h)",
     "graphic_humidity_name": "Luftfeuchtigkeit (%)",
-    "no_data_text": "Zuletzt aktualisierte Daten:"
+    "no_data_text": "Zuletzt aktualisierte Daten:",
+    "info_towz_primary": "Die Messungen werden auf einem Turm in",
+    "info_towz_secondary": "m Höhe über Boden durchgeführt."
 }

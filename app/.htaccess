@@ -1,7 +1,7 @@
 RewriteEngine On
 
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteRule (.*) https://votre-domaine.com/$1 [R=301,L]
+RewriteRule (.*) http://swissmetnet-display.ch/$1 [R=301,L]
 
 RewriteBase /
 RewriteRule ^index\.html$ - [L]

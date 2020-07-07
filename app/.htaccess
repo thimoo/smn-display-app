@@ -1,4 +1,8 @@
 RewriteEngine On
+
+RewriteCond %{HTTPS} off
+RewriteRule .* https://%{HTTP:Host}%{REQUEST_URI} [L,R=permanent]
+
 RewriteBase /
 RewriteRule ^index\.html$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
